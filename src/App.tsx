@@ -5,7 +5,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import undefined from "./";
+import HeroSection1 from "./components/HeroSection1";
 
 function App() {
   const action = useNavigationType();
@@ -45,7 +45,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<undefined />} />
+      <Route path="/" element={<HeroSection1 />} />
     </Routes>
   );
 }

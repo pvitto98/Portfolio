@@ -1,0 +1,84 @@
+.logo {
+  box-shadow: 2px 2px 20px rgba(238, 238, 238, 0.5);
+  border-radius: var(--br-31xl);
+  border: 3px solid var(--color-whitesmoke);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-xl) var(--padding-6xl);
+}
+.aboutMe,
+.projects {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 80%;
+}
+.projects {
+  color: var(--color-white);
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-31xl);
+}
+.vectorIcon {
+  position: absolute;
+  height: 50%;
+  width: 75%;
+  top: 25%;
+  right: 12.4%;
+  bottom: 25%;
+  left: 12.6%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.icsharpMenu {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  height: 50px;
+  width: 50px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: none;
+}
+.navigation,
+.navigationbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.navigation {
+  justify-content: center;
+  gap: var(--gap-31xl);
+  font-size: var(--font-size-11xl);
+}
+.navigationbar {
+  width: 1440px;
+  background-color: var(--color-gray);
+  max-width: 100%;
+  overflow: hidden;
+  justify-content: space-between;
+  padding: var(--padding-31xl) var(--padding-56xl) var(--padding-xl)
+    var(--padding-31xl);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--font-size-6xl);
+  color: var(--color-whitesmoke);
+  font-family: var(--font-bricolage-grotesque);
+}
+@media screen and (max-width: 960px) {
+  .links {
+    display: none;
+  }
+  .icsharpMenu {
+    display: flex;
+  }
+}

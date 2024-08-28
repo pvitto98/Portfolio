@@ -1,0 +1,30 @@
+.skillname {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 100%;
+  font-weight: 600;
+}
+.skill {
+  filter: drop-shadow(2px 2px 20px rgba(238, 238, 238, 0.5));
+  border-radius: var(--br-31xl);
+  border: 3px solid var(--color-whitesmoke);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-6xl) var(--padding-31xl);
+  text-align: left;
+  font-size: var(--font-size-21xl);
+  color: var(--color-whitesmoke);
+  font-family: var(--font-bricolage-grotesque);
+}
+@media screen and (max-width: 420px) {
+  .skillname {
+    font-size: var(--font-size-xl);
+  }
+  .skill {
+    padding: var(--padding-mini) var(--padding-6xl);
+    box-sizing: border-box;
+  }
+}

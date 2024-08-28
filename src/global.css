@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap");
 body {
   margin: 0;
   line-height: normal;
@@ -11,6 +11,8 @@ body {
   --font-size-11xl: 30px;
   --font-size-6xl: 25px;
   --font-size-31xl: 50px;
+  --font-size-21xl: 40px;
+  --font-size-xl: 20px;
 
   /* Colors */
   --color-black: #000;
@@ -29,6 +31,8 @@ body {
   --padding-6xl: 25px;
   --padding-21xl: 40px;
   --padding-56xl: 75px;
+  --padding-mini: 15px;
+  --padding-81xl: 100px;
 
   /* Border radiuses */
   --br-31xl: 50px;

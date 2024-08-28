@@ -1,5 +1,5 @@
 .pvitto98Wrapper {
-  border-radius: 50px;
+  border-radius: var(--br-31xl);
   border: 3px solid var(--color-whitesmoke);
   overflow: hidden;
   display: flex;
@@ -28,7 +28,8 @@
   width: 100%;
   overflow: hidden;
   justify-content: space-between;
-  padding: var(--padding-31xl) 75px var(--padding-xl) var(--padding-31xl);
+  padding: var(--padding-31xl) var(--padding-56xl) var(--padding-xl)
+    var(--padding-31xl);
   box-sizing: border-box;
   z-index: 1;
 }

@@ -48,7 +48,7 @@
   background-color: var(--color-gray);
   overflow: hidden;
   justify-content: flex-start;
-  padding: 100px 200px;
+  padding: var(--padding-81xl) 200px;
   box-sizing: border-box;
   opacity: 0;
   width: 100%;

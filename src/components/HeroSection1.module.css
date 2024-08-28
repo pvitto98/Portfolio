@@ -1,0 +1,153 @@
+.pvitto98Wrapper {
+  border-radius: 50px;
+  border: 3px solid var(--color-whitesmoke);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-6xl);
+}
+.project {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 80%;
+}
+.links,
+.navigationbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.links {
+  justify-content: center;
+  gap: var(--gap-31xl);
+  font-size: var(--font-size-11xl);
+}
+.navigationbar {
+  width: 1440px;
+  overflow: hidden;
+  justify-content: space-between;
+  padding: var(--padding-31xl) 75px var(--padding-xl) var(--padding-31xl);
+  box-sizing: border-box;
+}
+.helloMyNames {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.02em;
+}
+.vittorio {
+  margin: 0;
+}
+.vittorioPellittieri {
+  align-self: stretch;
+  position: relative;
+  font-size: 250px;
+  letter-spacing: -0.05em;
+  line-height: 190px;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.andIAm {
+  color: var(--color-whitesmoke);
+}
+.and {
+  color: var(--color-white);
+}
+.andIAmContainer {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.02em;
+  color: var(--color-salmon);
+}
+.hero,
+.herocontent {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.herocontent {
+  gap: 20px;
+}
+.hero {
+  padding: var(--padding-31xl) 0;
+  text-align: center;
+  font-size: var(--font-size-31xl);
+}
+.frameIcon {
+  width: 20px;
+  position: relative;
+  height: 23.1px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.autoLayoutHorizontal,
+.autoLayoutVertical {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.autoLayoutVertical {
+  border-radius: 144px;
+  background-color: var(--color-whitesmoke);
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px;
+}
+.herosection,
+.scrolldown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.scrolldown {
+  align-self: stretch;
+  justify-content: flex-start;
+}
+.herosection {
+  width: 1440px;
+  height: 1024px;
+  background-color: #2b2b2b;
+  max-width: 100%;
+  overflow: hidden;
+  justify-content: space-between;
+  padding: 0 0 var(--padding-31xl);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--font-size-6xl);
+  color: var(--color-whitesmoke);
+  font-family: var(--font-bricolage-grotesque);
+}
+@media screen and (max-width: 420px) {
+  .helloMyNames {
+    font-size: var(--font-size-6xl);
+  }
+  .andIAmContainer,
+  .helloMyNames,
+  .vittorioPellittieri {
+    text-align: center;
+    align-self: stretch;
+    width: auto;
+  }
+  .vittorioPellittieri {
+    font-weight: 700;
+    font-family: var(--font-bricolage-grotesque);
+    font-size: 65px;
+    line-height: 50px;
+  }
+  .andIAmContainer {
+    font-size: var(--font-size-6xl);
+  }
+  .herocontent {
+    gap: 15px;
+  }
+  .hero {
+    padding-left: var(--padding-21xl);
+    padding-right: var(--padding-21xl);
+    box-sizing: border-box;
+  }
+}

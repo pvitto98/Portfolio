@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700;800&display=swap");
+body {
+  margin: 0;
+  line-height: normal;
+}
+:root {
+  /* fonts */
+  --font-bricolage-grotesque: "Bricolage Grotesque";
+
+  /* font sizes */
+  --font-size-11xl: 30px;
+  --font-size-6xl: 25px;
+  --font-size-31xl: 50px;
+
+  /* Colors */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-salmon: #f26165;
+  --color-whitesmoke: #eee;
+
+  /* Gaps */
+  --gap-31xl: 50px;
+
+  /* Paddings */
+  --padding-31xl: 50px;
+  --padding-xl: 20px;
+  --padding-6xl: 25px;
+  --padding-21xl: 40px;
+}

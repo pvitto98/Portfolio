@@ -10,7 +10,7 @@ const SpinningModel: React.FC = () => {
   // Movement parameters
   const amplitude = 4;  // Adjust the height of the bounce
   const frequency = 0.5;  // Adjust the speed of the bounce
-  const bounds = { x: 10, y: 5 };  // Define the bounds for the display
+  const bounds = { x: 8, y: 5 };  // Define the bounds for the display
   const collisionDistance = 3; // Threshold distance to detect collisions
 
   useEffect(() => {

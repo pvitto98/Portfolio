@@ -61,18 +61,17 @@
   font-size: var(--font-size-11xl);
 }
 .navigationbar {
-  width: 1440px;
-  background-color: var(--color-gray);
+  width: 100%;
   max-width: 100%;
   overflow: hidden;
   justify-content: space-between;
-  padding: var(--padding-31xl) var(--padding-56xl) var(--padding-xl)
-    var(--padding-31xl);
+  padding: var(--padding-31xl) var(--padding-56xl) var(--padding-xl) var(--padding-56xl);
   box-sizing: border-box;
   text-align: left;
   font-size: var(--font-size-6xl);
   color: var(--color-whitesmoke);
   font-family: var(--font-bricolage-grotesque);
+  z-index: 1;
 }
 @media screen and (max-width: 960px) {
   .links {

@@ -5,7 +5,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import HeroSection1 from "./components/HeroSection1";
+import Project1 from "./pages/Project1";
 
 function App() {
   const action = useNavigationType();
@@ -45,7 +45,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<HeroSection1 />} />
+      <Route path="/" element={<Project1 />} />
     </Routes>
   );
 }

@@ -1,0 +1,210 @@
+.projecthero,
+.videoIcon {
+  align-self: stretch;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.videoIcon {
+  max-width: 100%;
+  height: 824px;
+  object-fit: cover;
+}
+.projecthero {
+  background-color: var(--color-gray);
+  height: 1024px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-81xl);
+  box-sizing: border-box;
+}
+.title {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 80%;
+  font-weight: 800;
+}
+.header,
+.link,
+.title {
+  align-self: stretch;
+}
+.link {
+  position: relative;
+  font-size: var(--font-size-13xl);
+  letter-spacing: -0.02em;
+  line-height: 80%;
+  font-weight: 200;
+  color: var(--color-whitesmoke);
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-mini);
+}
+.info1,
+.infodescription {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 80%;
+}
+.infodescription {
+  font-size: var(--font-size-3xl);
+  line-height: 110%;
+  font-weight: 500;
+  text-align: justify;
+}
+.info {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xl);
+}
+.htmlCss {
+  margin: 0;
+}
+.technologiesdescription {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-3xl);
+  letter-spacing: -0.02em;
+  line-height: 110%;
+  font-weight: 500;
+}
+.technologies {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xl);
+}
+.informations,
+.projectinfo {
+  align-self: stretch;
+  display: flex;
+}
+.informations {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0 var(--padding-31xl) 0 0;
+  font-size: var(--font-size-16xl);
+  color: var(--color-whitesmoke);
+}
+.projectinfo {
+  background-color: var(--color-gray);
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-81xl);
+  gap: var(--gap-81xl);
+}
+.screen1Icon {
+  position: relative;
+}
+.screen1Icon,
+.screen3Icon {
+  align-self: stretch;
+  max-width: 100%;
+  overflow: hidden;
+  height: 700px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.autoLayoutHorizontal {
+  width: 80px;
+  height: 69.3px;
+  object-fit: contain;
+}
+.prev {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 80%;
+  font-weight: 800;
+}
+.navigation,
+.previousbutton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.previousbutton {
+  justify-content: center;
+  gap: var(--gap-xl);
+}
+.navigation {
+  align-self: stretch;
+  justify-content: space-between;
+}
+.project,
+.projectphotos {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.projectphotos {
+  align-self: stretch;
+  background-color: var(--color-gray);
+  overflow: hidden;
+  align-items: center;
+  padding: var(--padding-81xl);
+  gap: var(--gap-81xl);
+  color: var(--color-whitesmoke);
+}
+.project {
+  width: 100%;
+  position: relative;
+  align-items: flex-start;
+  text-align: left;
+  font-size: var(--font-size-77xl);
+  color: var(--color-salmon);
+  font-family: var(--font-bricolage-grotesque);
+}
+@media screen and (max-width: 420px) {
+  .projecthero {
+    height: auto;
+    padding-left: var(--padding-21xl);
+    padding-top: var(--padding-81xl);
+    padding-right: var(--padding-21xl);
+    box-sizing: border-box;
+  }
+  .title {
+    font-size: var(--font-size-51xl);
+  }
+  .infodescription,
+  .link {
+    font-size: var(--font-size-xl);
+  }
+  .info,
+  .technologies {
+    align-self: stretch;
+    width: auto;
+  }
+  .informations {
+    flex-direction: column;
+    padding-right: 0;
+    box-sizing: border-box;
+    row-gap: 50px;
+  }
+  .projectinfo {
+    gap: var(--gap-56xl);
+    padding-left: var(--padding-21xl);
+    padding-right: var(--padding-21xl);
+    box-sizing: border-box;
+  }
+  .prev {
+    font-size: var(--font-size-11xl);
+  }
+  .projectphotos {
+    padding-left: var(--padding-21xl);
+    padding-right: var(--padding-21xl);
+    box-sizing: border-box;
+  }
+}

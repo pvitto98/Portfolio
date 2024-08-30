@@ -13,15 +13,22 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--padding-6xl) var(--padding-31xl);
+  padding: var(--padding-xl) var(--padding-31xl);
   text-align: left;
-  font-size: var(--font-size-21xl);
+  font-size: var(--font-size-11xl);
   color: var(--color-whitesmoke);
   font-family: var(--font-bricolage-grotesque);
 }
+.skill:hover {
+  transform: rotateY(10deg) translateZ(20px);
+  border-color: #F26165;  /* Change border color on hover */
+  color: #F26165;  /* Change text color on hover */
+  background-color: #EEEEEE; /* Change background color on hover */
+  transform: scale(1.2);
+}
 @media screen and (max-width: 420px) {
   .skillname {
-    font-size: var(--font-size-xl);
+    font-size: 18px;
   }
   .skill {
     padding: var(--padding-mini) var(--padding-6xl);

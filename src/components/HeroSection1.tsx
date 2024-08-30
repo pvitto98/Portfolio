@@ -9,7 +9,7 @@ import NavigationBar1 from './NavigationBar1';
 const HeroSection1 = ({ className = '' }) => {
   return (
     <div className={[styles.herosection, className].join(' ')}>
-      <Canvas style={{ position: 'absolute', height: '100svh', width: '100vw' }}>
+      <Canvas style={{ position: 'absolute', height: '100svh', width: '100%' }}>
         <ambientLight intensity={0.3} />
         <directionalLight intensity={0.3} position={[0, 5, 5]} />
         <SpinningModel />
@@ -19,7 +19,7 @@ const HeroSection1 = ({ className = '' }) => {
         style={{
           position: 'absolute',
           height: '100svh',
-          width: '100vw',
+          width: '100%',
           backdropFilter: 'blur(4px)', // Adjusted blur intensity
           zIndex: 0, // Ensure it's on top of the Canvas but behind other content
         }}
@@ -54,7 +54,6 @@ const HeroSection1 = ({ className = '' }) => {
           <b className={styles.project}>Contact</b>
         </div>
       </motion.div> */}
-      <NavigationBar1/>
       {/* Animated Hero Content */}
       <motion.div className={styles.hero} style={{ zIndex: 2 }}>
         <motion.div

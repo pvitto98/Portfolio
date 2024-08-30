@@ -45,9 +45,9 @@
 .vittorioPellittieri {
   align-self: stretch;
   position: relative;
-  font-size: 250px;
+  font-size: 200px;
   letter-spacing: -0.05em;
-  line-height: 190px;
+  line-height: 150px;
   text-transform: uppercase;
   font-weight: 900;
 
@@ -79,7 +79,7 @@
 .hero {
   padding: var(--padding-31xl) 0;
   text-align: center;
-  font-size: var(--font-size-31xl);
+  font-size: var(--font-size-11xl);
   gap: 5px;
 }
 .frameIcon {
@@ -102,7 +102,7 @@
   overflow: hidden;
   flex-direction: column;
   align-items: flex-start;
-  padding: 32px;
+  padding: 25px;
 }
 .herosection,
 .scrolldown {
@@ -114,6 +114,8 @@
   align-self: stretch;
   justify-content: flex-start;
   z-index: 1;
+  position: relative;
+  top: 8%;
 }
 .herosection {
   width: 100svw;
@@ -121,8 +123,8 @@
   background-color: #2b2b2b;
   max-width: 100%;
   overflow: hidden;
-  justify-content: space-between;
-  padding: 0 0 var(--padding-31xl);
+  justify-content: center;
+  /* padding: 0 0 8%; */
   box-sizing: border-box;
   text-align: left;
   font-size: var(--font-size-6xl);

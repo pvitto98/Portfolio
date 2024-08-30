@@ -29,7 +29,7 @@ const MySkills1: FunctionComponent<MySkills1Type> = ({ className = "" }) => {
         </div>
       </div>
       <div className={styles.maybeIShould}>
-        *Maybe I should practise it a little bit more...
+        *Maybe I should practice that a little bit more...
       </div>
     </div>
   );

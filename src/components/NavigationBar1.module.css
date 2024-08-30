@@ -58,9 +58,11 @@
 .navigation {
   justify-content: center;
   gap: var(--gap-31xl);
-  font-size: var(--font-size-11xl);
+  font-size: var(--font-size-xl);
 }
 .navigationbar {
+  position: fixed;
+  top:0;
   width: 100%;
   max-width: 100%;
   overflow: hidden;
@@ -68,7 +70,7 @@
   padding: var(--padding-31xl) var(--padding-56xl) var(--padding-xl) var(--padding-56xl);
   box-sizing: border-box;
   text-align: left;
-  font-size: var(--font-size-6xl);
+  font-size: var(--font-size-xl);
   color: var(--color-whitesmoke);
   font-family: var(--font-bricolage-grotesque);
   z-index: 1;
@@ -79,5 +81,8 @@
   }
   .icsharpMenu {
     display: flex;
+  }
+  .navigationbar{
+    padding: 25px 25px 20px 25px;
   }
 }

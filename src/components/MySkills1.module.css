@@ -15,7 +15,7 @@
   justify-content: center;
   flex-wrap: wrap;
   align-content: flex-start;
-  gap: 25px;
+  gap: 30px;
 }
 .myskillscontent {
   flex-direction: column;
@@ -28,11 +28,11 @@
   font-size: var(--font-size-11xl);
   letter-spacing: -0.02em;
   line-height: 100%;
-  font-weight: 500;
+  font-weight: 200;
   color: var(--color-whitesmoke);
 }
 .myskills {
-  width: 1440px;
+  width: 100%;
   background-color: var(--color-gray);
   max-width: 100%;
   overflow: hidden;
@@ -40,13 +40,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: var(--padding-81xl);
+  padding: 125px var(--padding-81xl);
   box-sizing: border-box;
   gap: var(--gap-81xl);
   text-align: left;
   font-size: var(--font-size-31xl);
   color: var(--color-white);
   font-family: var(--font-bricolage-grotesque);
+  height: 100svh;
 }
 @media screen and (max-width: 420px) {
   .skillset {
@@ -64,5 +65,6 @@
     gap: var(--gap-31xl);
     padding: var(--padding-31xl) var(--padding-21xl) var(--padding-81xl);
     box-sizing: border-box;
+    font-size: 40px;
   }
 }

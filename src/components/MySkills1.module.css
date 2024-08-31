@@ -51,7 +51,7 @@
 }
 @media screen and (max-width: 420px) {
   .skillset {
-    gap: 10px;
+    gap: 8px;
   }
   .myskillscontent {
     padding-left: 0;

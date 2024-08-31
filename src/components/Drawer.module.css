@@ -8,56 +8,47 @@
     opacity: 1;
   }
 }
-.pvitto {
-  position: relative;
+
+.drawer {
+  position: fixed; /* Cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100svh; /* Full height */
+  background-color: var(--color-gray); /* Background color */
+  z-index: 9999; /* Ensure it's on top */
+  overflow: hidden; /* Hide any overflow */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  animation: 0.25s ease 0s 1 normal forwards slide-in-top; /* Animation */
+  padding-bottom:  25px;
+}
+.links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 75px;
+  font-size: var(--font-size-31xl);
+  text-align: center;
+}
+
+.pvitto, .projects {
   letter-spacing: -0.02em;
   line-height: 80%;
+  color: var(--color-white);
 }
+
 .logo {
-  box-shadow: 3.2px 3.2px 31.74px rgba(238, 238, 238, 0.5);
-  border-radius: 79.35px;
-  border: 4.8px solid var(--color-whitesmoke);
+  box-shadow: 2px 2px 20px rgba(238, 238, 238, 0.5);
+  border-radius: var(--br-31xl);
+  border: 3px solid var(--color-whitesmoke);
   overflow: hidden;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 31.7px 39.7px;
-}
-.projects {
-  position: relative;
-  letter-spacing: -0.02em;
-  line-height: 80%;
-  color: var(--color-white);
-}
-.drawer,
-.links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--gap-81xl);
-}
-.links {
-  align-self: stretch;
-  justify-content: center;
-  font-size: var(--font-size-31xl);
-}
-.drawer {
-  height: 1024px;
-  position: relative;
+  padding: var(--padding-xl) var(--padding-6xl);
   background-color: var(--color-gray);
-  overflow: hidden;
-  justify-content: flex-start;
-  padding: var(--padding-81xl) 200px;
-  box-sizing: border-box;
-  opacity: 0;
-  width: 100%;
-  max-height: 90%;
-  text-align: left;
-  font-size: 39.7px;
-  color: var(--color-whitesmoke);
-  font-family: var(--font-bricolage-grotesque);
-}
-.drawer.animate {
-  animation: 0.25s ease 0s 1 normal forwards slide-in-top;
 }

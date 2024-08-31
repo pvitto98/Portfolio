@@ -8,6 +8,7 @@ import {
 import HeroSection1 from "./components/HeroSection1";
 import MySkills1 from "./components/MySkills1";
 import NavigationBar1 from "./components/NavigationBar1";
+import Project1 from "./pages/Project1";
 
 function App() {
   const action = useNavigationType();
@@ -51,6 +52,7 @@ function App() {
 
     <Routes>
       <Route path="/" element={<div><HeroSection1 /><MySkills1/></div>} />
+      <Route path="/BAT" element={<Project1 />} />
     </Routes>
     </>
   );

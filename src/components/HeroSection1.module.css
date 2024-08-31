@@ -149,6 +149,7 @@
   
 }
 @media screen and (max-width: 420px) {
+
   .helloMyNames {
     font-size: var(--font-size-6xl);
   }

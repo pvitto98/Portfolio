@@ -1,0 +1,120 @@
+.title {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 80%;
+  font-weight: 800;
+}
+.header,
+.link,
+.title {
+  align-self: stretch;
+}
+.link {
+  position: relative;
+  font-size: var(--font-size-13xl);
+  letter-spacing: -0.02em;
+  line-height: 80%;
+  font-weight: 200;
+  color: var(--color-whitesmoke);
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-mini);
+}
+.info1,
+.infodescription {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 80%;
+}
+.infodescription {
+  font-size: var(--font-size-3xl);
+  line-height: 110%;
+  font-weight: 500;
+  text-align: justify;
+}
+.info {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xl);
+}
+.htmlCss {
+  margin: 0;
+}
+.technologiesdescription {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--font-size-3xl);
+  letter-spacing: -0.02em;
+  line-height: 110%;
+  font-weight: 500;
+}
+.informations,
+.technologies {
+  display: flex;
+  align-items: flex-start;
+}
+.technologies {
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap-6xl);
+}
+.informations {
+  align-self: stretch;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 var(--padding-31xl) 0 0;
+  font-size: var(--font-size-16xl);
+  color: var(--color-whitesmoke);
+}
+.projectinfo {
+  width: 100%;
+  background-color: var(--color-gray);
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-81xl);
+  box-sizing: border-box;
+  gap: var(--gap-81xl);
+  text-align: left;
+  font-size: var(--font-size-77xl);
+  color: var(--color-salmon);
+  font-family: var(--font-bricolage-grotesque);
+}
+@media screen and (max-width: 420px) {
+  .title {
+    font-size: var(--font-size-51xl);
+  }
+  .infodescription,
+  .link {
+    font-size: 18px;
+  }
+  .info,
+  .technologies {
+    align-self: stretch;
+    width: auto;
+  }
+  .informations {
+    flex-direction: column;
+    padding-right: 0;
+    box-sizing: border-box;
+    row-gap: 50px;
+  }
+  .projectinfo {
+    gap: var(--gap-56xl);
+    padding-top: 75px;
+    padding-left: var(--padding-21xl);
+    padding-right: var(--padding-21xl);
+    box-sizing: border-box;
+  }
+}

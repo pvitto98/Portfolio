@@ -31,7 +31,7 @@
     font-size: 18px;
   }
   .skill {
-    padding: var(--padding-mini) var(--padding-6xl);
+    padding: 15px 20px;
     box-sizing: border-box;
   }
 }

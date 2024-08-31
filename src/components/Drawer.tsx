@@ -35,6 +35,7 @@ const Drawer: FunctionComponent<DrawerType> = ({ className = "", onClose }) => {
       }
     };
   }, []);
+
   return (
     <div
       className={[styles.drawer, className].join(" ")}
@@ -44,10 +45,16 @@ const Drawer: FunctionComponent<DrawerType> = ({ className = "", onClose }) => {
         <div className={styles.pvitto}>PVITTO</div>
       </div>
       <div className={styles.links}>
-        <div className={styles.pvitto}>About me</div>
-        <div className={styles.projects}>Projects</div>
-        <b className={styles.pvitto}>Contact</b>
+        <div className={styles.pvitto}>HOME</div>
+        <div className={styles.projects}>ABOUT</div>
+        <div className={styles.projects}>WORKS</div>
+        <b className={styles.pvitto}>CONTACT</b>
       </div>
+      {onClose && (
+        <button onClick={onClose} className={styles.closeButton}>
+          Close
+        </button>
+      )}
     </div>
   );
 };

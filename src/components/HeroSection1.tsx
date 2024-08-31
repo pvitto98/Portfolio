@@ -31,7 +31,7 @@ const HeroSection1 = ({ className = '' }) => {
             left: 0,
             height: '100%',
             width: '100%',
-            background: 'radial-gradient(circle, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 70%)', // Radial gradient for darker center
+            background: 'radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 70%)', // Radial gradient for darker center
             zIndex: 1,
           }}
         ></div>

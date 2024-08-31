@@ -18,6 +18,7 @@ body {
   --font-size-6xl: 25px;
   --font-size-31xl: 50px;
   --font-size-21xl: 40px;
+  --font-size-181xl: 200px;
 
   /* Colors */
   --color-gray: #2b2b2b;
@@ -33,6 +34,7 @@ body {
   --gap-6xl: 25px;
   --gap-mini: 15px;
   --gap-31xl: 50px;
+  --gap-3xs: 10px;
 
   /* Paddings */
   --padding-81xl: 100px;

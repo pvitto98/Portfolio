@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 import styles from "./Contact1.module.css";
+import Marquee from "react-fast-marquee";
 
 export type Contact1Type = {
   className?: string;
@@ -8,16 +9,47 @@ export type Contact1Type = {
 const Contact1: FunctionComponent<Contact1Type> = ({ className = "" }) => {
   return (
     <div className={[styles.contact, className].join(" ")}>
-      <div className={styles.header}>
-        <div className={styles.letsGetInTouch}>
-          <div className={styles.letsGetIn}>LET’S GET IN TOUCH</div>
+      <div className={styles.headerContainer}>
+        <div className={styles.divider}></div>
+        <div className={styles.header}>
+          <div className={styles.scrolling_text}>
+            <Marquee gradient={false} speed={300} direction="right" loop={0} >
+              <div className={styles.letsGetIn}>
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCHu
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCHu
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCHu
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCHu
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCHu
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+            
+              </div>
+            </Marquee>
+          </div>
         </div>
-        <div className={styles.letsGetInTouch}>
-          <div className={styles.letsGetIn}>LET’S GET IN TOUCH</div>
-        </div>
-        <div className={styles.letsGetInTouch}>
-          <div className={styles.letsGetIn}>LET’S GET IN TOUCH</div>
-        </div>
+        <div className={styles.divider}></div>
       </div>
       <div className={styles.contactcontentwrapper}>
         <div className={styles.contactcontent}>

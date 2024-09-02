@@ -10,9 +10,10 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  /* width: max-content; */
 }
 .header {
-  align-self: stretch;
+  /* align-self: stretch; */
   gap: var(--gap-81xl);
 }
 .email,
@@ -23,7 +24,7 @@
   line-height: 80%;
 }
 .email {
-  font-size: var(--font-size-51xl);
+  font-size: 60px;
   line-height: 110%;
   font-weight: 800;
   color: var(--color-salmon);
@@ -46,8 +47,8 @@
   position: relative;
 }
 .imgIcon {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   object-fit: cover;
 }
 .text {
@@ -73,8 +74,12 @@
 .buttoncontainer {
   justify-content: center;
   gap: var(--gap-6xl);
-  font-size: var(--font-size-11xl);
+  font-size: var(--font-size-6xl);
   color: var(--color-whitesmoke);
+}
+.linkedin:hover {
+  border-color: #F26165;  /* Change border color on hover */
+  transform: scale(1.1);
 }
 .socialwrapper {
   align-self: stretch;
@@ -97,10 +102,10 @@
   align-self: stretch;
   align-items: flex-start;
   padding: 0 var(--padding-81xl);
-  font-size: var(--font-size-21xl);
+  font-size: 30px;
 }
 .contact {
-  width: 1440px;
+  width: 100%;
   background-color: var(--color-gray);
   max-width: 100%;
   overflow: hidden;
@@ -113,6 +118,55 @@
   color: var(--color-white);
   font-family: var(--font-bricolage-grotesque);
 }
+.scrolling_text {
+  /* width: max-content; */
+  /* overflow: hidden; */
+  /* display: flex; */
+  /* white-space: nowrap; */
+  /* position: relative; */
+
+}
+
+.letsGetIn {
+  position: relative;
+  letter-spacing: -0.05em;
+  line-height: 80%;
+  font-weight: 800;
+  display: inline-flex;
+  white-space: nowrap;
+  margin: 0 40px;
+  gap: 40px;
+  /* Remove padding-right: 100%; */
+}
+
+.letsGetIn:hover {
+  animation-play-state: paused; /* Pause on hover */
+}
+.letsGetIn span {
+  margin: 0 40px;
+}
+.redLetter{
+  color: var(--color-salmon);
+  letter-spacing: -0.4em; /* Adjust this value to fine-tune the spacing */
+
+}
+
+
+
+.divider{
+  width: 100%;
+  background: white;
+  height: 3px;
+}
+@keyframes animate_text {
+  from {
+    transform:translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
 @media screen and (max-width: 420px) {
   .email,
   .whyDontYou {
@@ -148,5 +202,11 @@
     padding-left: var(--padding-21xl);
     padding-right: var(--padding-21xl);
     box-sizing: border-box;
+  }
+  .contact {
+    font-size:100px;
+  }
+  .redLetter{
+    letter-spacing: -0.4em; /* Adjust this value to fine-tune the spacing */
   }
 }

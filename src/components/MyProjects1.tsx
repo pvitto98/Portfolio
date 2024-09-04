@@ -17,12 +17,10 @@ const MyProjects1: FunctionComponent<MyProjects1Type> = ({
         <Project
           bAT="ATHING"
           landingPage="Native Android Application"
-          typeLeft="calc(50% - 179px)"
         />
         <Project
           bAT="WORK SCHEDULE"
           landingPage="Full Stack App"
-          typeLeft="calc(50% - 111.5px)"
         />
       </div>
     </div>

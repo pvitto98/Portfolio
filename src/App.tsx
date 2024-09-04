@@ -10,6 +10,8 @@ import MySkills1 from "./components/MySkills1";
 import NavigationBar1 from "./components/NavigationBar1";
 import Project1 from "./pages/Project1";
 import Contact1 from "./components/Contact1";
+import MyProjects1 from "./components/MyProjects1";
+import AboutMe from "./components/AboutMe";
 
 function App() {
   const action = useNavigationType();
@@ -47,14 +49,24 @@ function App() {
     }
   }, [pathname]);
 
+  const projectData = [{
+    videoSrc: "/bat_video.mp4",
+    title: "BAT",
+    link: "https://www.brasseria-augusta-taurinorum.it",
+    info: `Lipton Teas & Infusions, anciennement Ekaterra, un site présentant les différentes marques de thé, ainsi que l'histoire et les enjeux de la marque. J'ai travaillé en tant que développeur front-end. Mon rôle principal a été de réaliser l'intégration du site, en mettant en place les éléments visuels et interactifs, et j'ai également été chargé de créer la plupart des animations. Le projet est un site statique, dont les données sont récupérées via Contentful grâce à Eleventy.`,
+    technologies: ["HTML / CSS / JS", "Eleventy", "Contentful"],
+    credits: ["Lipton Teas & Infusions", "Design : Alter Bureau", "Développement : Troa"],
+    screenshots: ["/screen1@2x.png", "/screen2@2x.png", "/screen2@2x.png"],
+  }];
+
   return (
     <>
     <NavigationBar1/>
 
     <Routes>
-      <Route path="/" element={<div><HeroSection1 /><MySkills1/></div>} />
-      <Route path="/BAT" element={<Project1 />} />
-    </Routes>
+      <Route path="/" element={<div><HeroSection1 /><AboutMe/><MyProjects1/><MySkills1/></div>} />
+      <Route path="/BAT" element={<Project1 {...projectData[0]} />} />
+      </Routes>
     <Contact1/>
     </>
   );

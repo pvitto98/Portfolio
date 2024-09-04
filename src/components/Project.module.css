@@ -1,12 +1,21 @@
-.previewIcon {
-  align-self: stretch;
-  flex: 1;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
+.hoverGif {
+  display: block; /* Ensure the GIF is visible */
+  width: 100%;
+  height: auto;
   object-fit: cover;
-  z-index: 0;
+  transition: filter 0.3s ease, transform 0.3s ease; /* Smooth transition for grayscale and GIF play */
+  filter: grayscale(100%); /* Apply grayscale effect */
 }
+.project:hover .hoverGif {
+  filter: grayscale(0%); /* Remove grayscale on hover */
+}
+
+.linkWrapper {
+  display: contents; /* Makes sure the Link fits its content */
+  text-decoration: none; /* Remove underline from link */
+  width: 100%; /* Ensure Link takes up the width of its content */
+}
+
 .bat {
   position: relative;
   letter-spacing: -0.02em;
@@ -14,11 +23,11 @@
   font-weight: 800;
 }
 .titleholder {
-  width: 500px;
+  width: 100%;
   border-radius: 0 0 var(--br-11xl) var(--br-11xl);
   border-top: 5px solid var(--color-whitesmoke);
   box-sizing: border-box;
-  height: 85px;
+  height: 70px;
   overflow: hidden;
   flex-shrink: 0;
   display: flex;
@@ -44,36 +53,46 @@
 .type {
   margin: 0 !important;
   position: absolute;
-  top: calc(50% - 250px);
-  left: calc(50% - 107px);
+  top: 0;
+  /* left: calc(50% - 107px); */
   border-radius: 0 0 var(--br-11xl) var(--br-11xl);
   background-color: var(--color-gray);
   border-right: 5px solid var(--color-whitesmoke);
   border-bottom: 5px solid var(--color-whitesmoke);
   border-left: 5px solid var(--color-whitesmoke);
-  height: 55px;
+  height: auto;
   flex-direction: row;
   justify-content: center;
   padding: var(--padding-3xs) var(--padding-11xl);
   z-index: 2;
-  font-size: var(--font-size-5xl);
-  color: var(--color-salmon);
+  font-size: 20px;
+  /* color: var(--color-salmon); */
 }
 .project {
-  width: 500px;
+  width: 32%;
   box-shadow: 2px 2px 20px rgba(238, 238, 238, 0.5);
   border-radius: var(--br-11xl);
   border: 5px solid var(--color-whitesmoke);
-  height: 500px;
+  height: auto;
   flex-direction: column;
   justify-content: space-between;
-  padding: var(--padding-8xs) 0 0;
+  /* padding: var(--padding-8xs) 0 0; */
   position: relative;
   text-align: center;
-  font-size: var(--font-size-26xl);
+  font-size: 32px;
   color: var(--color-whitesmoke);
   font-family: var(--font-bricolage-grotesque);
+  min-width: 400px;
+  transform-style: preserve-3d; /* Preserve 3D transformations */
+  perspective: 1000px; /* Adjust perspective */
+  perspective-origin: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smoother transition */
 }
+.project:hover {
+  /* transform: perspective(500px) rotateY(0deg) rotateX(0deg) translateZ(0) */
+  z-index: 2;
+}
+
 @media screen and (max-width: 420px) {
   .bat {
     font-size: var(--font-size-11xl);
@@ -86,7 +105,15 @@
   }
   .project {
     align-self: stretch;
-    width: auto;
-    height: 400px;
+    width: 100%;
+    height: auto;
+    min-width: auto;
+  }
+  .type{
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+  .hoverGif {
+    filter: grayscale(0%); /* Remove grayscale on hover */
   }
 }

@@ -12,10 +12,10 @@
   justify-content: center;
   flex-wrap: wrap;
   align-content: flex-start;
-  gap: var(--gap-31xl);
+  gap: 20px;
 }
 .myprojects {
-  width: 1440px;
+  width: 100%;
   background-color: var(--color-gray);
   max-width: 100%;
   overflow: hidden;
@@ -39,9 +39,11 @@
   }
   .myprojects {
     width: 100%;
-    gap: var(--gap-81xl);
+    gap: 50px;
     padding-left: var(--padding-21xl);
     padding-right: var(--padding-21xl);
     box-sizing: border-box;
+    font-size: 40px;
+    text-align: center;
   }
 }

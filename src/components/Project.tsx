@@ -1,4 +1,5 @@
-import { FunctionComponent, useMemo, type CSSProperties } from "react";
+import { FunctionComponent, useMemo, useState, CSSProperties } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Project.module.css";
 
 export type ProjectType = {
@@ -16,22 +17,47 @@ const Project: FunctionComponent<ProjectType> = ({
   landingPage,
   typeLeft,
 }) => {
+  const [style, setStyle] = useState({});
   const typeStyle: CSSProperties = useMemo(() => {
     return {
       left: typeLeft,
     };
   }, [typeLeft]);
 
+  const handleMouseMove = (e: { nativeEvent: { offsetX: any; offsetY: any; target: any } }) => {
+    const { offsetX, offsetY, target } = e.nativeEvent;
+    const { offsetWidth: width, offsetHeight: height } = target;
+    const moveX = ((offsetX / width) * 30) - 15;
+    const moveY = ((offsetY / height) * 30) - 15;
+
+    setStyle({
+      transform: `scale(1.1) perspective(1000px) rotateY(${moveX}deg) rotateX(${moveY}deg)`,
+      boxShadow: "0 20px 40px rgba(0, 0, 0, 0.5)",
+    });
+  };
+
   return (
-    <div className={[styles.project, className].join(" ")}>
-      <img className={styles.previewIcon} alt="" src="/preview@2x.png" />
-      <div className={styles.titleholder}>
-        <div className={styles.bat}>{bAT}</div>
+    <Link to="/BAT" className={styles.linkWrapper}>
+      <div
+        className={[styles.project, className].join(" ")}
+        style={style}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={() => setStyle({})}
+      >
+
+        <img
+          className={styles.hoverGif}
+          src="/image.gif"
+          alt="Hover GIF"
+        />
+        <div className={styles.titleholder}>
+          <div className={styles.bat}>{bAT}</div>
+        </div>
+        <div className={styles.type} style={typeStyle}>
+          <div className={styles.landingPage}>{landingPage}</div>
+        </div>
       </div>
-      <div className={styles.type} style={typeStyle}>
-        <div className={styles.landingPage}>{landingPage}</div>
-      </div>
-    </div>
+    </Link>
   );
 };
 

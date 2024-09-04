@@ -1,18 +1,20 @@
 import { FunctionComponent } from "react";
 import styles from "./ProjectPhotos.module.css";
 
-export type ProjectPhotosType = {
+export type ProjectPhotosProps = {
+  screenshots: string[];
   className?: string;
 };
 
-const ProjectPhotos: FunctionComponent<ProjectPhotosType> = ({
+const ProjectPhotos: FunctionComponent<ProjectPhotosProps> = ({
+  screenshots,
   className = "",
 }) => {
   return (
     <div className={[styles.projectphotos, className].join(" ")}>
-      <img className={styles.screen1Icon} alt="" src="/screen1@2x.png" />
-      <img className={styles.screen1Icon} alt="" src="/screen2@2x.png" />
-      <img className={styles.screen3Icon} alt="" src="/screen2@2x.png" />
+      {screenshots.map((src, index) => (
+        <img key={index} className={styles.screen1Icon} alt="" src={src} />
+      ))}
       <div className={styles.navigation}>
         <div className={styles.previousbutton}>
           <img

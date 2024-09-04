@@ -4,12 +4,28 @@ import ProjectHero from "../components/ProjectHero";
 import ProjectInfo from "../components/ProjectInfo";
 import ProjectPhotos from "../components/ProjectPhotos";
 
-const Project1: FunctionComponent = () => {
+export type Project1Props = {
+  videoSrc: string;
+  title: string;
+  link: string;
+  info: string;
+  technologies: string[];
+  credits: string[];
+  screenshots: string[];
+};
+
+const Project1: FunctionComponent<Project1Props> = (props) => {
   return (
     <div className={styles.project}>
-      <ProjectHero/>
-      <ProjectInfo/>
-      <ProjectPhotos/>
+      <ProjectHero videoSrc={props.videoSrc} />
+      <ProjectInfo
+        title={props.title}
+        link={props.link}
+        info={props.info}
+        technologies={props.technologies}
+        credits={props.credits}
+      />
+      <ProjectPhotos screenshots={props.screenshots} />
     </div>
   );
 };

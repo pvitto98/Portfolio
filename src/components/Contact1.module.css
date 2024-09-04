@@ -186,6 +186,10 @@
   .linkedin {
     padding: var(--padding-mini) var(--padding-6xl);
     box-sizing: border-box;
+    transform: scale(0.8);
+  }
+  .linkedin:hover {
+    transform: scale(0.9);
   }
   .buttoncontainer,
   .socialwrapper {
@@ -205,6 +209,8 @@
   }
   .contact {
     font-size:100px;
+    gap: 50px;
+    padding: 0 0 50px 0;
   }
   .redLetter{
     letter-spacing: -0.4em; /* Adjust this value to fine-tune the spacing */

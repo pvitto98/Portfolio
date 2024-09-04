@@ -4,7 +4,6 @@ import { Canvas } from '@react-three/fiber';
 import { motion } from 'framer-motion'; // Import framer-motion
 import SpinningModel from './SpinningModel'; // Import your model component
 import styles from './HeroSection1.module.css';
-import NavigationBar1 from './NavigationBar1';
 
 const HeroSection1 = ({ className = '' }) => {
   return (
@@ -36,25 +35,6 @@ const HeroSection1 = ({ className = '' }) => {
           }}
         ></div>
       </div>
-      {/* Animated Navigation Bar */}
-      {/* <motion.div
-        className={styles.navigationbar}
-        style={{ zIndex: 2 }}
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }} // Delayed by 0.5s
-      >
-        <div className={styles.pvitto98Wrapper}>
-          <div className={styles.project}>PVITTO</div>
-        </div>
-        <div className={styles.links}>
-          <div className={styles.project}>Projects</div>
-          <div className={styles.project}>Skills</div>
-          <div className={styles.project}>Experience</div>
-          <b className={styles.project}>Contact</b>
-        </div>
-      </motion.div> */}
-      {/* Animated Hero Content */}
       <motion.div className={styles.hero} style={{ zIndex: 2 }}>
         <motion.div
           className={styles.herocontent}

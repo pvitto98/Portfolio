@@ -1,24 +1,39 @@
-.projecthero,
-.videoIcon {
-  max-width: 100%;
+.projecthero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
   overflow: hidden;
 }
-.videoIcon {
-  align-self: stretch;
-  height: 100%;
-  flex-shrink: 0;
-  object-fit: fill;
-}
-.projecthero {
+
+.videoContainer {
+  position: absolute; /* Absolute positioning within the container */
+  top: 0;
+  left: 0;
   width: 100%;
-  background-color: var(--color-gray);
-  height: 100svh;
+  height: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 125px;
-  box-sizing: border-box;
+  align-items: center;
+  z-index: 0; /* Ensure it is behind other content */
+  overflow: hidden;
+}
+
+.videoIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the entire container */
+}
+
+.videoContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+  pointer-events: none; /* Ensure the gradient doesn't block interactions */
+  z-index: 1; /* Place the gradient above the video */
 }
 @media screen and (max-width: 420px) {
   .projecthero {

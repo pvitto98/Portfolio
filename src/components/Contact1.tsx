@@ -8,16 +8,18 @@ export type Contact1Type = {
 
 const Contact1: FunctionComponent<Contact1Type> = ({ className = "" }) => {
   return (
-    <div className={[styles.contact, className].join(" ")}>
+    <div className={[styles.contact, className].join(" ")} id="contact">
       <div className={styles.headerContainer}>
         <div className={styles.divider}></div>
         <div className={styles.header}>
           <div className={styles.scrolling_text}>
-          <Marquee velocity={250} direction="ltr" resetAfterTries={200} minScale={0.7}>
+          <Marquee velocity={250} direction="ltr" resetAfterTries={0}  scatterRandomly={false} // Adjust based on need
+              onInit={() => console.log('Marquee Initialized')} // Optional callback
+              onFinish={() => console.log('Marquee Finished')} // Optional callback
+            >
               <div className={styles.letsGetIn}>
                 <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
                 </div>
-
                 <div className={styles.letsGetIn}>
                 <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
                 </div>                

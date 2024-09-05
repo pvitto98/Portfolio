@@ -7,7 +7,7 @@ import styles from './HeroSection1.module.css';
 
 const HeroSection1 = ({ className = '' }) => {
   return (
-    <div className={[styles.herosection, className].join(' ')}>
+    <div className={[styles.herosection, className].join(' ')} id="home">
       <Canvas style={{ position: 'absolute', height: '100svh', width: '100%' }}>
         <ambientLight intensity={0.3} />
         <directionalLight intensity={0.3} position={[0, 5, 5]} />

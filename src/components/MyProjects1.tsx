@@ -10,7 +10,7 @@ const MyProjects1: FunctionComponent<MyProjects1Type> = ({
   className = "",
 }) => {
   return (
-    <div className={[styles.myprojects, className].join(" ")}>
+    <div className={[styles.myprojects, className].join(" ")} id="projects">
       <b className={styles.myProjects}>MY PROJECTS</b>
       <div className={styles.projectcontainer}>
         <Project bAT="BAT" landingPage="Landing page" />

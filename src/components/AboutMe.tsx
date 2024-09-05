@@ -21,7 +21,7 @@ const AboutMe: React.FC<AboutMeType> = ({ className = "" }) => {
   }, []);
 
   return (
-    <div className={[styles.aboutMeSection, className].join(" ")}>
+    <div className={[styles.aboutMeSection, className].join(" ")} id="about">
       <b className={styles.title}>ABOUT ME</b>
       <div className={styles.content}>
         <div className={styles.text}>

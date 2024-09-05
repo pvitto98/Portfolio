@@ -18,11 +18,13 @@
     "react-marquee-slider": "^1.1.5",
     "react-marquee-text": "^1.0.4",
     "react-router-dom": "^6.2.1",
+    "react-router-hash-link": "^2.4.3",
     "three": "^0.168.0",
     "typescript": "^5.5.4",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
+    "@types/react-router-hash-link": "^2.4.9",
     "@types/three": "^0.168.0",
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",

@@ -3,6 +3,7 @@
     transform: translateY(-200px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -10,21 +11,29 @@
 }
 
 .drawer {
-  position: fixed; /* Cover the entire viewport */
+  position: fixed;
+  /* Cover the entire viewport */
   top: 0;
   left: 0;
-  width: 100%; /* Full width */
-  height: 100svh; /* Full height */
-  background-color: var(--color-gray); /* Background color */
-  z-index: 9999; /* Ensure it's on top */
-  overflow: hidden; /* Hide any overflow */
+  width: 100%;
+  /* Full width */
+  height: 100svh;
+  /* Full height */
+  background-color: var(--color-gray);
+  /* Background color */
+  z-index: 9999;
+  /* Ensure it's on top */
+  overflow: hidden;
+  /* Hide any overflow */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  animation: 0.25s ease 0s 1 normal forwards slide-in-top; /* Animation */
-  padding-bottom:  25px;
+  animation: 0.25s ease 0s 1 normal forwards slide-in-top;
+  /* Animation */
+  padding-bottom: 25px;
 }
+
 .links {
   display: flex;
   flex-direction: column;
@@ -34,10 +43,14 @@
   text-align: center;
 }
 
-.pvitto, .projects {
+.pvitto,
+.projects {
   letter-spacing: -0.02em;
   line-height: 80%;
   color: var(--color-white);
+  text-decoration: none;
+  color: inherit;
+  /* Keeps the text color the same */
 }
 
 .logo {
@@ -52,15 +65,22 @@
   padding: var(--padding-xl) var(--padding-6xl);
   background-color: var(--color-gray);
 }
+
 .closeButton {
-  background: none; /* Remove default background */
-  border: none; /* Remove default border */
-  padding: 0; /* Remove default padding */
-  cursor: pointer; /* Change cursor to pointer */
+  background: none;
+  /* Remove default background */
+  border: none;
+  /* Remove default border */
+  padding: 0;
+  /* Remove default padding */
+  cursor: pointer;
+  /* Change cursor to pointer */
 }
 
 .closeButton img {
-  width: 24px; /* Adjust the size of the image */
-  height: 24px; /* Adjust the size of the image */
+  width: 24px;
+  /* Adjust the size of the image */
+  height: 24px;
+  /* Adjust the size of the image */
   color: white;
 }

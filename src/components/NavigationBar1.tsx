@@ -1,6 +1,7 @@
 import { FunctionComponent, useState, useEffect } from "react";
-import Drawer from "./Drawer"; // Ensure the import path is correct
+import Drawer from "./Drawer";
 import styles from "./NavigationBar1.module.css";
+import { HashLink } from 'react-router-hash-link';
 import { Link } from "react-router-dom";
 
 export type NavigationBar1Type = {
@@ -41,9 +42,15 @@ const NavigationBar1: FunctionComponent<NavigationBar1Type> = ({
       </Link>
       <div className={styles.navigation}>
         <div className={styles.links}>
-          <div className={styles.aboutMe}>About me</div>
-          <div className={styles.projects}>Projects</div>
-          <b className={styles.aboutMe}>Contact</b>
+          <HashLink smooth to="/#about" className={styles.aboutMe} onClick={toggleDrawer}>
+            About me
+          </HashLink>
+          <HashLink smooth to="/#projects" className={styles.projects} onClick={toggleDrawer}>
+            Projects
+          </HashLink>
+          <HashLink smooth to="/#contact" className={styles.aboutMe} onClick={toggleDrawer}>
+            Contact
+          </HashLink>
         </div>
         <button className={styles.icsharpMenu} onClick={toggleDrawer}>
           <img className={styles.vectorIcon} alt="" src="/vector.svg" />

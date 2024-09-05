@@ -91,6 +91,10 @@
   font-family: var(--font-bricolage-grotesque);
   z-index: 5;
 }
+.aboutMe,.projects{
+    text-decoration: none;
+    color: inherit; /* Keeps the text color the same */
+}
 @media screen and (max-width: 960px) {
   .links {
     display: none;

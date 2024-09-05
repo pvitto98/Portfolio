@@ -52,8 +52,8 @@ const Drawer: FunctionComponent<DrawerType> = ({ className = "", onClose }) => {
       </div>
       {onClose && (
         <button onClick={onClose} className={styles.closeButton}>
-          Close
-        </button>
+          <img src="/ic_baseline-close.svg" alt="Close" />
+          </button>
       )}
     </div>
   );

@@ -12,10 +12,11 @@
 }
 .skillset {
   flex-direction: row;
-  justify-content: center;
+  justify-content: end;
   flex-wrap: wrap;
-  align-content: flex-start;
-  gap: 30px;
+  align-content: flex-end;
+  gap: 15px;
+  width: 50%;
 }
 .myskillscontent {
   flex-direction: column;
@@ -25,11 +26,14 @@
 .maybeIShould {
   align-self: stretch;
   position: relative;
-  font-size: var(--font-size-11xl);
+  font-size: 20px;
   letter-spacing: -0.02em;
   line-height: 100%;
   font-weight: 200;
   color: var(--color-whitesmoke);
+  text-align: end;
+  margin-top: 25px;
+  
 }
 .myskills {
   width: 100%;
@@ -40,14 +44,31 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 125px var(--padding-81xl);
+  padding: var(--padding-81xl);
   box-sizing: border-box;
-  gap: var(--gap-81xl);
+  gap: 100px;
   text-align: left;
   font-size: var(--font-size-31xl);
   color: var(--color-white);
   font-family: var(--font-bricolage-grotesque);
-  height: 100svh;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  gap:30px;
+}
+
+.categoryTitle{
+  font-size: 25px;
+  width: 50%;
+  text-align: start;
+  font-weight: 200;
+}
+.category{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 @media screen and (max-width: 420px) {
   .skillset {
@@ -67,5 +88,29 @@
     box-sizing: border-box;
     font-size: 40px;
     text-align: center;
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+  }
+  
+  .categoryTitle{
+    font-size: 20px;
+    width: 100%;
+    text-align: center;
+    font-weight: 200;
+    margin-bottom: 20px;
+  }
+  .category{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .skillset{
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    
   }
 }

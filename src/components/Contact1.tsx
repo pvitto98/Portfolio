@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import styles from "./Contact1.module.css";
-import Marquee from "react-fast-marquee";
+import Marquee from "react-marquee-slider";
 
 export type Contact1Type = {
   className?: string;
@@ -13,39 +13,17 @@ const Contact1: FunctionComponent<Contact1Type> = ({ className = "" }) => {
         <div className={styles.divider}></div>
         <div className={styles.header}>
           <div className={styles.scrolling_text}>
-            <Marquee gradient={false} speed={300} direction="right" loop={0} >
+          <Marquee velocity={250} direction="ltr" resetAfterTries={200} minScale={0.7}>
               <div className={styles.letsGetIn}>
                 <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                </div>
+
+                <div className={styles.letsGetIn}>
                 <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                </div>                
+                <div className={styles.letsGetIn}>
                 <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCHu
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCHu
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCHu
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCHu
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCHu
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
-            
-              </div>
+                </div>                {/* Repeated text */}
             </Marquee>
           </div>
         </div>
@@ -60,14 +38,14 @@ const Contact1: FunctionComponent<Contact1Type> = ({ className = "" }) => {
           <div className={styles.socialwrapper}>
             <div className={styles.orCheckMe}>or check me out at:</div>
             <div className={styles.buttoncontainer}>
-              <div className={styles.linkedin}>
+            <a href="https://www.linkedin.com/in/pvitto98" target="_blank" rel="noopener noreferrer" className={styles.linkedin}>
                 <img className={styles.imgIcon} alt="" src="/img@2x.png" />
                 <div className={styles.text}>Linkedin</div>
-              </div>
-              <div className={styles.linkedin}>
+              </a>
+              <a href="https://github.com/pvitto98" target="_blank" rel="noopener noreferrer" className={styles.linkedin}>
                 <img className={styles.imgIcon} alt="" src="/img1@2x.png" />
                 <div className={styles.text}>Github</div>
-              </div>
+              </a>
             </div>
           </div>
         </div>

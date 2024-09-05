@@ -30,7 +30,7 @@
   flex-direction: column;
   align-items: center;
   gap: 75px;
-  font-size: var(--font-size-31xl);
+  font-size: 30px;
   text-align: center;
 }
 
@@ -51,4 +51,16 @@
   justify-content: center;
   padding: var(--padding-xl) var(--padding-6xl);
   background-color: var(--color-gray);
+}
+.closeButton {
+  background: none; /* Remove default background */
+  border: none; /* Remove default border */
+  padding: 0; /* Remove default padding */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.closeButton img {
+  width: 24px; /* Adjust the size of the image */
+  height: 24px; /* Adjust the size of the image */
+  color: white;
 }

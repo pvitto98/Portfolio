@@ -13,9 +13,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--padding-xl) var(--padding-31xl);
+  padding: 15px 30px;
   text-align: left;
-  font-size: var(--font-size-11xl);
+  font-size: 20px;
   color: var(--color-whitesmoke);
   font-family: var(--font-bricolage-grotesque);
 }

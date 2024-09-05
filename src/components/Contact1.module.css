@@ -151,6 +151,10 @@
 
 }
 
+.linkedin{
+  text-decoration: none;
+  color: inherit; /* Keeps the text color the same */
+}
 
 
 .divider{
@@ -212,7 +216,8 @@
     gap: 50px;
     padding: 0 0 50px 0;
   }
-  .redLetter{
-    letter-spacing: -0.4em; /* Adjust this value to fine-tune the spacing */
+  .letsGetIn {
+    gap: 0px;
   }
+
 }

@@ -37,7 +37,7 @@
 }
 @media screen and (max-width: 420px) {
   .projecthero {
-    height: auto;
+    height: 50vh;
     padding-left: 20px;
     padding-top: var(--padding-81xl);
     padding-right: 20px;

@@ -14,27 +14,8 @@ const HeroSection1 = ({ className = '' }) => {
         <SpinningModel />
       </Canvas>
       <div
-        className="blurLayer"
-        style={{
-          position: 'absolute',
-          height: '100svh',
-          width: '100%',
-          backdropFilter: 'blur(4px)', // Adjusted blur intensity
-          zIndex: 0, // Ensure it's on top of the Canvas but behind other content
-        }}
-      >
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            height: '100%',
-            width: '100%',
-            background: 'radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 70%)', // Radial gradient for darker center
-            zIndex: 1,
-          }}
+          className={styles.gradientLayer} // Use a CSS class for the gradient
         ></div>
-      </div>
       <motion.div className={styles.hero} style={{ zIndex: 2 }}>
         <motion.div
           className={styles.herocontent}

@@ -42,13 +42,13 @@ const NavigationBar1: FunctionComponent<NavigationBar1Type> = ({
       </Link>
       <div className={styles.navigation}>
         <div className={styles.links}>
-          <HashLink smooth to="/#about" className={styles.aboutMe} onClick={toggleDrawer}>
+          <HashLink smooth to="/#about" className={styles.aboutMe}>
             About me
           </HashLink>
-          <HashLink smooth to="/#projects" className={styles.projects} onClick={toggleDrawer}>
+          <HashLink smooth to="/#projects" className={styles.projects}>
             Projects
           </HashLink>
-          <HashLink smooth to="/#contact" className={styles.aboutMe} onClick={toggleDrawer}>
+          <HashLink smooth to="/#contact" className={styles.aboutMe}>
             Contact
           </HashLink>
         </div>

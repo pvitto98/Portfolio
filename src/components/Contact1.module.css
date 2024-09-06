@@ -171,14 +171,60 @@
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 768px) {
+  .email,
+  .whyDontYou {
+    text-align: center;
+  }
+  .email {
+    font-size: var(--font-size-6xl);
+  }
+  .emailwrapper {
+    gap: var(--gap-6xl);
+  }
+  .orCheckMe,
+  .text {
+    font-size: var(--font-size-xl);
+  }
+  .linkedin {
+    padding: var(--padding-mini) var(--padding-6xl);
+    box-sizing: border-box;
+  }
+
+  
+  .socialwrapper {
+    flex-direction: column;
+  }
+  .socialwrapper {
+    align-items: center;
+    justify-content: center;
+    padding-right: 0;
+    box-sizing: border-box;
+    row-gap: 25px;
+  }
+  .contactcontentwrapper {
+    padding-left: var(--padding-21xl);
+    padding-right: var(--padding-21xl);
+    box-sizing: border-box;
+  }
+  .contact {
+    font-size:150px;
+    padding: 0 0 50px 0;
+  }
+  .letsGetIn {
+    gap: 20px;
+  }
+
+}
+
+@media screen and (max-width: 425px) {
   .email,
   .whyDontYou {
     font-size: var(--font-size-xl);
     text-align: center;
   }
   .email {
-    font-size: var(--font-size-6xl);
+    font-size: 23px;
   }
   .emailwrapper {
     gap: var(--gap-6xl);
@@ -220,4 +266,16 @@
     gap: 0px;
   }
 
+}
+
+@media screen and (max-width: 320px) {
+  .whyDontYou {
+    font-size: 16px;
+  }
+  .email {
+    font-size: 18px;
+  }
+  .buttoncontainer{
+    gap:10px;
+  }
 }

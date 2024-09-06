@@ -8,40 +8,30 @@
   justify-content: center;
   padding: var(--padding-6xl);
 }
+
 .project {
   position: relative;
   letter-spacing: -0.02em;
   line-height: 80%;
 }
-.links,
-.navigationbar {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+
 .links {
   justify-content: center;
   gap: var(--gap-31xl);
   font-size: var(--font-size-11xl);
 }
-.navigationbar {
-  width: 100%;
-  overflow: hidden;
-  justify-content: space-between;
-  padding: var(--padding-31xl) var(--padding-56xl) var(--padding-xl)
-    var(--padding-31xl);
-  box-sizing: border-box;
-  z-index: 1;
-}
+
 .helloMyNames {
   align-self: stretch;
   position: relative;
   letter-spacing: -0.02em;
 }
+
 .vittorio {
   margin: 0;
-  
+
 }
+
 .vittorioPellittieri {
   align-self: stretch;
   position: relative;
@@ -56,15 +46,18 @@
 .andIAm {
   color: var(--color-whitesmoke);
 }
+
 .and {
   color: var(--color-white);
 }
+
 .andIAmContainer {
   align-self: stretch;
   position: relative;
   letter-spacing: -0.02em;
   color: var(--color-salmon);
 }
+
 .hero,
 .herocontent {
   align-self: stretch;
@@ -73,15 +66,18 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
 .herocontent {
   gap: 20px;
 }
+
 .hero {
   padding: var(--padding-31xl) 0;
   text-align: center;
   font-size: var(--font-size-11xl);
   gap: 5px;
 }
+
 .frameIcon {
   width: 20px;
   position: relative;
@@ -89,6 +85,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
+
 .autoLayoutHorizontal,
 .autoLayoutVertical {
   display: flex;
@@ -96,6 +93,7 @@
   align-items: center;
   justify-content: flex-start;
 }
+
 .autoLayoutVertical {
   border-radius: 144px;
   background-color: var(--color-whitesmoke);
@@ -104,12 +102,14 @@
   align-items: flex-start;
   padding: 25px;
 }
+
 .herosection,
 .scrolldown {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .scrolldown {
   align-self: stretch;
   justify-content: flex-start;
@@ -117,6 +117,7 @@
   position: relative;
   top: 8%;
 }
+
 .herosection {
   width: 100svw;
   height: 100svh;
@@ -131,6 +132,7 @@
   color: var(--color-whitesmoke);
   font-family: var(--font-bricolage-grotesque);
 }
+
 .canvas {
   position: absolute;
   top: 0;
@@ -140,19 +142,104 @@
   z-index: -1;
 }
 
-.blurLayer{
+.blurLayer {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  
 }
-@media screen and (max-width: 420px) {
 
+.blurLayer {
+  position: 'absolute';
+  height: '100svh';
+  width: '100%';
+  backdrop-filter: blur(4px);
+  /* Apply a 4px blur */
+  z-index: 0;
+  /* Ensure it's behind other elements with higher z-index */
+}
+
+/* More styles here... */
+.gradientLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 70%);
+  z-index: 1;
+}
+
+/* Medium screens (Tablets) - 1024px */
+@media screen and (max-width: 1024px) {
+  .links {
+    gap: var(--gap-25xl);
+    font-size: var(--font-size-8xl);
+    /* Reduce font size */
+  }
+
+  .vittorioPellittieri {
+    font-size: 150px;
+    /* Reduce title size */
+    line-height: 120px;
+  }
+
+  .hero {
+    font-size: var(--font-size-8xl);
+    /* Reduce hero section font size */
+    gap: 10px;
+  }
+
+  .autoLayoutVertical {
+    padding: 20px;
+    /* Adjust padding */
+  }
+
+  .frameIcon {
+    width: 15px;
+    /* Reduce icon size */
+  }
+}
+
+/* Small screens (Portrait Tablets and large Phones) - 768px */
+@media screen and (max-width: 768px) {
+  .links {
+    gap: var(--gap-20xl);
+    font-size: var(--font-size-6xl);
+    /* Further reduce font size */
+  }
+  .vittorioPellittieri {
+    font-size: 100px;
+    /* Further reduce title size */
+    line-height: 90px;
+  }
+
+  .hero {
+    font-size: var(--font-size-6xl);
+    /* Further reduce hero section font size */
+    gap: 8px;
+  }
+
+  .autoLayoutVertical {
+    padding: 18px;
+    /* Adjust padding */
+  }
+
+  .frameIcon {
+    width: 12px;
+    /* Further reduce icon size */
+  }
+  .blurLayer {
+    backdrop-filter: blur(3px);
+  }
+}
+
+@media screen and (max-width: 425px) {
   .helloMyNames {
     font-size: var(--font-size-6xl);
   }
+
   .andIAmContainer,
   .helloMyNames,
   .vittorioPellittieri {
@@ -160,29 +247,80 @@
     align-self: stretch;
     width: auto;
   }
+
   .vittorioPellittieri {
     font-weight: 700;
     font-family: var(--font-bricolage-grotesque);
     font-size: 55px;
     line-height: 45px;
   }
+
   .andIAmContainer {
     font-size: 20px;
   }
+
   .herocontent {
     gap: 15px;
   }
+
   .hero {
     padding-left: var(--padding-21xl);
     padding-right: var(--padding-21xl);
     box-sizing: border-box;
   }
-  .autoLayoutVertical{
+
+  .autoLayoutVertical {
     /* width: 50px;
     height: ; */
     padding: 16px;
   }
+
   .frameIcon {
     width: 10px;
+  }
+
+  .scrolldown {
+    top: 15%;
+  }
+  .blurLayer {
+    backdrop-filter: blur(2px);
+  }
+  .gradientLayer {
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 60%);
+  }
+}
+
+/* Extra Small screens (Phones) - 320px */
+@media screen and (max-width: 320px) {
+  .links {
+    gap: var(--gap-10xl);
+    font-size: var(--font-size-4xl);
+    /* Further reduce font size */
+  }
+
+
+  .vittorioPellittieri {
+    font-size: 50px;
+    /* Further reduce title size */
+    line-height: 40px;
+  }
+
+  .hero {
+    font-size: var(--font-size-4xl);
+    /* Further reduce hero section font size */
+    gap: 5px;
+  }
+
+  .autoLayoutVertical {
+    padding: 14px;
+    /* Adjust padding */
+  }
+
+  .frameIcon {
+    width: 10px;
+    /* Further reduce icon size */
+  }
+  .blurLayer {
+    backdrop-filter: blur(1px);
   }
 }

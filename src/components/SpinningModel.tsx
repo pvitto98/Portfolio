@@ -4,26 +4,26 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import React, { useEffect, useRef, useState } from 'react';
 
 const SpinningModel: React.FC = () => {
-  const [models, setModels] = useState<{ model: THREE.Group; speed: number; direction: THREE.Vector2 }[]>([]);
+  const [models, setModels] = useState<{ model: THREE.Group; speed: number; direction: THREE.Vector2; boundingVolume: THREE.Mesh }[]>([]);
   const modelRefs = useRef<THREE.Group[]>([]);
 
-  // Movement parameters
-  const amplitude = 4;  // Adjust the height of the bounce
-  const frequency = 0.5;  // Adjust the speed of the bounce
-  const bounds = { x: 8, y: 5 };  // Define the bounds for the display
-  const collisionDistance = 3; // Threshold distance to detect collisions
+  const isMobile = window.innerWidth <= 768;
+  const amplitude = 4;
+  const frequency = isMobile ? 0.1 : 0.5;
+  const bounds = isMobile ? { x: 3, y: 4 } : { x: 8, y: 5 };
+  const collisionDistance = 5;
 
   useEffect(() => {
     const loader = new GLTFLoader();
 
-    // Load a model from the path and return a promise
     const loadModel = (path: string) => {
       return new Promise<THREE.Group>((resolve, reject) => {
         loader.load(
           path,
           (gltf) => {
             const loadedModel = gltf.scene;
-            loadedModel.scale.set(6, 6, 6); // Adjust scale factor as needed
+            const scale = isMobile ? 3 : 6;
+            loadedModel.scale.set(scale, scale, scale);
             resolve(loadedModel);
           },
           undefined,
@@ -34,26 +34,45 @@ const SpinningModel: React.FC = () => {
       });
     };
 
+    const createBoundingVolume = (model: THREE.Group) => {
+      const box = new THREE.Box3().setFromObject(model); // Calculate the bounding box of the model
+      const boxSize = new THREE.Vector3();
+      box.getSize(boxSize);
+
+      // Create a bounding cylinder that wraps the model entirely
+      const geometry = new THREE.CylinderGeometry(boxSize.x / 10, boxSize.x / 10, boxSize.y, 6);
+      const material = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
+      const cylinder = new THREE.Mesh(geometry, material);
+      cylinder.visible = false;
+
+      // Position the cylinder so that its base aligns with the bottom of the model
+      cylinder.position.set(0, boxSize.y / 5, 0);
+
+      return cylinder;
+    };
+
     const initializeModels = async () => {
       try {
-        // Paths for the models
         const desktopPath = '/desktop.glb';
         const mobilePath = '/mobile.glb';
 
-        // Create an array to hold the paths
         const paths = [desktopPath, mobilePath];
 
-        // Load models based on the paths
         const modelInstances = await Promise.all(paths.map(loadModel));
 
-        // Assign random speeds and directions to each model
-        const modelsWithSpeedAndDirection = modelInstances.map(model => ({
-          model,
-          speed: Math.random() * 2 + 1,  // Random speed between 1 and 3
-          direction: new THREE.Vector2(Math.random() * 2 - 1, Math.random() * 2 - 1).normalize()  // Random direction vector
-        }));
+        const modelsWithBoundingVolumes = modelInstances.map(model => {
+          const boundingVolume = createBoundingVolume(model);
+          model.add(boundingVolume); // Attach the bounding volume to the model
 
-        setModels(modelsWithSpeedAndDirection);
+          return {
+            model,
+            speed: isMobile? Math.random()%5 : Math.random() * 2 + 1,
+            direction: new THREE.Vector2(Math.random() * 2 - 1, Math.random() * 2 - 1).normalize(),
+            boundingVolume
+          };
+        });
+
+        setModels(modelsWithBoundingVolumes);
       } catch (error) {
         console.error('Error loading models:', error);
       }
@@ -68,40 +87,35 @@ const SpinningModel: React.FC = () => {
       if (modelRef && modelData) {
         const { model, speed, direction } = modelData;
 
-        // Spin the model
-        model.rotation.y += 0.01;  // Rotate the model on the y-axis
+        model.rotation.y += 0.01;
 
-        // Bounce the model
         const time = state.clock.getElapsedTime();
-        const bounceY = amplitude * Math.sin(frequency * time + index);  // Offset bounce for each model
+        const bounceY = amplitude * Math.sin(frequency * time + index);
         model.position.y = bounceY;
 
-        // Move the model horizontally and vertically
         model.position.x += direction.x * speed * delta;
         model.position.y += direction.y * speed * delta;
 
-        // Bounce off the horizontal walls
         if (model.position.x > bounds.x || model.position.x < -bounds.x) {
-          model.position.x = Math.max(-bounds.x, Math.min(bounds.x, model.position.x)); // Clamp position
-          direction.x = -direction.x;  // Reverse the horizontal direction for this model
+          model.position.x = Math.max(-bounds.x, Math.min(bounds.x, model.position.x));
+          direction.x = -direction.x;
         }
 
-        // Bounce off the vertical walls
         if (model.position.y > bounds.y || model.position.y < -bounds.y) {
-          model.position.y = Math.max(-bounds.y, Math.min(bounds.y, model.position.y)); // Clamp position
-          direction.y = -direction.y;  // Reverse the vertical direction for this model
+          model.position.y = Math.max(-bounds.y, Math.min(bounds.y, model.position.y));
+          direction.y = -direction.y;
         }
 
-        // Check for collisions with other models
+        // Updated collision detection using bounding volumes
         for (let i = 0; i < modelRefs.current.length; i++) {
           if (i !== index) {
-            const otherModelRef = modelRefs.current[i];
-            const distance = model.position.distanceTo(otherModelRef.position);
+            const otherModelData = models[i];
+            const distance = model.position.distanceTo(otherModelData.model.position);
+
+            // Use a simple bounding cylinder collision detection
             if (distance < collisionDistance) {
-              // Reverse direction of both models to simulate a bounce
               direction.x = -direction.x;
               direction.y = -direction.y;
-              const otherModelData = models[i];
               otherModelData.direction.x = -otherModelData.direction.x;
               otherModelData.direction.y = -otherModelData.direction.y;
             }
@@ -118,7 +132,7 @@ const SpinningModel: React.FC = () => {
           key={index}
           object={modelData.model}
           ref={(el: THREE.Group<THREE.Object3DEventMap>) => modelRefs.current[index] = el}
-          position={[Math.random() * 2 * bounds.x - bounds.x, Math.random() * 2 * bounds.y - bounds.y, 0]} // Random initial positions
+          position={[Math.random() * 2 * bounds.x - bounds.x, Math.random() * 2 * bounds.y - bounds.y, 0]}
         />
       ))}
     </>

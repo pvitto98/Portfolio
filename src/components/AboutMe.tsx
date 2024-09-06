@@ -33,9 +33,9 @@ const AboutMe: React.FC<AboutMeType> = ({ className = "" }) => {
             stunning too.
           </p>
         </div>
-        <div className={styles.model}>
+        {/* <div className={styles.model}>
           <Carousel3D highlightedWord={highlightedWord} />
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -91,7 +91,7 @@
   color: var(--color-salmon);
   font-family: var(--font-bricolage-grotesque);
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 425px) {
   .title {
     font-size: var(--font-size-51xl);
   }

@@ -26,7 +26,7 @@
   background-color: #EEEEEE; /* Change background color on hover */
   transform: scale(1.2);
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 425px) {
   .skillname {
     font-size: 18px;
   }

@@ -70,7 +70,43 @@
   flex-direction: row;
   width: 100%;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 768px) {
+  .myskillscontent {
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+  .myskills {
+    gap: var(--gap-31xl);
+    padding: var(--padding-31xl) var(--padding-21xl) var(--padding-81xl);
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .content{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+  }
+  
+  .categoryTitle{
+    width: 100%;
+    text-align: center;
+    font-weight: 200;
+    margin-bottom: 20px;
+  }
+  .category{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .skillset{
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 425px) {
   .skillset {
     gap: 8px;
   }

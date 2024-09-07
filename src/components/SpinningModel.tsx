@@ -3,7 +3,11 @@ import { useFrame } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import React, { useEffect, useRef, useState } from 'react';
 
-const SpinningModel: React.FC = () => {
+interface SpinningModelProps {
+  onLoaded: () => void; // Add onLoaded prop
+}
+
+const SpinningModel: React.FC<SpinningModelProps> = ({ onLoaded }) => {
   const [models, setModels] = useState<{ model: THREE.Group; speed: number; direction: THREE.Vector2; boundingVolume: THREE.Mesh }[]>([]);
   const modelRefs = useRef<THREE.Group[]>([]);
 
@@ -73,13 +77,15 @@ const SpinningModel: React.FC = () => {
         });
 
         setModels(modelsWithBoundingVolumes);
+        onLoaded(); // Notify that the models are fully loaded
+
       } catch (error) {
         console.error('Error loading models:', error);
       }
     };
 
     initializeModels();
-  }, []);
+  }, [onLoaded]);
 
   useFrame((state, delta) => {
     modelRefs.current.forEach((modelRef, index) => {

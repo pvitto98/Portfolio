@@ -1,10 +1,5 @@
-import { useEffect } from "react";
-import {
-  Routes,
-  Route,
-  useNavigationType,
-  useLocation,
-} from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Routes, Route, useNavigationType, useLocation } from "react-router-dom";
 import HeroSection1 from "./components/HeroSection1";
 import MySkills1 from "./components/MySkills1";
 import NavigationBar1 from "./components/NavigationBar1";
@@ -12,8 +7,11 @@ import Project1 from "./pages/Project1";
 import Contact1 from "./components/Contact1";
 import MyProjects1 from "./components/MyProjects1";
 import AboutMe from "./components/AboutMe";
+import HomeScreen from "./pages/HomeScreen";
+import LoadingPage from "./components/LoadingPage"; // Import the loading page component
 
 function App() {
+  const [loading, setLoading] = useState(true); // Add a loading state
   const action = useNavigationType();
   const location = useLocation();
   const pathname = location.pathname;
@@ -59,15 +57,20 @@ function App() {
     screenshots: ["/screen1@2x.png", "/screen2@2x.png", "/screen2@2x.png"],
   }];
 
+  const [isLoaded, setIsLoaded] = useState(false);
+
+
   return (
     <>
-    <NavigationBar1/>
-
-    <Routes>
-      <Route path="/" element={<div><HeroSection1 /><AboutMe/><MyProjects1/><MySkills1/></div>} />
-      <Route path="/BAT" element={<Project1 {...projectData[0]} />} />
-      </Routes>
-    <Contact1/>
+      <NavigationBar1/>
+      {!isLoaded && <LoadingPage onLoaded={function (): void {
+        console.log("loaded")
+      } } />} {/* Show loading page while not loaded */}
+      <Routes>
+        <Route path="/" element={<HomeScreen onLoaded={() => setIsLoaded(true)} />} />
+          <Route path="/BAT" element={<Project1 {...projectData[0]} />} />
+        </Routes>
+      <Contact1/>
     </>
   );
 }

@@ -52,7 +52,7 @@
   color: var(--color-whitesmoke);
   font-family: var(--font-bricolage-grotesque);
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 450px) {
   .prev {
     font-size: var(--font-size-11xl);
   }

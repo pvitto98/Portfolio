@@ -6,10 +6,15 @@ import AboutMe from "../components/AboutMe";
 import MyProjects1 from "../components/MyProjects1";
 import MySkills1 from "../components/MySkills1";
 
-const HomeScreen = () => {
+interface HomeScreenProps {
+  onLoaded: () => void; // Define the type for the onLoaded prop
+}
+
+
+const HomeScreen: React.FC<HomeScreenProps> = ({ onLoaded }) => {
   return (
-    <div style={{width:'100vw'}}>
-      <HeroSection1 />
+    <div >
+      <HeroSection1 onLoaded={onLoaded} />
       <AboutMe />
       <MyProjects1 />
       <MySkills1 />

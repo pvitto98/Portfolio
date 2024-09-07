@@ -27,20 +27,30 @@ function Model({ url, position }: { url: string; position: [number, number, numb
 
 const Carousel3D: React.FC<{ highlightedWord: string }> = ({ highlightedWord }) => {
   const [currentModel, setCurrentModel] = useState<string>('/rocket.glb');
+  const [key, setKey] = useState<number>(0);
 
   useEffect(() => {
+    let newModel = '/rocket.glb'; // Default model
+
     if (highlightedWord === 'creative') {
-      setCurrentModel('/light.glb');
-    } else if (highlightedWord === 'high-performance' || highlightedWord === 'user-friendly') {
-      setCurrentModel('/rocket.glb');
+      newModel = '/light.glb';
+    } else if (highlightedWord === 'high-performance') {
+      newModel = '/rocket2.glb';
     }
+
+    setCurrentModel(newModel);
+    setKey((prevKey) => prevKey + 1); // Force a re-render with a new key
+
   }, [highlightedWord]);
+
+  const isMobile = window.innerWidth <= 768;
 
   return (
     <Canvas
+      key={key} // This forces the Canvas to re-render
       shadows
       camera={{ position: [0, 2, 10], fov: 50 }}
-      style={{ height: '450px', width: '100%' }}
+      style={{ height: isMobile? '250px': '450px', width: '100%' }}
     >
       <ambientLight intensity={0.5} />
       <spotLight 
@@ -60,14 +70,12 @@ const Carousel3D: React.FC<{ highlightedWord: string }> = ({ highlightedWord }) 
         shadow-camera-top={10} 
         shadow-camera-bottom={-10} 
       />
-      <OrbitControls />
-
-      {/* Plane */}
-      {/* <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -4, 0]} receiveShadow>
-        <planeGeometry args={[10, 10]} />
-        <meshStandardMaterial color="#808080" />
-      </mesh> */}
-
+      <OrbitControls
+        enableZoom={false} // Disable zoom
+        enablePan={false} // Disable panning
+        maxPolarAngle={Math.PI / 2} // Optional: Limit vertical rotation to horizontal plane
+        minPolarAngle={Math.PI / 2} // Optional: Limit vertical rotation to horizontal plane
+      />
       <Model url={currentModel} position={[0, 0, 0]} />
     </Canvas>
   );

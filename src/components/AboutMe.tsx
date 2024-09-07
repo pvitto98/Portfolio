@@ -10,12 +10,12 @@ const AboutMe: React.FC<AboutMeType> = ({ className = "" }) => {
   const [highlightedWord, setHighlightedWord] = useState<string>('creative');
 
   useEffect(() => {
-    const words = ['creative', 'high-performance', 'user-friendly'];
+    const words = ['creative', 'high-performance'];
     let index = 0;
     const interval = setInterval(() => {
       index = (index + 1) % words.length;
       setHighlightedWord(words[index]);
-    }, 3000); // Change word every 2 seconds
+    }, 4000); // Change word every 2 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -26,16 +26,17 @@ const AboutMe: React.FC<AboutMeType> = ({ className = "" }) => {
       <div className={styles.content}>
         <div className={styles.text}>
           <p>Hey there! I’m Vittorio, a <span className={`${styles.highlightedWord} ${highlightedWord === 'creative' ? styles.active : ''}`}>creative</span> web and mobile developer based in Turin.</p>
-          <p>
+          {/* <p>
             I’m all about putting people first when building intuitive, <span className={`${styles.highlightedWord} ${highlightedWord === 'user-friendly' ? styles.active : ''}`}>user-friendly</span> apps. 
-            </p><p>My approach integrates modern frameworks and leverages the latest emerging
+            </p> */}
+            <p>My approach integrates modern frameworks and leverages the latest emerging
             tools to create <span className={`${styles.highlightedWord} ${highlightedWord === 'high-performance' ? styles.active : ''}`}>high-performance</span> products that don’t just work well—but look
             stunning too.
           </p>
         </div>
-        {/* <div className={styles.model}>
+        <div className={styles.model}>
           <Carousel3D highlightedWord={highlightedWord} />
-        </div> */}
+        </div>
       </div>
     </div>
   );

@@ -5,13 +5,17 @@ import { motion } from 'framer-motion'; // Import framer-motion
 import SpinningModel from './SpinningModel'; // Import your model component
 import styles from './HeroSection1.module.css';
 
-const HeroSection1 = ({ className = '' }) => {
+interface HeroSection1Props {
+  onLoaded: () => void; // Define the type for the onLoaded prop
+}
+
+const HeroSection1: React.FC<HeroSection1Props> = ({ onLoaded }) => {
   return (
-    <div className={[styles.herosection, className].join(' ')} id="home">
+    <div className={[styles.herosection].join(' ')} id="home">
       <Canvas style={{ position: 'absolute', height: '100svh', width: '100%' }}>
         <ambientLight intensity={0.3} />
         <directionalLight intensity={0.3} position={[0, 5, 5]} />
-        <SpinningModel />
+        <SpinningModel onLoaded={onLoaded} />
       </Canvas>
       <div
           className={styles.gradientLayer} // Use a CSS class for the gradient

@@ -35,7 +35,7 @@
   pointer-events: none; /* Ensure the gradient doesn't block interactions */
   z-index: 1; /* Place the gradient above the video */
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 450px) {
   .projecthero {
     height: 50vh;
     padding-left: 20px;

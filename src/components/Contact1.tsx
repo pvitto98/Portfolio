@@ -13,7 +13,7 @@ const Contact1: FunctionComponent<Contact1Type> = ({ className = "" }) => {
         <div className={styles.divider}></div>
         <div className={styles.header}>
           <div className={styles.scrolling_text}>
-          <Marquee velocity={250} direction="ltr" resetAfterTries={0}  scatterRandomly={false} // Adjust based on need
+          <Marquee velocity={250} direction="rtl" resetAfterTries={0}  scatterRandomly={false} // Adjust based on need
               onInit={() => console.log('Marquee Initialized')} // Optional callback
               onFinish={() => console.log('Marquee Finished')} // Optional callback
             >
@@ -35,7 +35,7 @@ const Contact1: FunctionComponent<Contact1Type> = ({ className = "" }) => {
         <div className={styles.contactcontent}>
           <div className={styles.emailwrapper}>
             <div className={styles.whyDontYou}>Why don’t you write me at:</div>
-            <div className={styles.email}>pellittierivittorio@gmail.com</div>
+            <div className={styles.email}><a href="mailto:pellittierivittorio@gmail.com"  style={{ color: 'inherit', textDecoration: 'none' }}>pellittierivittorio@gmail.com</a></div>
           </div>
           <div className={styles.socialwrapper}>
             <div className={styles.orCheckMe}>or check me out at:</div>

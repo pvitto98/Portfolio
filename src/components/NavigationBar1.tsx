@@ -38,24 +38,22 @@ const NavigationBar1: FunctionComponent<NavigationBar1Type> = ({
         className={`${styles.logo} ${isClicked ? styles.clicked : ""}`}
         onClick={handleClick}
       >
-        <div className={styles.aboutMe}>PVITTO</div>
+        <div className={styles.logoText}>PVITTO</div>
       </Link>
       <div className={styles.navigation}>
         <div className={styles.links}>
-          <HashLink smooth to="/#about" className={styles.aboutMe}>
+          <HashLink smooth to="/#about" className={`nav-link-ltr ${styles.aboutMe}`}>
             About me
           </HashLink>
-          <HashLink smooth to="/#projects" className={styles.projects}>
+          <HashLink smooth to="/#projects" className={`nav-link-ltr ${styles.projects}`}>
             Projects
           </HashLink>
-          <HashLink smooth to="/#contact" className={styles.aboutMe}>
+          <HashLink smooth to="/#contact" className={`nav-link-ltr ${styles.aboutMe}`}>
             Contact
           </HashLink>
         </div>
-        <button className={styles.icsharpMenu} onClick={toggleDrawer}>
-          <img className={styles.vectorIcon} alt="" src="/vector.svg" />
-        </button>
       </div>
+
       {isDrawerOpen && <Drawer className={styles.drawer} onClose={toggleDrawer} />}
     </div>
   );

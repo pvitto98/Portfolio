@@ -8,13 +8,36 @@
   align-items: center;
   justify-content: center;
   padding: var(--padding-xl) var(--padding-6xl);
-  background-color: var(--color-gray);
+  background-color: var(--color-gray)!important;
+  height: 25px;
+  width: 75px;
 }
 .aboutMe,
 .projects {
   position: relative;
   letter-spacing: -0.02em;
   line-height: 80%;
+  padding: 20px 0px;
+  margin: 0px 20px;
+  display: inline-block;
+  opacity: 0.75;
+}
+.aboutMe:hover, .projects:hover {
+  opacity: 1;
+}
+
+.aboutMe::before, .projects::before {
+  transition: 300ms;
+  height: 3px;
+  content: "";
+  position: absolute;
+  background-color: currentColor; /* Use current text color */
+  width: 0%;
+  bottom: 10px; /* Adjust the position if necessary */
+}
+
+.aboutMe:hover::before, .projects:hover::before {
+  width: 100%;
 }
 .logo{
   color: inherit;  /* Keep the text color the same */
@@ -75,6 +98,7 @@
   justify-content: center;
   gap: var(--gap-31xl);
   font-size: var(--font-size-xl);
+
 }
 .navigationbar {
   position: fixed;
@@ -91,9 +115,11 @@
   font-family: var(--font-bricolage-grotesque);
   z-index: 5;
 }
+
 .aboutMe,.projects{
     text-decoration: none;
     color: inherit; /* Keeps the text color the same */
+
 }
 @media screen and (max-width: 960px) {
   .links {

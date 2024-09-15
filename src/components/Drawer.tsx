@@ -21,11 +21,14 @@ const Drawer: FunctionComponent<DrawerType> = ({ className = "", onClose }) => {
           HOME
         </HashLink>
         <HashLink smooth to="/#about" className={styles.projects} onClick={onClose}>
-          ABOUT
+          ABOUT ME
         </HashLink>
         <HashLink smooth to="/#projects" className={styles.projects} onClick={onClose}>
           PROJECTS
         </HashLink>
+        <HashLink smooth to="/#skills" className={styles.projects} onClick={onClose}>
+            SKILLS
+          </HashLink>
         <HashLink smooth to="/#contact" className={styles.pvitto} onClick={onClose}>
           CONTACT
         </HashLink>

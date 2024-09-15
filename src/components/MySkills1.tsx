@@ -8,8 +8,8 @@ export type MySkills1Type = {
 
 const MySkills1: FunctionComponent<MySkills1Type> = ({ className = "" }) => {
   return (
-    <div className={[styles.myskills, className].join(" ")}>
-      <b className={styles.mySkills}>MY SKILLS</b>
+    <div id="skills" className={[styles.myskills, className].join(" ")}>
+      <b className={styles.mySkills}>SKILLS</b>
       
       <div className={styles.content}>
       {/* Frontend Development Section */}

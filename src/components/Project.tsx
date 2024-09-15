@@ -4,6 +4,7 @@ import styles from "./Project.module.css";
 
 export type ProjectType = {
   className?: string;
+  link: string;
   bAT?: string;
   landingPage?: string;
 
@@ -13,6 +14,7 @@ export type ProjectType = {
 
 const Project: FunctionComponent<ProjectType> = ({
   className = "",
+  link,
   bAT,
   landingPage,
   typeLeft,
@@ -37,18 +39,22 @@ const Project: FunctionComponent<ProjectType> = ({
   };
 
   return (
-    <Link to="/BAT" className={styles.linkWrapper}>
+    <Link to={link} className={styles.linkWrapper}>
       <div
         className={[styles.project, className].join(" ")}
         style={style}
         onMouseMove={handleMouseMove}
         onMouseLeave={() => setStyle({})}
       >
-
         <img
           className={styles.hoverGif}
           src="/image.gif"
           alt="Hover GIF"
+        />
+        <img
+          className={styles.image}
+          src="/screen1@2x.png"
+          alt="Project Image"
         />
         <div className={styles.titleholder}>
           <div className={styles.bat}>{bAT}</div>

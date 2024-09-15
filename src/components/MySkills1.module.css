@@ -107,6 +107,12 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .myskills{
+    padding: 50px;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .skillset {
     gap: 8px;

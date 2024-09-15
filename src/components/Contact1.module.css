@@ -173,6 +173,15 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .contact{
+    padding: 50px;
+  }
+  .contactcontentwrapper{
+    padding: 0px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .email,
   .whyDontYou {

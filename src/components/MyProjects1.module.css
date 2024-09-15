@@ -31,6 +31,13 @@
   color: var(--color-white);
   font-family: var(--font-bricolage-grotesque);
 }
+
+@media screen and (max-width: 1024px) {
+.myprojects{
+  padding: 50px;
+  text-align: center;
+}
+}
 @media screen and (max-width: 450px) {
   .projectcontainer {
     align-self: stretch;

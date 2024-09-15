@@ -48,11 +48,17 @@ const NavigationBar1: FunctionComponent<NavigationBar1Type> = ({
           <HashLink smooth to="/#projects" className={`nav-link-ltr ${styles.projects}`}>
             Projects
           </HashLink>
+          <HashLink smooth to="/#skills" className={`nav-link-ltr ${styles.projects}`}>
+            Skills
+          </HashLink>
           <HashLink smooth to="/#contact" className={`nav-link-ltr ${styles.aboutMe}`}>
             Contact
           </HashLink>
         </div>
       </div>
+      <button className={styles.icsharpMenu} onClick={toggleDrawer}>
+          <img className={styles.vectorIcon} alt="" src="/vector.svg" />
+        </button>
 
       {isDrawerOpen && <Drawer className={styles.drawer} onClose={toggleDrawer} />}
     </div>

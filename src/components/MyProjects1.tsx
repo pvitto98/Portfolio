@@ -11,14 +11,16 @@ const MyProjects1: FunctionComponent<MyProjects1Type> = ({
 }) => {
   return (
     <div className={[styles.myprojects, className].join(" ")} id="projects">
-      <b className={styles.myProjects}>MY PROJECTS</b>
+      <b className={styles.myProjects}>PROJECTS</b>
       <div className={styles.projectcontainer}>
-        <Project bAT="BAT" landingPage="Landing page" />
+        <Project link="BAT" bAT="BAT" landingPage="React three.js" />
         <Project
+        link="ATHING"
           bAT="ATHING"
           landingPage="Native Android Application"
         />
         <Project
+          link="WORKSCHEDULE"
           bAT="WORK SCHEDULE"
           landingPage="Full Stack App"
         />

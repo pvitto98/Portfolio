@@ -11,21 +11,37 @@ export type Project1Props = {
   info: string;
   technologies: string[];
   credits: string[];
-  screenshots: string[];
+  content: string; // content is a string here
+  prev: string;
+  next: string;
 };
 
-const Project1: FunctionComponent<Project1Props> = (props) => {
+const Project1: FunctionComponent<Project1Props> = ({
+  videoSrc,
+  title,
+  link,
+  info,
+  technologies,
+  credits,
+  content,
+  prev,
+  next,
+}) => {
   return (
     <div className={styles.project}>
-      <ProjectHero videoSrc={props.videoSrc} />
+      <ProjectHero videoSrc={videoSrc} />
       <ProjectInfo
-        title={props.title}
-        link={props.link}
-        info={props.info}
-        technologies={props.technologies}
-        credits={props.credits}
+        title={title}
+        link={link}
+        info={info}
+        technologies={technologies}
+        credits={credits}
       />
-      <ProjectPhotos screenshots={props.screenshots} />
+      <ProjectPhotos
+        content={content}
+        prevLink={prev}
+        nextLink={next}
+      />
     </div>
   );
 };

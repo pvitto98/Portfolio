@@ -43,7 +43,7 @@ const Carousel3D: React.FC<{ highlightedWord: string }> = ({ highlightedWord }) 
 
   }, [highlightedWord]);
 
-  const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 1024;
 
   return (
     <Canvas

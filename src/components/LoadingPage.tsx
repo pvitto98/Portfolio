@@ -18,7 +18,7 @@ const LoadingPage: React.FC<LoadingPageProps> = ({ onLoaded }) => {
 
   return (
     <div className={styles.loadingPage}>
-      <div className={styles.logo}>PVITTO</div>
+      <img className={styles.logo} src='/Logo.svg'/>
     </div>
   );
 };

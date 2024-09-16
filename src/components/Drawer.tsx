@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useState } from "react";
 import { HashLink } from 'react-router-hash-link';
 import styles from "./Drawer.module.css";
 
@@ -8,13 +8,21 @@ export type DrawerType = {
 };
 
 const Drawer: FunctionComponent<DrawerType> = ({ className = "", onClose }) => {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleLogoClick = () => {
+    setIsClicked(true);
+    setTimeout(() => setIsClicked(false), 300); // Reset after animation
+  };
+
   return (
-    <div
-      className={[styles.drawer, className].join(" ")}
-      data-animate-on-scroll
-    >
-      <div className={styles.logo}>
-        <div className={styles.pvitto}>PVITTO</div>
+    <div className={[styles.drawer, className].join(" ")} data-animate-on-scroll>
+      <div className={styles.logo} onClick={handleLogoClick}>
+        <img
+          className={`${styles.logoStyle} ${isClicked ? styles.clicked : ""}`}
+          src="/Logo.svg"
+          alt="PVITTO Logo"
+        />
       </div>
       <div className={styles.links}>
         <HashLink smooth to="/#home" className={styles.pvitto} onClick={onClose}>
@@ -27,8 +35,8 @@ const Drawer: FunctionComponent<DrawerType> = ({ className = "", onClose }) => {
           PROJECTS
         </HashLink>
         <HashLink smooth to="/#skills" className={styles.projects} onClick={onClose}>
-            SKILLS
-          </HashLink>
+          SKILLS
+        </HashLink>
         <HashLink smooth to="/#contact" className={styles.pvitto} onClick={onClose}>
           CONTACT
         </HashLink>

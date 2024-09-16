@@ -28,10 +28,10 @@
 }
 @media screen and (max-width: 450px) {
   .skillname {
-    font-size: 18px;
+    font-size: 16px;
   }
   .skill {
-    padding: 10px 20px;
+    padding: 8px 15px;
     box-sizing: border-box;
   }
 }

@@ -235,7 +235,7 @@
     text-align: center;
   }
   .email {
-    font-size: 23px;
+    font-size: 20px;
   }
   .emailwrapper {
     gap: var(--gap-6xl);
@@ -275,6 +275,10 @@
   }
   .letsGetIn {
     gap: 0px;
+  }
+
+  .buttoncontainer{
+    gap: 10px;
   }
 
 }

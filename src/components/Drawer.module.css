@@ -53,17 +53,15 @@
   /* Keeps the text color the same */
 }
 
-.logo {
-  box-shadow: 2px 2px 20px rgba(238, 238, 238, 0.5);
-  border-radius: var(--br-31xl);
-  border: 3px solid var(--color-whitesmoke);
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: var(--padding-xl) var(--padding-6xl);
-  background-color: var(--color-gray);
+.logo img {
+  transition: filter 0.3s ease;
+}
+
+.logo img.clicked {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Shadow follows the SVG shape */
+}
+.logoStyle{
+  height: 80px;
 }
 
 .closeButton {

@@ -63,7 +63,7 @@ function App() {
         "text:Further information on Athing.",
       ].join(';'),
       prev: "/WORKSCHEDULE",
-      next: "/CONTACT",
+      next: "/BAT",
     },
   ];
   

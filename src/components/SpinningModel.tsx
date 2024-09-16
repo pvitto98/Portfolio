@@ -1,21 +1,19 @@
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, memo } from 'react';
 
 interface SpinningModelProps {
-  onLoaded: () => void; // Add onLoaded prop
+  onLoaded: () => void;
+  viewMode: 'front-end' | 'mobile';
 }
 
-const SpinningModel: React.FC<SpinningModelProps> = ({ onLoaded }) => {
-  const [models, setModels] = useState<{ model: THREE.Group; speed: number; direction: THREE.Vector2; boundingVolume: THREE.Mesh }[]>([]);
+const SpinningModel: React.FC<SpinningModelProps> = memo(({ onLoaded, viewMode }) => {
+  const [models, setModels] = useState<{ model: THREE.Group; speed: number; direction: THREE.Vector2 }[]>([]);
   const modelRefs = useRef<THREE.Group[]>([]);
+  const [previousModelState, setPreviousModelState] = useState<{ position: THREE.Vector3; direction: THREE.Vector2; speed: number } | null>(null);
 
-  const isMobile = window.innerWidth <= 768;
-  const amplitude = 4;
-  const frequency = isMobile ? 0.1 : 0.5;
-  const bounds = isMobile ? { x: 3, y: 4 } : { x: 8, y: 5 };
-  const collisionDistance = 5;
+  const bounds = viewMode === 'mobile' ? { x: 3, y: 4 } : { x: 8, y: 5 };
 
   useEffect(() => {
     const loader = new GLTFLoader();
@@ -26,7 +24,7 @@ const SpinningModel: React.FC<SpinningModelProps> = ({ onLoaded }) => {
           path,
           (gltf) => {
             const loadedModel = gltf.scene;
-            const scale = isMobile ? 3 : 6;
+            const scale = viewMode === 'mobile' ? 3 : 4; // Adjusted scale for desktop model
             loadedModel.scale.set(scale, scale, scale);
             resolve(loadedModel);
           },
@@ -38,54 +36,45 @@ const SpinningModel: React.FC<SpinningModelProps> = ({ onLoaded }) => {
       });
     };
 
-    const createBoundingVolume = (model: THREE.Group) => {
-      const box = new THREE.Box3().setFromObject(model); // Calculate the bounding box of the model
-      const boxSize = new THREE.Vector3();
-      box.getSize(boxSize);
-
-      // Create a bounding cylinder that wraps the model entirely
-      const geometry = new THREE.CylinderGeometry(boxSize.x / 10, boxSize.x / 10, boxSize.y, 6);
-      const material = new THREE.MeshBasicMaterial({ color: 0xff0000, wireframe: true });
-      const cylinder = new THREE.Mesh(geometry, material);
-      cylinder.visible = false;
-
-      // Position the cylinder so that its base aligns with the bottom of the model
-      cylinder.position.set(0, boxSize.y / 5, 0);
-
-      return cylinder;
-    };
-
     const initializeModels = async () => {
       try {
-        const desktopPath = '/desktop.glb';
-        const mobilePath = '/mobile.glb';
+        const desktopPath = '/desktop_hero.glb';
+        const mobilePath = '/mobile_hero.glb';
 
-        const paths = [desktopPath, mobilePath];
+        const path = viewMode === 'mobile' ? mobilePath : desktopPath;
+        const modelInstance = await loadModel(path);
 
-        const modelInstances = await Promise.all(paths.map(loadModel));
+        // Set initial state for new model
+        const initialState = previousModelState || {
+          position: modelInstance.position.clone(),
+          direction: new THREE.Vector2(Math.random() * 2 - 1, Math.random() * 2 - 1).normalize(),
+          speed: viewMode === 'mobile' ? Math.random() * 5 : Math.random() * 2 + 1,
+        };
 
-        const modelsWithBoundingVolumes = modelInstances.map(model => {
-          const boundingVolume = createBoundingVolume(model);
-          model.add(boundingVolume); // Attach the bounding volume to the model
+        modelInstance.position.copy(initialState.position);
+        modelInstance.userData = { direction: initialState.direction, speed: initialState.speed };
 
-          return {
-            model,
-            speed: isMobile? Math.random()%5 : Math.random() * 2 + 1,
-            direction: new THREE.Vector2(Math.random() * 2 - 1, Math.random() * 2 - 1).normalize(),
-            boundingVolume
-          };
+        setModels([{
+          model: modelInstance,
+          speed: initialState.speed,
+          direction: initialState.direction,
+        }]);
+
+        // Update previous model state
+        setPreviousModelState({
+          position: modelInstance.position.clone(),
+          direction: initialState.direction.clone(),
+          speed: initialState.speed,
         });
 
-        setModels(modelsWithBoundingVolumes);
-        onLoaded(); // Notify that the models are fully loaded
-
+        onLoaded();
       } catch (error) {
         console.error('Error loading models:', error);
       }
     };
 
     initializeModels();
-  }, [onLoaded]);
+  }, [viewMode, onLoaded]);
 
   useFrame((state, delta) => {
     modelRefs.current.forEach((modelRef, index) => {
@@ -94,10 +83,6 @@ const SpinningModel: React.FC<SpinningModelProps> = ({ onLoaded }) => {
         const { model, speed, direction } = modelData;
 
         model.rotation.y += 0.01;
-
-        const time = state.clock.getElapsedTime();
-        const bounceY = amplitude * Math.sin(frequency * time + index);
-        model.position.y = bounceY;
 
         model.position.x += direction.x * speed * delta;
         model.position.y += direction.y * speed * delta;
@@ -112,21 +97,12 @@ const SpinningModel: React.FC<SpinningModelProps> = ({ onLoaded }) => {
           direction.y = -direction.y;
         }
 
-        // Updated collision detection using bounding volumes
-        for (let i = 0; i < modelRefs.current.length; i++) {
-          if (i !== index) {
-            const otherModelData = models[i];
-            const distance = model.position.distanceTo(otherModelData.model.position);
-
-            // Use a simple bounding cylinder collision detection
-            if (distance < collisionDistance) {
-              direction.x = -direction.x;
-              direction.y = -direction.y;
-              otherModelData.direction.x = -otherModelData.direction.x;
-              otherModelData.direction.y = -otherModelData.direction.y;
-            }
-          }
-        }
+        // Update previous model state
+        setPreviousModelState({
+          position: model.position.clone(),
+          direction: direction.clone(),
+          speed: speed,
+        });
       }
     });
   });
@@ -138,11 +114,11 @@ const SpinningModel: React.FC<SpinningModelProps> = ({ onLoaded }) => {
           key={index}
           object={modelData.model}
           ref={(el: THREE.Group<THREE.Object3DEventMap>) => modelRefs.current[index] = el}
-          position={[Math.random() * 2 * bounds.x - bounds.x, Math.random() * 2 * bounds.y - bounds.y, 0]}
+          position={modelData.model.position.toArray()}
         />
       ))}
     </>
   );
-};
+});
 
 export default SpinningModel;

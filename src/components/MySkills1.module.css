@@ -4,6 +4,10 @@
   letter-spacing: -0.02em;
   line-height: 80%;
 }
+.mySkills span {
+  color: #f26165; /* Red color */
+}
+
 .myskillscontent,
 .skillset {
   align-self: stretch;
@@ -56,7 +60,7 @@
 .content{
   display: flex;
   flex-direction: column;
-  gap:30px;
+  gap: 40px;
 }
 
 .categoryTitle{
@@ -70,6 +74,8 @@
   flex-direction: row;
   width: 100%;
 }
+
+
 @media screen and (max-width: 768px) {
   .myskillscontent {
     padding-left: 0;

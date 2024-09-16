@@ -18,7 +18,7 @@
 .titleholder {
   width: 100%;
   border-radius: 0 0 var(--br-11xl) var(--br-11xl);
-  border-top: 5px solid var(--color-whitesmoke);
+  border-top: 3px solid var(--color-whitesmoke);
   box-sizing: border-box;
   height: 70px;
   overflow: hidden;
@@ -50,9 +50,9 @@
   /* left: calc(50% - 107px); */
   border-radius: 0 0 var(--br-11xl) var(--br-11xl);
   background-color: var(--color-gray);
-  border-right: 5px solid var(--color-whitesmoke);
-  border-bottom: 5px solid var(--color-whitesmoke);
-  border-left: 5px solid var(--color-whitesmoke);
+  border-right: 3px solid var(--color-whitesmoke);
+  border-bottom: 3px solid var(--color-whitesmoke);
+  border-left: 3px solid var(--color-whitesmoke);
   height: auto;
   flex-direction: row;
   justify-content: center;
@@ -63,10 +63,10 @@
 }
 .project {
   flex:1;
-  max-width: 30%;
+  max-width: 32%;
   box-shadow: 2px 2px 20px rgba(238, 238, 238, 0.5);
   border-radius: var(--br-11xl);
-  border: 5px solid var(--color-whitesmoke);
+  border: 3px solid var(--color-whitesmoke);
   height: auto;
   flex-direction: column;
   justify-content: space-between;

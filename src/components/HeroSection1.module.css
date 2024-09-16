@@ -29,18 +29,22 @@
 
 .vittorio {
   margin: 0;
+  font-size: 40px;
+  text-transform: none;
+  font-weight: 500;
+  line-height: 100%;
 
 }
 
 .vittorioPellittieri {
   align-self: stretch;
   position: relative;
-  font-size: 200px;
+  /* font-size: 200px; */
   letter-spacing: -0.05em;
-  line-height: 150px;
+  /* line-height: 150px; */
   text-transform: uppercase;
   font-weight: 900;
-
+  line-height: 220%;
 }
 
 .andIAm {
@@ -65,6 +69,8 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  padding-right: 150px;
+  padding-top: 100px;
 }
 
 .herocontent {
@@ -73,7 +79,7 @@
 
 .hero {
   padding: var(--padding-31xl) 0;
-  text-align: center;
+  text-align: right;
   font-size: var(--font-size-11xl);
   gap: 5px;
 }
@@ -131,6 +137,8 @@
   font-size: var(--font-size-6xl);
   color: var(--color-whitesmoke);
   font-family: var(--font-bricolage-grotesque);
+  user-select: none; /* Prevents text selection */
+
 }
 
 .canvas {
@@ -171,19 +179,85 @@
   z-index: 1;
 }
 
+.vittorio2 {
+  font-size: 100px;
+  cursor: pointer;
+  transition: all 2s ease;
+  display: inline-block;
+  line-height: 80%;
+
+}
+
+.vittorio2.collapsed .redV::after {
+  content: 'V';
+  color: var(--color-salmon);
+  letter-spacing: -5px;
+
+  /* Decrease the space between letters */
+}
+
+.vittorio2.collapsed .whiteP::after {
+  content: 'P';
+  letter-spacing: -5px;
+  /* Decrease the space between letters */
+}
+
+.vittorio2.expanded .redV::after {
+  content: 'Vittorio';
+  filter: drop-shadow(4px 4px 30px rgba(255, 255, 255, 0.4)); /* More pronounced shadow on hover */
+  line-height: 80%;
+
+  /* Show full name */
+  color: var(--color-salmon);
+  letter-spacing: -5px;
+  /* Decrease the space between letters */
+
+}
+
+.vittorio2.expanded .whiteP::after {
+  content: ' Pellittieri';
+  /* Show full surname */
+  letter-spacing: -5px;
+  /* Decrease the space between letters */
+  filter: drop-shadow(4px 4px 30px rgba(255, 255, 255, 0.4)); /* More pronounced shadow on hover */
+  line-height: 80%;
+
+}
+
+.frontEndMobileWrapper {
+  display: inline-block;
+  position: relative;
+  font-size: 100px;
+  cursor: pointer;
+  letter-spacing: -5px;
+  line-height: 80%;
+
+}
+
+.redText {
+  color: var(--color-salmon);
+  transition: all 0.5s ease;
+}
+
+.redText:hover{
+    filter: drop-shadow(4px 4px 30px rgba(255, 255, 255, 0.4)); /* More pronounced shadow on hover */
+}
+
+.whiteText {
+  color: var(--color-whitesmoke);
+}
+
+.shadowEffect {
+  filter: drop-shadow(2px 2px 20px rgba(255, 255, 255, 0.7)); /* White shadow effect */
+  transition: filter 0.3s ease; /* Smooth transition */
+}
+
+.shadowEffect:hover {
+  filter: drop-shadow(4px 4px 30px rgba(255, 255, 255, 0.8)); /* More pronounced shadow on hover */
+}
+
 /* Medium screens (Tablets) - 1024px */
 @media screen and (max-width: 1024px) {
-  .links {
-    gap: var(--gap-25xl);
-    font-size: var(--font-size-8xl);
-    /* Reduce font size */
-  }
-
-  .vittorioPellittieri {
-    font-size: 150px;
-    /* Reduce title size */
-    line-height: 120px;
-  }
 
   .hero {
     font-size: var(--font-size-8xl);
@@ -200,20 +274,30 @@
     width: 15px;
     /* Reduce icon size */
   }
+
+  /* .vittorioPellittieri {
+    line-height: 180%;
+  } */
+
+  .frontEndMobileWrapper,
+  .vittorio2 {
+    font-size: 65px;
+  }
+
+  .vittorio {
+    font-size: 30px;
+  }
+
+  .hero,
+  .herocontent {
+    padding-top: 50px;
+    padding-right: 50px;
+  }
+
 }
 
 /* Small screens (Portrait Tablets and large Phones) - 768px */
 @media screen and (max-width: 768px) {
-  .links {
-    gap: var(--gap-20xl);
-    font-size: var(--font-size-6xl);
-    /* Further reduce font size */
-  }
-  .vittorioPellittieri {
-    font-size: 70px;
-    /* Further reduce title size */
-    line-height: 55px;
-  }
 
   .hero {
     font-size: var(--font-size-6xl);
@@ -230,9 +314,30 @@
     width: 12px;
     /* Further reduce icon size */
   }
+
   .blurLayer {
     backdrop-filter: blur(3px);
   }
+
+  .vittorioPellittieri {
+    line-height: 180%;
+  }
+
+  .frontEndMobileWrapper,
+  .vittorio2 {
+    font-size: 55px;
+  }
+
+  .vittorio {
+    font-size: 20px;
+  }
+
+  .hero,
+  .herocontent {
+    padding-top: 30px;
+    padding-right: 30px;
+  }
+
 }
 
 @media screen and (max-width: 450px) {
@@ -243,17 +348,10 @@
   .andIAmContainer,
   .helloMyNames,
   .vittorioPellittieri {
-    text-align: center;
     align-self: stretch;
     width: auto;
   }
 
-  .vittorioPellittieri {
-    font-weight: 700;
-    font-family: var(--font-bricolage-grotesque);
-    font-size: 55px;
-    line-height: 45px;
-  }
 
   .andIAmContainer {
     font-size: 20px;
@@ -264,8 +362,8 @@
   }
 
   .hero {
-    padding-left: var(--padding-21xl);
-    padding-right: var(--padding-21xl);
+    padding-left: 0px;
+    padding-right: 10px;
     box-sizing: border-box;
   }
 
@@ -282,27 +380,34 @@
   .scrolldown {
     top: 15%;
   }
+
   .blurLayer {
     backdrop-filter: blur(2px);
   }
+
   .gradientLayer {
     background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 60%);
+  }
+
+  .vittorioPellittieri{
+    line-height: 150%;
   }
 }
 
 /* Extra Small screens (Phones) - 320px */
 @media screen and (max-width: 320px) {
-  .links {
-    gap: var(--gap-10xl);
-    font-size: var(--font-size-4xl);
-    /* Further reduce font size */
+
+  .frontEndMobileWrapper,
+  .vittorio2 {
+    font-size: 40px;
   }
 
+  .vittorio {
+    font-size: 20px;
+  }
 
-  .vittorioPellittieri {
-    font-size: 50px;
-    /* Further reduce title size */
-    line-height: 40px;
+  .vittorioPellittieri{
+    line-height: 130%;
   }
 
   .hero {
@@ -320,7 +425,9 @@
     width: 10px;
     /* Further reduce icon size */
   }
+
   .blurLayer {
     backdrop-filter: blur(1px);
   }
+
 }

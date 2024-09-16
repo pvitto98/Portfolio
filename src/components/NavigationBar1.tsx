@@ -31,14 +31,16 @@ const NavigationBar1: FunctionComponent<NavigationBar1Type> = ({
     }
   }, [isDrawerOpen]);
 
+  
+
   return (
     <div className={[styles.navigationbar, className].join(" ")}>
       <Link
         to="/"
-        className={`${styles.logo} ${isClicked ? styles.clicked : ""}`}
+        className={styles.logo}
         onClick={handleClick}
       >
-        <div className={styles.logoText}>PVITTO</div>
+        <img className={`${styles.logoStyle} ${isClicked ? styles.clicked : ""}`} src="/Logo.svg" />
       </Link>
       <div className={styles.navigation}>
         <div className={styles.links}>
@@ -57,8 +59,8 @@ const NavigationBar1: FunctionComponent<NavigationBar1Type> = ({
         </div>
       </div>
       <button className={styles.icsharpMenu} onClick={toggleDrawer}>
-          <img className={styles.vectorIcon} alt="" src="/vector.svg" />
-        </button>
+        <img className={styles.vectorIcon} alt="" src="/vector.svg" />
+      </button>
 
       {isDrawerOpen && <Drawer className={styles.drawer} onClose={toggleDrawer} />}
     </div>

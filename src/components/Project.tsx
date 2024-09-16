@@ -48,7 +48,7 @@ const Project: FunctionComponent<ProjectType> = ({
       >
         <img
           className={styles.hoverGif}
-          src="/image.gif"
+          src="/WS_preview_LQ.gif"
           alt="Hover GIF"
         />
         <img

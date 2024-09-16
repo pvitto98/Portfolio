@@ -4,6 +4,10 @@
   letter-spacing: -0.02em;
   line-height: 80%;
 }
+
+.myProjects span{
+  color: #f26165; /* Red color */
+}
 .projectcontainer {
   align-self: stretch;
   display: flex;

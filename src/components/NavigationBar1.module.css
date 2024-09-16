@@ -1,16 +1,9 @@
-.logo {
-  box-shadow: 2px 2px 20px rgba(238, 238, 238, 0.5);
-  border-radius: var(--br-31xl);
-  border: 3px solid var(--color-whitesmoke);
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: var(--padding-xl) var(--padding-6xl);
-  background-color: var(--color-gray)!important;
-  height: 25px;
-  width: 75px;
+.logo img {
+  transition: filter 0.3s ease;
+}
+
+.logo img.clicked {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* Shadow follows the SVG shape */
 }
 .aboutMe,
 .projects {
@@ -43,16 +36,17 @@
   color: inherit;  /* Keep the text color the same */
   text-decoration: none;  /* Remove the underline */
 }
-.logo {
+/* .logo {
   transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
-}
 
-.clicked {
+} */
+
+/* .clicked {
   transform: rotateY(10deg) translateZ(20px) scale(1.05);
   border-color: #F26165;
   color: #F26165;
   background-color: #EEEEEE;
-}
+} */
 
 .projects {
   color: var(--color-white);
@@ -116,6 +110,10 @@
   z-index: 5;
 }
 
+.logoStyle{
+  height: 100px;
+}
+
 .aboutMe,.projects{
     text-decoration: none;
     color: inherit; /* Keeps the text color the same */
@@ -134,5 +132,8 @@
   }
   .logo {
     padding: 15px 20px;
+  }
+  .logoStyle{
+    height: 80px;
   }
 }

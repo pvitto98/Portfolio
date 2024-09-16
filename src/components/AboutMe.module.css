@@ -20,6 +20,9 @@
     text-align: start;
     width: 100%;
 }
+.title span {
+    color: #f26165; /* Red color */
+  }
 
 .content {
     display: flex;
@@ -39,6 +42,7 @@
     align-self: start;
     text-align: justify;
 }
+
 
 .model {
     flex: 0 0 40%; /* Take up 40% of the space */

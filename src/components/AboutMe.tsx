@@ -22,16 +22,16 @@ const AboutMe: React.FC<AboutMeType> = ({ className = "" }) => {
 
   return (
     <div className={[styles.aboutMeSection, className].join(" ")} id="about">
-      <b className={styles.title}>ABOUT ME</b>
+      <b className={styles.title}><span>A</span>BOUT ME</b>
       <div className={styles.content}>
         <div className={styles.text}>
-          <p>Hey there! I’m Vittorio, a <span className={`${styles.highlightedWord} ${highlightedWord === 'creative' ? styles.active : ''}`}>creative</span> web and mobile developer based in Turin.</p>
+          <p>Hey there! I’m Vittorio, a <span className={`${styles.highlightedWord} ${highlightedWord === 'creative' ? styles.active : ''}`}>creative</span> web and mobile developer.</p>
           {/* <p>
             I’m all about putting people first when building intuitive, <span className={`${styles.highlightedWord} ${highlightedWord === 'user-friendly' ? styles.active : ''}`}>user-friendly</span> apps. 
             </p> */}
             <p>My approach integrates modern frameworks and leverages the latest emerging
             tools to create <span className={`${styles.highlightedWord} ${highlightedWord === 'high-performance' ? styles.active : ''}`}>high-performance</span> products that don’t just work well—but look
-            stunning too.
+            cool too.
           </p>
         </div>
         <div className={styles.model}>

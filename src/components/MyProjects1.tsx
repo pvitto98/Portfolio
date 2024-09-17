@@ -13,16 +13,26 @@ const MyProjects1: FunctionComponent<MyProjects1Type> = ({
     <div className={[styles.myprojects, className].join(" ")} id="projects">
       <b className={styles.myProjects}><span>P</span>ROJECTS</b>
       <div className={styles.projectcontainer}>
-        <Project link="BAT" bAT="BAT" landingPage="React Three.js" />
+        <Project 
+          link="BAT" 
+          bAT="BAT" 
+          landingPage="React Three.js" 
+          imageSrc="/BAT_Image_Preview-min.png"    // Pass imageSrc
+          gifSrc="/BAT_Gif_Preview.gif"        // Pass gifSrc
+        />
         <Project
-        link="ATHING"
+          link="ATHING"
           bAT="ATHING"
           landingPage="Native Android Application"
+          imageSrc="/AT_Image_Preview-min.png"
+          gifSrc="/AT_Gif_Preview.gif"
         />
         <Project
           link="WORKSCHEDULE"
           bAT="WORK SCHEDULE"
           landingPage="Full Stack App"
+          imageSrc="/WS_Image_Preview-min.png"
+          gifSrc="/WS_Gif_Preview.gif"
         />
       </div>
     </div>

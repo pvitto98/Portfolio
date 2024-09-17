@@ -56,7 +56,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-31xl);
+  gap: 20px;
 }
 .vectorIcon {
   position: absolute;
@@ -90,8 +90,8 @@
 }
 .navigation {
   justify-content: center;
-  gap: var(--gap-31xl);
-  font-size: var(--font-size-xl);
+  gap: 30px;
+  font-size: 18px;
 
 }
 .navigationbar {
@@ -101,10 +101,10 @@
   max-width: 100%;
   overflow: hidden;
   justify-content: space-between;
-  padding: var(--padding-31xl) var(--padding-56xl) var(--padding-xl) var(--padding-56xl);
+  padding: var(--padding-31xl) 100px var(--padding-xl) var(--padding-56xl);
   box-sizing: border-box;
   text-align: left;
-  font-size: var(--font-size-xl);
+  font-size: 16px;
   color: var(--color-whitesmoke);
   font-family: var(--font-bricolage-grotesque);
   z-index: 5;

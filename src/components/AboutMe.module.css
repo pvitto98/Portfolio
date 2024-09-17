@@ -33,8 +33,8 @@
 }
 
 .text {
-    flex: 0 0 65%; /* Take up 60% of the space */
-    font-size: 35px;
+    flex: 0 0 58%; /* Take up 60% of the space */
+    font-size: 32px;
     line-height: 1.4;
     /* Adjusted for better readability */
     color: var(--color-white);

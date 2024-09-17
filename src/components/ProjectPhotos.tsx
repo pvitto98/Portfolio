@@ -79,8 +79,8 @@ const ProjectPhotos: FunctionComponent<ProjectPhotosProps> = ({
           />
           <div className={styles.prev}>PREV</div>
         </Link>
-        <Link to={nextLink} className={styles.nextbutton}>
-          <div className={styles.next}>NEXT</div>
+        <Link to={nextLink} className={styles.previousbutton}>
+          <div className={styles.prev}>NEXT</div>
           <img
             className={styles.autoLayoutHorizontal}
             alt=""

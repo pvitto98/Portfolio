@@ -13,7 +13,7 @@ const SpinningModel: React.FC<SpinningModelProps> = memo(({ onLoaded, viewMode }
   const modelRefs = useRef<THREE.Group[]>([]);
   const [previousModelState, setPreviousModelState] = useState<{ position: THREE.Vector3; direction: THREE.Vector2; speed: number } | null>(null);
 
-  const bounds = viewMode === 'mobile' ? { x: 3, y: 4 } : { x: 8, y: 5 };
+  const bounds = viewMode === 'mobile' ? { x: 8, y: 5 } : { x: 3, y: 4 };
 
   useEffect(() => {
     const loader = new GLTFLoader();

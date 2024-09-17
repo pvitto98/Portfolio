@@ -60,6 +60,8 @@
   z-index: 2;
   font-size: 20px;
   /* color: var(--color-salmon); */
+  transition: all 1s ease;
+
 }
 .project {
   flex:1;

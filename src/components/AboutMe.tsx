@@ -10,7 +10,7 @@ const AboutMe: React.FC<AboutMeType> = ({ className = "" }) => {
   const [highlightedWord, setHighlightedWord] = useState<string>('creative');
 
   useEffect(() => {
-    const words = ['creative', 'high-performance'];
+    const words = ['creative', 'high-performing'];
     let index = 0;
     const interval = setInterval(() => {
       index = (index + 1) % words.length;
@@ -25,13 +25,8 @@ const AboutMe: React.FC<AboutMeType> = ({ className = "" }) => {
       <b className={styles.title}><span>A</span>BOUT ME</b>
       <div className={styles.content}>
         <div className={styles.text}>
-          <p>Hey there! I’m Vittorio, a <span className={`${styles.highlightedWord} ${highlightedWord === 'creative' ? styles.active : ''}`}>creative</span> web and mobile developer.</p>
-          {/* <p>
-            I’m all about putting people first when building intuitive, <span className={`${styles.highlightedWord} ${highlightedWord === 'user-friendly' ? styles.active : ''}`}>user-friendly</span> apps. 
-            </p> */}
-            <p>My approach integrates modern frameworks and leverages the latest emerging
-            tools to create <span className={`${styles.highlightedWord} ${highlightedWord === 'high-performance' ? styles.active : ''}`}>high-performance</span> products that don’t just work well—but look
-            cool too.
+          <p>Hey there! My name's Vittorio and I am a <span className={`${styles.highlightedWord} ${highlightedWord === 'creative' ? styles.active : ''}`}>creative</span> web and mobile developer.</p>
+            <p>When developing my projects using modern frameworks, I like to elevate them exploiting the full potential of new generation AI tools. This approach helps me build <span className={`${styles.highlightedWord} ${highlightedWord === 'high-performing' ? styles.active : ''}`}>high-performing</span> products that are not just functional—but look cool too.
           </p>
         </div>
         <div className={styles.model}>

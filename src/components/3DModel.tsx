@@ -34,7 +34,7 @@ const Carousel3D: React.FC<{ highlightedWord: string }> = ({ highlightedWord }) 
 
     if (highlightedWord === 'creative') {
       newModel = '/light.glb';
-    } else if (highlightedWord === 'high-performance') {
+    } else if (highlightedWord === 'high-performing') {
       newModel = '/rocket2.glb';
     }
 

@@ -50,7 +50,7 @@ const Carousel3D: React.FC<{ highlightedWord: string }> = ({ highlightedWord }) 
       key={key} // This forces the Canvas to re-render
       shadows
       camera={{ position: [0, 2, 10], fov: 50 }}
-      style={{ height: isMobile? '250px': '450px', width: '100%' }}
+      style={{ height: isMobile? '250px': '450px', width: isMobile? '200px': '100%' }}
     >
       <ambientLight intensity={0.5} />
       <spotLight 

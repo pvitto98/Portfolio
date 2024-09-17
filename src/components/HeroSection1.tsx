@@ -17,7 +17,7 @@ const HeroSection1: React.FC<HeroSection1Props> = memo(({ onLoaded }) => {
     if (!isHovered) {
       const interval = setInterval(() => {
         setCurrentText((prevText) => (prevText === 'front-end' ? 'mobile' : 'front-end'));
-      }, 2000);
+      }, 3000);
       return () => clearInterval(interval);
     }
   }, [isHovered]);
@@ -38,7 +38,7 @@ const HeroSection1: React.FC<HeroSection1Props> = memo(({ onLoaded }) => {
           transition={{ duration: 1, delay: 1.5 }}
         >
           <div className={styles.vittorioPellittieri}>
-            <div className={styles.vittorio}>Hello, my name's </div>
+            <div className={styles.vittorio}>My name's </div>
             <div
               className={`${styles.vittorio2} ${isCollapsed ? styles.collapsed : styles.expanded}`}
               onMouseEnter={() => setIsCollapsed(false)}
@@ -51,10 +51,8 @@ const HeroSection1: React.FC<HeroSection1Props> = memo(({ onLoaded }) => {
             <div className={styles.vittorio}>and I'm a</div>
             <div
               className={styles.frontEndMobileWrapper}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
             >
-              <span className={styles.redText}>{currentText}</span>
+              <span onMouseEnter={() => setIsHovered(true)}   onMouseLeave={() => setIsHovered(false)} className={styles.redText}>{currentText}</span>
               <span className={styles.whiteText}> developer</span>
             </div>
           </div>

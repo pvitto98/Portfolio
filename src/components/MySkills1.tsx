@@ -39,8 +39,7 @@ const MySkills1: FunctionComponent<MySkills1Type> = ({ className = "" }) => {
           <div className={styles.categoryTitle}>Version Control & Other Tools</div>
           <div className={styles.skillset}>
             <Skill skillName="GIT" />
-            <Skill skillName="GPT" />
-            <Skill skillName="Midjourney" />
+            <Skill skillName="Generative AI" />
           </div>
         </div>
 

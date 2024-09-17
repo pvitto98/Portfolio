@@ -22,8 +22,9 @@ const ProjectInfo: FunctionComponent<ProjectInfoProps> = ({
     <div className={[styles.projectinfo, className].join(" ")}>
       <div className={styles.header}>
         <div className={styles.title}>{title}</div>
-        <div className={styles.link}>{link}</div>
-      </div>
+        {(link !== "" ? <a href={link} className={styles.projectLink} target="_blank" rel="noopener noreferrer">
+          Visit Project
+        </a> : <></>)}      </div>
       <div className={styles.informations}>
         <div className={styles.info}>
           <b className={styles.info1}>INFO</b>

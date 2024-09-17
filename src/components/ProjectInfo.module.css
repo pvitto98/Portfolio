@@ -91,6 +91,13 @@
   color: var(--color-salmon);
   font-family: var(--font-bricolage-grotesque);
 }
+
+.projectLink{
+  color: inherit;  /* Keep the text color the same */
+  /* text-decoration: none;  Remove the underline */
+  color: white;
+  font-size: 30px;
+}
 @media screen and (max-width: 450px) {
   .title {
     font-size: var(--font-size-51xl);

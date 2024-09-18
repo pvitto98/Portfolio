@@ -1,0 +1,148 @@
+
+.project:hover .hoverGif {
+  filter: grayscale(0%); /* Remove grayscale on hover */
+}
+
+.linkWrapper {
+  display: contents; /* Makes sure the Link fits its content */
+  text-decoration: none; /* Remove underline from link */
+  width: 100%; /* Ensure Link takes up the width of its content */
+}
+
+.bat {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 110%;
+  font-weight: 800;
+}
+.titleholder {
+  width: 100%;
+  border-radius: 0 0 var(--br-11xl) var(--br-11xl);
+  border-top: 3px solid var(--color-whitesmoke);
+  box-sizing: border-box;
+  height: 70px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+  z-index: 1;
+}
+.landingPage {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 110%;
+}
+.project,
+.type {
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+.type {
+  margin: 0 !important;
+  position: absolute;
+  top: 0;
+  /* left: calc(50% - 107px); */
+  border-radius: 0 0 var(--br-11xl) var(--br-11xl);
+  background-color: var(--color-gray);
+  border-right: 3px solid var(--color-whitesmoke);
+  border-bottom: 3px solid var(--color-whitesmoke);
+  border-left: 3px solid var(--color-whitesmoke);
+  height: auto;
+  flex-direction: row;
+  justify-content: center;
+  padding: var(--padding-3xs) var(--padding-11xl);
+  z-index: 2;
+  font-size: 20px;
+  /* color: var(--color-salmon); */
+  transition: all 1s ease;
+
+}
+.project {
+  flex:1;
+  max-width: 32%;
+  box-shadow: 2px 2px 20px rgba(238, 238, 238, 0.5);
+  border-radius: var(--br-11xl);
+  border: 3px solid var(--color-whitesmoke);
+  height: auto;
+  flex-direction: column;
+  justify-content: space-between;
+  /* padding: var(--padding-8xs) 0 0; */
+  position: relative;
+  text-align: center;
+  font-size: 32px;
+  color: var(--color-whitesmoke);
+  font-family: var(--font-bricolage-grotesque);
+  min-width: 270px;
+  transform-style: preserve-3d; /* Preserve 3D transformations */
+  perspective: 1000px; /* Adjust perspective */
+  perspective-origin: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smoother transition */
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+/*  */
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.hoverGif {
+  display: none; /* Hide GIF by default */
+}
+
+@media (hover: hover) {
+  /* Show image by default on desktop */
+  .hoverGif {
+    display: none;
+  }
+  
+  .project:hover .hoverGif {
+    display: block;
+  }
+  .project:hover img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .project{
+    max-width: auto;
+    min-width: 350px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .bat {
+    font-size: 25px;
+  }
+  .titleholder {
+    height: 60px;
+  }
+  .landingPage {
+    font-size: var(--font-size-sm);
+  }
+  .project {
+    align-self: stretch;
+    width: 100%; /* Ensure it takes the full width */
+    height: auto; /* Adjust height to content */
+    min-width: 100%; /* Ensure it takes the full available width */
+    max-width: 100%; /* Prevent it from shrinking */
+    box-sizing: border-box; /* Ensure padding and border are included in the width/height */
+  }
+  .type{
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+  .hoverGif {
+    filter: grayscale(0%); /* Remove grayscale on hover */
+  }
+}

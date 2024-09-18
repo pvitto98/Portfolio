@@ -1,0 +1,47 @@
+/* Spinner.module.css */
+
+.loadingPage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Changed from absolute to fixed */
+  top: 0; /* Ensure it covers the entire viewport */
+  left: 0;
+  background-color: var(--color-gray);
+  font-family: var(--font-bricolage-grotesque);
+  color: white;
+  z-index: 9999;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+.logo {
+  height: 200px;
+  animation: glowAnimation 0.8s infinite, rotateAnimation 5s linear infinite; /* Apply both glowing and rotating animations */
+}
+
+/* Define the keyframes for the glow animation */
+@keyframes glowAnimation {
+  0% {
+      filter: drop-shadow(0 0 10px rgba(238, 238, 238, 0.5));
+  }
+  50% {
+      filter: drop-shadow(0 0 25px rgba(238, 238, 238, 0.8));
+  }
+  100% {
+      filter: drop-shadow(0 0 10px rgba(238, 238, 238, 0.5));
+  }
+}
+
+/* Define the keyframes for the rotation animation */
+@keyframes rotateAnimation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}

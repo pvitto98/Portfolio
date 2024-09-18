@@ -1,0 +1,308 @@
+.letsGetIn {
+  position: relative;
+  letter-spacing: -0.05em;
+  line-height: 80%;
+  font-weight: 800;
+}
+.header,
+.letsGetInTouch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* width: max-content; */
+}
+.header {
+  /* align-self: stretch; */
+  gap: var(--gap-81xl);
+}
+.email,
+.whyDontYou {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 80%;
+}
+.email {
+  font-size: 60px;
+  line-height: 110%;
+  font-weight: 800;
+  color: var(--color-salmon);
+  
+}
+.emailwrapper {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+}
+.orCheckMe {
+  letter-spacing: -0.02em;
+  line-height: 80%;
+}
+.imgIcon,
+.orCheckMe,
+.text {
+  position: relative;
+}
+.imgIcon {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+}
+.text {
+  letter-spacing: -0.02em;
+  line-height: 100%;
+  font-weight: 600;
+}
+.linkedin, .resume {
+  filter: drop-shadow(2px 2px 20px rgba(238, 238, 238, 0.5));
+  border-radius: var(--br-31xl);
+  border: 3px solid var(--color-whitesmoke);
+  justify-content: center;
+  padding: var(--padding-6xl);
+  gap: var(--gap-3xs);
+}
+.buttoncontainer,
+.linkedin,
+.socialwrapper,
+.resumecontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.buttoncontainer,
+.resumecontainer {
+  justify-content: center;
+  gap: var(--gap-6xl);
+  font-size: var(--font-size-6xl);
+  color: var(--color-whitesmoke);
+}
+.linkedin:hover {
+  border-color: #F26165;  /* Change border color on hover */
+  transform: scale(1.1);
+}
+.resume:hover {
+  transform: rotateY(10deg) translateZ(20px);
+  border-color: #F26165;  /* Change border color on hover */
+  color: #F26165;  /* Change text color on hover */
+  background-color: #EEEEEE; /* Change background color on hover */
+  transform: scale(1.2);
+}
+.socialwrapper {
+  align-self: stretch;
+  justify-content: space-between;
+  padding: var(--padding-xl) var(--padding-81xl) var(--padding-xl) 0;
+}
+.contactcontent {
+  align-self: stretch;
+  align-items: flex-start;
+  gap: var(--gap-56xl);
+}
+.contact,
+.contactcontent,
+.contactcontentwrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.contactcontentwrapper {
+  align-self: stretch;
+  align-items: flex-start;
+  padding: 0 var(--padding-81xl);
+  font-size: 30px;
+}
+.contact {
+  width: 100%;
+  background-color: var(--color-gray);
+  max-width: 100%;
+  overflow: hidden;
+  align-items: center;
+  padding: var(--padding-81xl) 0;
+  box-sizing: border-box;
+  gap: var(--gap-81xl);
+  text-align: left;
+  font-size: var(--font-size-181xl);
+  color: var(--color-white);
+  font-family: var(--font-bricolage-grotesque);
+}
+.divider {
+  width: 100%;
+  height: 3px;
+  background: white;
+  filter: drop-shadow(10px 10px 20px rgba(238, 238, 238, 0.8));
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.letsGetIn {
+  position: relative;
+  letter-spacing: -0.05em;
+  line-height: 80%;
+  font-weight: 800;
+  display: inline-flex;
+  white-space: nowrap;
+  margin: 0 40px;
+  gap: 40px;
+  /* Remove padding-right: 100%; */
+}
+
+
+.letsGetIn:hover {
+  animation-play-state: paused; /* Pause on hover */
+}
+.letsGetIn span {
+  margin: 0 40px;
+}
+.redLetter{
+  color: var(--color-salmon);
+  letter-spacing: -0.4em; /* Adjust this value to fine-tune the spacing */
+
+}
+
+.linkedin, .resume{
+  text-decoration: none;
+  color: inherit; /* Keeps the text color the same */
+}
+
+
+.divider{
+  width: 100%;
+  background: white;
+  height: 3px;
+}
+@keyframes animate_text {
+  from {
+    transform:translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .contact{
+    padding: 50px;
+  }
+  .contactcontentwrapper{
+    padding: 0px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .email,
+  .whyDontYou {
+    text-align: center;
+  }
+  .email {
+    font-size: var(--font-size-6xl);
+  }
+  .emailwrapper {
+    gap: var(--gap-6xl);
+  }
+  .orCheckMe,
+  .text {
+    font-size: var(--font-size-xl);
+  }
+  .linkedin {
+    padding: var(--padding-mini) var(--padding-6xl);
+    box-sizing: border-box;
+  }
+
+  
+  .socialwrapper {
+    flex-direction: column;
+  }
+  .socialwrapper {
+    align-items: center;
+    justify-content: center;
+    padding-right: 0;
+    box-sizing: border-box;
+    row-gap: 25px;
+  }
+  .contactcontentwrapper {
+    padding-left: var(--padding-21xl);
+    padding-right: var(--padding-21xl);
+    box-sizing: border-box;
+  }
+  .contact {
+    font-size:150px;
+    padding: 0 0 50px 0;
+  }
+  .letsGetIn {
+    gap: 20px;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+  .email,
+  .whyDontYou {
+    font-size: var(--font-size-xl);
+    text-align: center;
+  }
+  .email {
+    font-size: 20px;
+  }
+  .emailwrapper {
+    gap: var(--gap-6xl);
+  }
+  .orCheckMe,
+  .text {
+    font-size: var(--font-size-xl);
+  }
+  .linkedin {
+    padding: var(--padding-mini) var(--padding-6xl);
+    box-sizing: border-box;
+    transform: scale(0.8);
+  }
+  .linkedin:hover {
+    transform: scale(0.9);
+  }
+  .buttoncontainer,
+  .socialwrapper,
+  .resumecontainer {
+    flex-direction: column;
+  }
+  .socialwrapper {
+    align-items: center;
+    justify-content: center;
+    padding-right: 0;
+    box-sizing: border-box;
+    row-gap: 25px;
+  }
+  .contactcontentwrapper {
+    padding-left: var(--padding-21xl);
+    padding-right: var(--padding-21xl);
+    box-sizing: border-box;
+  }
+  .contact {
+    font-size:100px;
+    gap: 50px;
+    padding: 0 0 50px 0;
+  }
+  .letsGetIn {
+    gap: 0px;
+  }
+
+  .buttoncontainer,
+  .resumecontainer{
+    gap: 10px;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+  .whyDontYou {
+    font-size: 16px;
+  }
+  .email {
+    font-size: 18px;
+  }
+  .buttoncontainer,
+  .resumecontainer{
+    gap:10px;
+  }
+}

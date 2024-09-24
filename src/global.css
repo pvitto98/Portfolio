@@ -4,6 +4,9 @@ body {
   line-height: normal;
   background-color: #2b2b2b;
 }
+html {
+  scroll-behavior: smooth;
+}
 :root {
   /* fonts */
   --font-bricolage-grotesque: "Bricolage Grotesque";

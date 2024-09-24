@@ -21,14 +21,14 @@ const Projects: FunctionComponent<ProjectsType> = ({
           gifSrc="/previews/BAT_Gif_Preview.gif"        // Pass gifSrc
         />
         <ProjectCard
-          link="ATHING"
+          link="AThing"
           bAT="ATHING"
           landingPage="Native Android Application"
           imageSrc="/previews/AT_Image_Preview-min.png"
           gifSrc="/previews/AT_Gif_Preview.gif"
         />
         <ProjectCard
-          link="WORKSCHEDULE"
+          link="WorkSchedule"
           bAT="WORK SCHEDULE"
           landingPage="Full Stack App"
           imageSrc="/previews/WS_Image_Preview-min.png"

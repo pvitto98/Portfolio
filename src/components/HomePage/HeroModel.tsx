@@ -13,52 +13,39 @@ const HeroModel: React.FC<HeroModelProps> = memo(({ onLoaded, viewMode }) => {
   const modelRefs = useRef<THREE.Group[]>([]);
   const [previousModelSide, setPreviousModelSide] = useState<'top' | 'right' | 'bottom' | 'left' | null>(null);
 
+  // Cache for loaded models
+  const modelCache = useRef<{ [key: string]: THREE.Group }>({});
+
   // Adjust bounds, scale, and speed based on screen size
   const getBounds = () => {
     const width = window.innerWidth;
-    if (width < 450) {
-      return { x: 3, y: 3 };
-    } else if (width < 760) {
-      return { x: 10, y: 6 };
-    }     else if (width < 1024) {
-      return { x: 7, y: 6 };
-
-    }
-    
-    else {
-      return { x: 10, y: 7 };
-
-    }
+    if (width < 450) return { x: 3, y: 3 };
+    if (width < 760) return { x: 10, y: 6 };
+    if (width < 1024) return { x: 7, y: 6 };
+    return { x: 10, y: 7 };
   };
 
   const getScale = () => {
     const width = window.innerWidth;
-    if (width < 450) {
-      return 1.2;
-    } else if (width < 769) {
-      return 2;
-    } else {
-      return 2;
-    }
+    return width < 450 ? 1.2 : 2;
   };
 
   const getSpeed = () => {
     const width = window.innerWidth;
-    if (width < 450) {
-      return Math.random() * 3 + 0.5; // Speed between 1 and 4
-    } else if (width < 760) {
-      return Math.random() * 4 + 1; // Speed between 2 and 6
-    } else {
-      return Math.random() * 5 + 3; // Speed between 3 and 8
-    }
+    if (width < 450) return Math.random() * 3 + 0.5; // Speed between 1 and 4
+    if (width < 760) return Math.random() * 4 + 1; // Speed between 2 and 6
+    return Math.random() * 5 + 3; // Speed between 3 and 8
   };
 
   const bounds = getBounds();
   const scale = getScale();
-  const speed = getSpeed();
   const center = new THREE.Vector3(0, 0, 0); // Center point of the scene
 
-  const loadModel = (path: string) => {
+  const loadModel = async (path: string): Promise<THREE.Group> => {
+    if (modelCache.current[path]) {
+      return modelCache.current[path];
+    }
+
     return new Promise<THREE.Group>((resolve, reject) => {
       const loader = new GLTFLoader();
       loader.load(
@@ -66,6 +53,7 @@ const HeroModel: React.FC<HeroModelProps> = memo(({ onLoaded, viewMode }) => {
         (gltf) => {
           const loadedModel = gltf.scene;
           loadedModel.scale.set(scale, scale, scale); // Apply scale here
+          modelCache.current[path] = loadedModel; // Cache the model
           resolve(loadedModel);
         },
         undefined,
@@ -87,7 +75,6 @@ const HeroModel: React.FC<HeroModelProps> = memo(({ onLoaded, viewMode }) => {
     try {
       const desktopPath = '/3DModels/desktop_hero.glb';
       const mobilePath = '/3DModels/mobile_hero.glb';
-
       const path = viewMode === 'mobile' ? mobilePath : desktopPath;
       const modelInstance = await loadModel(path);
 
@@ -116,14 +103,9 @@ const HeroModel: React.FC<HeroModelProps> = memo(({ onLoaded, viewMode }) => {
       }
 
       modelInstance.position.copy(initialPosition);
-      modelInstance.userData = { direction, speed };
+      modelInstance.userData = { direction, speed: getSpeed() };
 
-      setModels([{
-        model: modelInstance,
-        speed,
-        direction,
-      }]);
-
+      setModels([{ model: modelInstance, speed: modelInstance.userData.speed, direction }]);
       setPreviousModelSide(entrySide);
 
       onLoaded();
@@ -141,7 +123,6 @@ const HeroModel: React.FC<HeroModelProps> = memo(({ onLoaded, viewMode }) => {
       const modelData = models[index];
       if (modelRef && modelData) {
         const { model, speed, direction } = modelData;
-
 
         model.rotation.y += 0.01;
 
@@ -175,7 +156,7 @@ const HeroModel: React.FC<HeroModelProps> = memo(({ onLoaded, viewMode }) => {
         <primitive
           key={index}
           object={modelData.model}
-          ref={(el: THREE.Group<THREE.Object3DEventMap>) => modelRefs.current[index] = el}
+          ref={(el: THREE.Group) => (modelRefs.current[index] = el)}
           position={modelData.model.position.toArray()}
         />
       ))}

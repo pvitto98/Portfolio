@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 import styles from "./ProjectInfo.module.css";
+import SkillCard from "../HomePage/SkillCard";
 
 export type ProjectInfoProps = {
   title: string;
@@ -26,27 +27,36 @@ const ProjectInfo: FunctionComponent<ProjectInfoProps> = ({
           Visit Project
         </a> : <></>)}      </div>
       <div className={styles.informations}>
-        <div className={styles.info}>
+        <div className={styles.technologies}>
+        <div className={styles.titleContainer}>
+
           <b className={styles.info1}>INFO</b>
+          </div>
+
           <div className={styles.infodescription}>{info}</div>
         </div>
+        <div className={styles.separator}></div>
         <div className={styles.technologies}>
+          <div className={styles.titleContainer}>
           <b className={styles.info1}>TECHNOLOGIES</b>
+          </div>
           <div className={styles.technologiesdescription}>
             {technologies.map((tech, index) => (
               <p key={index} className={styles.htmlCss}>
-                {tech}
+                <SkillCard skillName={tech}/>
               </p>
             ))}
           </div>
         </div>
+        <div className={styles.separator}></div>
+
         <div className={styles.technologies}>
           <b className={styles.info1}>CREDITS</b>
-          <div className={styles.technologiesdescription}>
+          <div className={styles.creditdescription}>
             {credits.map((credit, index) => (
-              <p key={index} className={styles.htmlCss}>
+              <div key={index} className={styles.credit}>
                 {credit}
-              </p>
+              </div>
             ))}
           </div>
         </div>

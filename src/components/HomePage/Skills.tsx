@@ -43,11 +43,10 @@ const Skills: FunctionComponent<MySkills1Type> = ({ className = "" }) => {
           </div>
         </div>
 
-        {/* Design & UX/UI Section */}
+        {/* DesignSection */}
         <div className={styles.category}>
-          <div className={styles.categoryTitle}>Design & UX/UI</div>
+          <div className={styles.categoryTitle}>Design</div>
           <div className={styles.skillset}>
-            <SkillCard skillName="UX/UI" />
             <SkillCard skillName="Figma" />
             <SkillCard skillName="Blender*" />
           </div>

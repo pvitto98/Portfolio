@@ -1,17 +1,28 @@
-.screen1Icon {
+.screen1Icon, .screen1Icon_small {
   position: relative;
 }
 .screen1Icon,
-.screen3Icon {
+.screen3Icon,
+.screen1Icon_small {
   align-self: stretch;
   /* max-width: 100%; */
-  width: 70%;
   overflow: hidden;
   height: auto;
   flex-shrink: 0;
   object-fit: cover;
   object-position: center;
   align-self: center;
+  filter: drop-shadow(2px 2px 8px rgba(255, 255, 255, 0.7)); /* White shadow effect */
+
+}
+
+.screen1Icon{
+  width: 45%;
+}
+
+.screen1Icon_small{
+  width: 20%;
+  
 }
 .autoLayoutHorizontal {
   width: 80px;
@@ -36,6 +47,14 @@
   display: flex;
   align-self: center;
 }
+.photoContainer{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
 .navigation {
   align-self: stretch;
   flex-direction: row;
@@ -43,6 +62,7 @@
 }
 .projectphotos {
   width: 100%;
+  justify-content: center;
   background-color: var(--color-gray);
   max-width: 100%;
   overflow: hidden;
@@ -62,17 +82,39 @@
   color: inherit;
 }
 
-.screen1Icon {
+.screen1Icon, .screen1Icon_small {
   /* transition: transform 0.3s ease, filter 0.3s ease; Smooth transition for transform */
   transform-origin: center center;
-  border-radius: var(--br-11xl); /* Optional: rounded corners */
+  border-radius: 10px; /* Optional: rounded corners */
 }
 
+/* .screen1Icon:hover{
+  transform: scale(1.5);
+  z-index: 100;
+  position: fixed;
+  top:25%;
+  
+} */
+
 .textContent {
-  margin-bottom: 20px; /* Space between text sections */
-  font-size: var(--font-size-3xl);
-  color: var(--color-whitesmoke);
-  font-family: var(--font-bricolage-grotesque);
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 80%;
+  font-size: 50px;
+  line-height: 110%;
+  text-align: justify;
+  font-weight: bold;
+  width: 100%;
+}
+
+@media screen and (max-width:769px) {
+  .textContent {
+    font-size: 40px;
+  }
+  .screen1Icon_small{
+    width: 40%;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -99,4 +141,10 @@
 .previousbutton{
   gap: 10px;
 }
+
+/* .screen1Icon:hover{
+  transform: scale(1);
+  z-index: inherit;
+  position: inherit;  
+} */
 }

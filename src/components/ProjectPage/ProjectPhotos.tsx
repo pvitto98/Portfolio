@@ -13,9 +13,13 @@ export type ProjectPhotosProps = {
 const parseContent = (contentString: string) => {
   return contentString.split(';').map(item => {
     const [type, value] = item.split(':');
-    return type === 'image'
-      ? { type: "image", src: value }
-      : { type: "text", content: value };
+    if (type === 'image') {
+      return { type: "image", src: value };
+    } else if (type === 'image_small') {
+      return { type: "image_small", src: value };
+    } else {
+      return { type: "text", content: value };
+    }
   });
 };
 
@@ -31,45 +35,40 @@ const ProjectPhotos: FunctionComponent<ProjectPhotosProps> = ({
   // Parse the content string into the required format
   const parsedContent = parseContent(content);
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setScrollY(window.scrollY);
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
 
   return (
     <div className={[styles.projectphotos, className].join(" ")} ref={containerRef}>
-      {parsedContent.map((item, index) => {
-        if (item.type === 'image') {
-          return (
-            <img
-              key={index}
-              className={styles.screen1Icon}
-              alt={`Screenshot ${index + 1}`}
-              src={item.src}
-              // style={{
-              //   transform: `scale(${1 + scrollY * 0.001}) translateY(${scrollY * 0.05}px)`
-              // }}
-            />
-          );
-        } else if (item.type === 'text') {
-          return (
-            <div
-              key={index}
-              className={styles.textContent}
-            >
-              {item.content}
-            </div>
-          );
-        }
-        return null;
-      })}
+      <div className={styles.photoContainer}>
+        {parsedContent.map((item, index) => {
+          if (item.type === 'image') {
+            return (
+              <img
+                key={index}
+                className={styles.screen1Icon}
+                alt={`Screenshot ${index + 1}`}
+                src={item.src}
+              />
+            );
+          } else if (item.type === 'image_small') {
+            return (
+              <img
+                key={index}
+                className={styles.screen1Icon_small}
+                alt={`Screenshot ${index + 1}`}
+                src={item.src}
+              />
+            );
+          } else if (item.type === 'text') {
+            return (
+              <div key={index} className={styles.textContent}>
+                {item.content}
+              </div>
+            );
+          }
+          return null;
+        })}
+
+      </div>
       <div className={styles.navigation}>
         <Link to={prevLink} className={styles.previousbutton}>
           <img

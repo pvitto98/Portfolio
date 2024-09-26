@@ -181,7 +181,7 @@
 
 
 @media screen and (max-width: 450px) {
-  .title {
+  .projectinfo {
     font-size: var(--font-size-51xl);
   }
 
@@ -201,19 +201,29 @@
     flex-direction: column;
     padding-right: 0;
     box-sizing: border-box;
-    row-gap: 50px;
+    row-gap: 25px;
     font-size: 30px;
   }
 
   .projectinfo {
-    gap: var(--gap-56xl);
+    gap: 50px;
     padding-top: 75px;
     padding-left: var(--padding-21xl);
     padding-right: var(--padding-21xl);
+    padding-bottom: 25px;
     box-sizing: border-box;
   }
 
   .creditdescription {
-    gap: 5px;
+    gap: 0px;
   }
+
+  .projectLink{
+    font-size: 20px;
+  }
+  
+  .technologies{
+    row-gap: 15px;
+  }
+
 }

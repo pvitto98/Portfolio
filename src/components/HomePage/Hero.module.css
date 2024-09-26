@@ -176,7 +176,7 @@
   left: 0;
   height: 100svh;
   width: 100%;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 70%);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
@@ -389,7 +389,7 @@
   }
 
   .gradientLayer {
-    background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.1) 60%);
+    background-color: rgba(0, 0, 0, 0.15);
   }
 
   .vittorioPellittieri{

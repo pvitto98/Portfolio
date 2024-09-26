@@ -142,9 +142,7 @@
   gap: 10px;
 }
 
-/* .screen1Icon:hover{
-  transform: scale(1);
-  z-index: inherit;
-  position: inherit;  
-} */
+.photoContainer{
+  row-gap: 25px;
+}
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, memo } from 'react';
+import React, { useEffect, useState, memo, Profiler } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { motion } from 'framer-motion';
 import HeroModel from './HeroModel';
@@ -23,6 +23,9 @@ const Hero: React.FC<HeroSection1Props> = memo(({ onLoaded }) => {
   }, [isHovered]);
 
   return (
+    <Profiler id="Hero" onRender={(id, phase, actualDuration) => {
+      console.log({ id, phase, actualDuration });
+    }}>
     <div className={[styles.herosection].join(' ')} id="home">
       <Canvas style={{ position: 'absolute', height: '100svh', width: '100%' }}>
         <ambientLight intensity={0.3} />
@@ -81,6 +84,8 @@ const Hero: React.FC<HeroSection1Props> = memo(({ onLoaded }) => {
         </motion.div>
       </motion.div>
     </div>
+    </Profiler>
+
   );
 });
 

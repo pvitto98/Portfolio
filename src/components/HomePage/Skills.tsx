@@ -14,15 +14,16 @@ const Skills: FunctionComponent<MySkills1Type> = ({ className = "" }) => {
       <div className={styles.content}>
         {/* Frontend Development Section */}
         <div className={styles.category}>
-          <div className={styles.categoryTitle}>Frontend Development</div>
+          <div className={styles.categoryTitle}>Web Development</div>
           <div className={styles.skillset}>
-            <SkillCard skillName="HTML" />
-            <SkillCard skillName="CSS" />
-            <SkillCard skillName="Javascript" />
-            <SkillCard skillName="Typescript" />
             <SkillCard skillName="React" />
             <SkillCard skillName="Angular" />
+            <SkillCard skillName="Node.js" />
             <SkillCard skillName="Three.js" />
+            <SkillCard skillName="Javascript" />
+            <SkillCard skillName="Typescript" />
+            <SkillCard skillName="HTML" />
+            <SkillCard skillName="CSS" />
           </div>
         </div>
         {/* Mobile Development Section */}
@@ -38,8 +39,11 @@ const Skills: FunctionComponent<MySkills1Type> = ({ className = "" }) => {
         <div className={styles.category}>
           <div className={styles.categoryTitle}>Version Control & Other Tools</div>
           <div className={styles.skillset}>
+
             <SkillCard skillName="GIT" />
+            <SkillCard skillName="Agile" />
             <SkillCard skillName="Generative AI" />
+
           </div>
         </div>
 
@@ -47,8 +51,11 @@ const Skills: FunctionComponent<MySkills1Type> = ({ className = "" }) => {
         <div className={styles.category}>
           <div className={styles.categoryTitle}>Design</div>
           <div className={styles.skillset}>
+            <SkillCard skillName="UX/UI" />
             <SkillCard skillName="Figma" />
+
             <SkillCard skillName="Blender*" />
+
           </div>
         </div>
 

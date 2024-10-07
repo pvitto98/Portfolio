@@ -59,7 +59,7 @@ function App() {
       title: "AThing",
       link: "",
       info: `Athing is a task management app designed to help users fight FOMO (Fear of Missing Out). Created in response to today’s overwhelming demands and the struggle to prioritize self-care, Athing encourages users to appreciate even the smallest achievements. The app allows you to insert and categorize tasks, select your mood from a collection of humorous animal memes, and later suggests self-care activities based on the way you feel. AThing also features a playful appreciation page that boosts your self-confidence by using Gen-Z humor.`,
-      technologies: ["Kotlin", "Firebase", "Android"],
+      technologies: ["Kotlin", "Firebase", "Gemini API", "AI", "Android"],
       credits: ["Design: me", "Developement: me"],
       content: [
         "text:SCREENSHOTS",

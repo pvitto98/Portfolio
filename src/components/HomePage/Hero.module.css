@@ -140,6 +140,26 @@
   user-select: none; /* Prevents text selection */
   -webkit-tap-highlight-color: transparent;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    /* Moving gradient background */
+    background: linear-gradient(270deg, #1a1a1a 0%, #2b2b2b 70%, #000000 100%);
+    background-size: 300% 300%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+
+
+/* Define the keyframes for the gradient animation */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .canvas {
@@ -150,6 +170,13 @@
   height: 100%;
   z-index: -1;
 }
+
+.canvas {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7), inset 0px 2px 6px rgba(255, 255, 255, 0.1);
+  transform: perspective(1000px) rotateX(15deg) rotateY(-10deg);
+}
+
+
 
 .blurLayer {
   position: absolute;
@@ -176,7 +203,7 @@
   left: 0;
   height: 100svh;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 

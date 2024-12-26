@@ -67,6 +67,11 @@ const ProjectCard: FunctionComponent<ProjectType> = ({
         onMouseEnter={handleMouseEnter} // Add onMouseEnter to reset GIF
         onMouseLeave={handleMouseLeave} // Add onMouseEnter to reset GIF
               >
+                      
+          <div className={styles.type} style={typeStyle}>
+            <div className={styles.landingPage}>{landingPage}</div>
+          </div>
+    
         <img
           ref={gifRef} // Attach the ref to the GIF image
           className={styles.hoverGif}
@@ -81,11 +86,7 @@ const ProjectCard: FunctionComponent<ProjectType> = ({
         <div className={styles.titleholder}>
           <div className={styles.bat}>{bAT}</div>
         </div>
-        {!isHovered && (
-          <div className={styles.type} style={typeStyle}>
-            <div className={styles.landingPage}>{landingPage}</div>
-          </div>
-        )}
+
       </div>
     </Link>
   );

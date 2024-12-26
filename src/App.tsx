@@ -6,6 +6,7 @@ import ProjectPage from "./pages/ProjectPage";
 import Contact from "./components/HomePage/Contact";
 import HomePage from "./pages/HomePage";
 import Spinner from "./components/Misc/Spinner";
+import Footer from "./components/HomePage/Footer";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -20,7 +21,7 @@ function App() {
       title: "BAT",
       link: "https://www.brasseria-augusta-taurinorum.it/",
       info: `Brasseria Augusta Taurinorum is a passion project born from a deep love of rock music and craft brewing, created by two lifelong friends from Turin. This landing page invites visitors to dive into the unique story and culture behind their beers, featuring immersive videos and curated Spotify playlists that capture the spirit of the founders. A highlight of the site is the dedicated beer section, where users can interactively explore the  eye-catching can designs while discovering each beer’s story, characteristics, and food pairings.`,
-      technologies: ["React", "Three.js","TypeScript", "HTML", "CSS",  "Cookie Policy", "Figma", "Blender"],
+      technologies: ["React", "Three.js","TypeScript", "HTML", "CSS",  "Cookie Policy", "Figma", "Blender", "SEO"],
       credits: ["Copywriting: Chiara Catania, Valeria Sampino", "Design: Chiara Catania, Valeria Sampino, Me", "Development: Me"],
       content: [
         "text:SCREENSHOTS",
@@ -69,6 +70,25 @@ function App() {
         "image_small:/screenshots/AT_Add.jpg",
         "image_small:/screenshots/AT_Profile.jpg",
         "image_small:/screenshots/AT_Appreciation.jpg",
+      ].join(';'),
+      prev: "/WorkSchedule",
+      next: "/ViciniATe",
+    },
+    {
+      id: "VICINIATE",
+      title: "Vicini A Te",
+      link: "https://www.viciniate.it/",
+      info: `Vicini a Te is a landing page intended to present elderly home care services. The design takes care of visitors by describing available services, processes, and contacts. Every detail was worked on to give quick understanding and easy accessibility of the information, facilitating a good catch of users by linking them to the care that will serve them without unnecessary disturb.`,
+      technologies: ["React", "TypeScript", "HTML", "CSS",  "Cookie Policy", "Figma", "SEO"],
+      credits: ["Copywriting: Chiara Catania, Valeria Sampino", "Design: Chiara Catania, Valeria Sampino, Me", "Development: Me"],
+      content: [
+        "text:SCREENSHOTS",
+        "image:/screenshots/VAT_Hero.png",
+        "image:/screenshots/VAT_ChiSiamo.png",
+        "image:/screenshots/VAT_INostriServizi.png",
+        "image:/screenshots/VAT_ComeFunziona.png",
+        "image:/screenshots/VAT_Perche.png",
+        "image:/screenshots/VAT_Servizio.png",
       ].join(';'),
       prev: "/WorkSchedule",
       next: "/BAT",
@@ -128,6 +148,7 @@ function App() {
         ))}
       </Routes>
       <Contact />
+      {/* <Footer/> */}
     </>
   );
 }

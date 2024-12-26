@@ -11,12 +11,13 @@ const Projects: FunctionComponent<ProjectsType> = ({
 }) => {
   return (
     <div className={[styles.myprojects, className].join(" ")} id="projects">
-      <b className={styles.myProjects}><span>P</span>ROJECTS</b>
+      <div className={styles.projectContent}>
+      <h1 className={styles.myProjects}><span>P</span>ROJECTS</h1>
       <div className={styles.projectcontainer}>
         <ProjectCard 
           link="BAT" 
           bAT="BAT" 
-          landingPage="React Three.js" 
+          landingPage="Landing Page" 
           imageSrc="/previews/BAT_Image_Preview-min.png"    // Pass imageSrc
           gifSrc="/previews/BAT_Gif_Preview.gif"        // Pass gifSrc
         />
@@ -34,6 +35,14 @@ const Projects: FunctionComponent<ProjectsType> = ({
           imageSrc="/previews/WS_Image_Preview-min.png"
           gifSrc="/previews/WS_Gif_Preview.gif"
         />
+          <ProjectCard
+          link="ViciniATe"
+          bAT="VICINI A TE"
+          landingPage="Landing Page" 
+          imageSrc="/previews/VAT_Image_Preview-min.png"
+          gifSrc="/previews/VAT_Gif_Preview.gif"
+        />
+      </div>
       </div>
     </div>
   );

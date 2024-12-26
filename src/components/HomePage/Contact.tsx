@@ -1,6 +1,7 @@
 import { FunctionComponent, useState } from "react";
 import styles from "./Contact.module.css";
 import Marquee from "react-marquee-slider";
+import { motion } from "framer-motion";
 
 export type Contact1Type = {
   className?: string;
@@ -26,7 +27,8 @@ const Contact: FunctionComponent<Contact1Type> = ({ className = "" }) => {
 
   return (
     <div className={[styles.contact, className].join(" ")} id="contact">
-      <div className={styles.headerContainer}>
+
+      {/* <div className={styles.headerContainer}>
         <div className={styles.divider}></div>
         <div className={styles.header}>
           <div className={styles.scrolling_text} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick}>
@@ -39,50 +41,51 @@ const Contact: FunctionComponent<Contact1Type> = ({ className = "" }) => {
               onFinish={() => console.log('Marquee Finished')} // Optional callback
             >
               <div className={styles.letsGetIn}>
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>C</span>ONTACT ME
               </div>
               <div className={styles.letsGetIn}>
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>C</span>ONTACT ME
               </div>
               <div className={styles.letsGetIn}>
-                <span className={styles.redLetter}>L</span>ET’S GET IN TOUCH
+                <span className={styles.redLetter}>C</span>ONTACT ME
               </div>
             </Marquee>
           </div>
         </div>
         <div className={styles.divider}></div>
-      </div>
+      </div> */}
+
       <div className={styles.contactcontentwrapper}>
-        <div className={styles.contactcontent}>
-          <div className={styles.emailwrapper}>
-            <div className={styles.whyDontYou}>Why don’t you write me at:</div>
-            <div className={styles.email}>
-              <a
-                href="mailto:pellittierivittorio@gmail.com"
-                style={{ color: "inherit", textDecoration: "none" }}
-              >
-                pellittierivittorio@gmail.com
-              </a>
-            </div>
-          </div>
-          <div className={styles.socialwrapper}>
 
-            <div className={styles.orCheckMe}>Here's my resume:</div>
-            <div className={styles.buttoncontainer}>
-              <a
-                href="/resume.pdf" // Update this with the actual path to your resume
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.resume}
-              >
-                <div className={styles.text}>My resume</div>
-              </a>
-            </div>
+        <h1 className={styles.mySkills}><span>C</span>ONTACTS</h1>
 
-          </div>
-          <div className={styles.socialwrapper}>
-            <div className={styles.orCheckMe}>or check me out at:</div>
-            <div className={styles.resumecontainer}>
+        <motion.div
+          className={styles.contatticard2}
+          initial={{ opacity: 1, y: -30 }}
+          transition={{ duration: 0.6 }}
+        >
+          <b className={styles.scriviciSu}>Why don’t you write me at:</b>
+          <div className={styles.formFields}>
+            <a href="mailto:pellittierivittorio@gmail.com" className={styles.emailline}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className={styles.linkedin}>
+                  <img
+                    className={styles.emailicon}
+                    alt="Icona Email"
+                    src="/icons/emailicon.svg"
+                  />
+                  <b className={styles.email}>pellittierivittorio@gmail.com</b>
+                </div>
+              </motion.div>
+            </a>
+            <motion.div
+              className={styles.emailline}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <a
                 href="https://www.linkedin.com/in/pvitto98"
                 target="_blank"
@@ -92,20 +95,58 @@ const Contact: FunctionComponent<Contact1Type> = ({ className = "" }) => {
                 <img className={styles.imgIcon} alt="" src="/icons/img@2x.png" />
                 <div className={styles.text}>Linkedin</div>
               </a>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        <div className={styles.secondRow}>
+
+          <motion.div
+            className={styles.contatticard}
+            initial={{ opacity: 1, y: -30 }}
+            transition={{ duration: 0.6 }}
+          >
+            <b className={styles.scriviciSu}>Checkout my resume:</b>
+            <div className={styles.formFields}>
               <a
-                href="https://github.com/pvitto98"
+                href="/resume.pdf" // Update this with the actual path to your resume
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.linkedin}
+              // className={styles.resume}
               >
-                <img className={styles.imgIcon} alt="" src="/icons/img1@2x.png" />
-                <div className={styles.text}>Github</div>
+                <div className={styles.linkedin}>
+
+                  <img
+                    className={styles.emailicon}
+                    alt="Icon Resume"
+                    src="/icons/resume.svg"
+                  />
+                  <div className={styles.text2}>My resume</div>
+                </div>
               </a>
 
             </div>
-
-
-          </div>
+          </motion.div>
+          <motion.div
+            className={styles.contatticard}
+            initial={{ opacity: 1, y: -30 }}
+            transition={{ duration: 0.6 }}
+          >
+            <b className={styles.scriviciSu}>Want to see how I work?</b>
+            <div className={styles.formFields}>
+              <div className={styles.buttoncontainer}>
+                <a
+                  href="https://github.com/pvitto98"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.linkedin}
+                >
+                  <img className={styles.imgIcon} alt="" src="/icons/img1@2x.png" />
+                  <div className={styles.text}>Github</div>
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>

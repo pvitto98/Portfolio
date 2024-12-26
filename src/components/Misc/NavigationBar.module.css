@@ -57,6 +57,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
+  font-weight: 800;
 }
 .vectorIcon {
   position: absolute;
@@ -101,7 +102,7 @@
   max-width: 100%;
   overflow: hidden;
   justify-content: space-between;
-  padding: var(--padding-31xl) 100px var(--padding-xl) var(--padding-56xl);
+  padding: 20px 100px var(--padding-xl) var(--padding-56xl);
   box-sizing: border-box;
   text-align: left;
   font-size: 16px;

@@ -4,34 +4,90 @@
   letter-spacing: -0.02em;
   line-height: 100%;
   font-weight: 600;
-}
+  align-content: center;}
+  
 .skill {
-  filter: drop-shadow(2px 2px 20px rgba(238, 238, 238, 0.5));
-  border-radius: var(--br-31xl);
-  border: 3px solid var(--color-whitesmoke);
+  filter: drop-shadow(2px 2px 20px rgba(238, 238, 238, 0.1));
+  border-radius: 25px;
+  border: 2px solid var(--color-whitesmoke);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 10px;
   align-items: center;
   justify-content: center;
-  padding: 15px 30px;
+  padding: 12px 30px;
+  align-self: center;
   text-align: left;
   font-size: 20px;
   color: var(--color-whitesmoke);
   font-family: var(--font-bricolage-grotesque);
+  background: linear-gradient(135deg, #2c2c2c, #5a5a5a);
+  background-size: 200% 200%; /* Extend background for animation */
+  animation: gradientMove 5s ease infinite; /* Apply animation */
+  transition: transform 0.3s ease, border-color 0.3s ease; /* Smooth hover animation */
 }
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%; /* Start position */
+  }
+  50% {
+    background-position: 100% 50%; /* Middle position */
+  }
+  100% {
+    background-position: 0% 50%; /* Back to start */
+  }
+}
+
+.imageContainer {
+  transition: all 0.3s ease-in-out; /* Smooth reveal */
+}
+
+.skillImage{
+  height: 24px;
+  width: 24px;
+}
+
+
+
 .skill:hover {
   transform: rotateY(10deg) translateZ(20px);
   border-color: #F26165;  /* Change border color on hover */
-  color: #F26165;  /* Change text color on hover */
   background-color: #EEEEEE; /* Change background color on hover */
   transform: scale(1.2);
 }
+
+.skillname strong{
+  font-weight: 600;
+}
+
+.skill:hover .imageContainer {
+  animation: bounce 0.6s ease-in-out; /* Apply bounce effect on hover */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0); /* Default position */
+  }
+  50% {
+    transform: translateY(-5px); /* Move up slightly */
+  }
+}
+
 @media screen and (max-width: 450px) {
   .skillname {
     font-size: 16px;
+    align-content: center;
+
   }
   .skill {
     padding: 8px 15px;
     box-sizing: border-box;
   }
+
+  .skillImage{
+    height: 18px;
+    width: 18px;
+  }
+  
 }

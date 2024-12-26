@@ -5,7 +5,7 @@ import ProjectInfo from "../components/ProjectPage/ProjectInfo";
 import ProjectPhotos from "../components/ProjectPage/ProjectPhotos";
 
 export type Project1Props = {
-  videoSrc: string;
+  videoSrc?: string;
   title: string;
   link: string;
   info: string;
@@ -29,7 +29,7 @@ const ProjectPage: FunctionComponent<Project1Props> = ({
 }) => {
   return (
     <div className={styles.project}>
-      <ProjectHero videoSrc={videoSrc} />
+      {videoSrc && <ProjectHero videoSrc={videoSrc} />} {/* Conditionally render ProjectHero */}
       <ProjectInfo
         title={title}
         link={link}

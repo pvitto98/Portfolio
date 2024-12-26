@@ -4,9 +4,10 @@ import styles from "./SkillCard.module.css";
 export type SkillType = {
   className?: string;
   skillName?: string;
+  imageUrl?: string; // Optional image URL
 };
 
-const SkillCard: FunctionComponent<SkillType> = ({ className = "", skillName }) => {
+const SkillCard: FunctionComponent<SkillType> = ({ className = "", skillName, imageUrl }) => {
   const [style, setStyle] = useState({});
 
   const handleMouseMove = (e: { nativeEvent: { offsetX: any; offsetY: any; target: any; }; }) => {
@@ -28,7 +29,12 @@ const SkillCard: FunctionComponent<SkillType> = ({ className = "", skillName }) 
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setStyle({})}
     >
-      <div className={styles.skillname}>{skillName}</div>
+      {imageUrl && (
+        <div className={styles.imageContainer}>
+          <img src={imageUrl} alt={`${skillName} image`} className={styles.skillImage} />
+        </div>
+      )}
+      <div className={styles.skillname}><strong>{skillName}</strong></div>
     </div>
   );
 };

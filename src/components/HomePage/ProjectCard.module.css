@@ -18,9 +18,9 @@
 .titleholder {
   width: 100%;
   border-radius: 0 0 var(--br-11xl) var(--br-11xl);
-  border-top: 3px solid var(--color-whitesmoke);
+  /* border-top: 3px solid var(--color-whitesmoke); */
   box-sizing: border-box;
-  height: 70px;
+  height: 50px;
   overflow: hidden;
   flex-shrink: 0;
   display: flex;
@@ -44,15 +44,16 @@
   align-items: center;
 }
 .type {
-  margin: 0 !important;
+  /* margin: 0 !important;
   position: absolute;
-  top: 0;
+  top: 0; */
   /* left: calc(50% - 107px); */
-  border-radius: 0 0 var(--br-11xl) var(--br-11xl);
+  /* border-radius: 0 0 var(--br-11xl) var(--br-11xl); */
   background-color: var(--color-gray);
-  border-right: 3px solid var(--color-whitesmoke);
-  border-bottom: 3px solid var(--color-whitesmoke);
-  border-left: 3px solid var(--color-whitesmoke);
+  /* border-right: 3px solid var(--color-whitesmoke); */
+  /* border-bottom: 3px solid var(--color-whitesmoke); */
+  /* border-left: 3px solid var(--color-whitesmoke); */
+  width: 100%;
   height: auto;
   flex-direction: row;
   justify-content: center;
@@ -67,7 +68,7 @@
   flex:1;
   max-width: 32%;
   box-shadow: 2px 2px 20px rgba(238, 238, 238, 0.5);
-  border-radius: var(--br-11xl);
+  border-radius: 15px;
   border: 3px solid var(--color-whitesmoke);
   height: auto;
   flex-direction: column;
@@ -75,10 +76,10 @@
   /* padding: var(--padding-8xs) 0 0; */
   position: relative;
   text-align: center;
-  font-size: 32px;
+  font-size: 25px;
   color: var(--color-whitesmoke);
   font-family: var(--font-bricolage-grotesque);
-  min-width: 270px;
+  min-width: 308px;
   transform-style: preserve-3d; /* Preserve 3D transformations */
   perspective: 1000px; /* Adjust perspective */
   perspective-origin: center;
@@ -116,16 +117,16 @@
 @media screen and (max-width: 1024px) {
   .project{
     max-width: auto;
-    min-width: 350px;
-  }
+    min-width: 320px;
+    }
 }
 
 @media screen and (max-width: 450px) {
   .bat {
-    font-size: 25px;
+    font-size: 16px;
   }
   .titleholder {
-    height: 60px;
+    height: auto;
   }
   .landingPage {
     font-size: var(--font-size-sm);
@@ -137,6 +138,8 @@
     min-width: 100%; /* Ensure it takes the full available width */
     max-width: 100%; /* Prevent it from shrinking */
     box-sizing: border-box; /* Ensure padding and border are included in the width/height */
+    box-shadow: 2px 2px 20px rgba(238, 238, 238, 0.2);
+
   }
   .type{
     font-size: 12px;

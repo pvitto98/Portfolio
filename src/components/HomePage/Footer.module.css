@@ -1,0 +1,853 @@
+.viciniinfoIcon {
+    width: 150px;
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .viciniate {
+    position: relative;
+    font-weight: 600;
+    font-size: 60px;
+  }
+  .ragionesociale {
+    position: relative;
+  }
+  .viciniateParent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-3xs);
+  }
+  .via {
+    position: relative;
+    font-weight: 400;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-xl);
+    align-self: center;
+  }
+  .viciniinfoParent {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 100px;
+  }
+  .email,
+  .telefono,
+  .telefonoWhatsapp {
+    align-self: stretch;
+    position: relative;
+  }
+  .telefono {
+    font-size: var(--font-size-6xl);
+  }
+  .telefonoWhatsapp{
+    font-size: var(--font-size-lg);
+  }
+  .contatti {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-3xs);
+  }
+  .frameIcon,
+  .frameIcon1 {
+    width: 51px;
+    position: relative;
+    height: 51px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .frameIcon1 {
+    width: 50px;
+  }
+  .link,
+  .location,
+  .social {
+    display: flex;
+    align-items: flex-start;
+  }
+  .link {
+    align-self: stretch;
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--gap-xl);
+  }
+  .location,
+  .social {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .location {
+    align-self: stretch;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-xl);
+  }
+  .contattacicompact,
+  .content {
+    display: flex;
+    align-items: flex-start;
+  }
+  .content {
+    align-self: stretch;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .contattacicompact {
+    width: 100%;
+    background-color: var(--color-lightcyan-100);
+    max-width: 100%;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 50px 100px var(--padding-11xl);
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    font-family: var(--font-literata);
+  }
+  
+  .legal{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .positionline, .whatsappline{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .email, .number{
+    width: 100%;
+  }
+  .whatsappline{
+    box-shadow: 0 10px 20px #72bfad;
+    border-radius: var(--br-81xl);
+    background-color: var(--color-lightcyan-100);
+    border: 3px solid var(--color-darkslategray-400);
+    padding: 10px 15px;
+  }
+
+  .whatsappline a{
+    display: flex;
+    width: 100%;
+  }
+
+  .formFields {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    color: var(--color-darkslategray-200)
+  }
+
+  .linkedin,
+.resume {
+  filter: drop-shadow(2px 2px 20px rgba(238, 238, 238, .1));
+  border-radius: 25px;
+  border: 2px solid var(--color-whitesmoke);
+  justify-content: center;
+  padding: 15px var(--padding-6xl);
+  gap: 15px;
+  background-color: var(--color-gray);
+  display: flex;
+  flex-direction: row;
+}
+
+.buttoncontainer,
+.linkedin {
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+
+.buttoncontainer {
+  justify-content: center;
+  gap: var(--gap-6xl);
+  font-size: var(--font-size-6xl);
+  color: var(--color-whitesmoke)
+}
+
+.linkedin:hover {
+  border-color: #f26165;
+  transform: scale(1.1)
+}
+
+.linkedin,
+.resume,
+a {
+  text-decoration: none;
+  color: inherit
+}
+
+.imgIcon,
+.text {
+  position: relative
+}
+
+.imgIcon, .emailicon {
+  width: 35px;
+  height: 35px;
+  object-fit: cover
+}
+
+
+
+
+  @media screen and (max-width: 1440px) {
+    .viciniate, .telefono {
+      font-size: clamp(20px, calc(20px + (25 - 20) * ((100vw - 1025px) / (1440 - 1025))), 25px);
+    }
+    .telefonoWhatsapp, .contattacicompact {
+      font-size: calc(16px + (18 - 16) * ((100vw - 1025px) / (1440 - 1025)));
+    }
+    .viciniinfoIcon {
+      /* width: calc(160px + (250 - 160) * ((100vw - 1025px) / (1440 - 1025))); */
+      width: 150px;
+    }
+    .viciniinfoParent {
+
+      /* gap: calc(40px + (250 - 160) * ((100vw - 1025px) / (1440 - 1025))); */
+      gap:50px;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .viciniinfoIcon {
+      width: 300px;
+    }
+    .viciniateParent{
+      align-items: center;
+      text-align: center;
+      align-self: center;
+    }
+    .via {
+      text-align: center;
+    }
+    .viciniinfoParent,
+    .info {
+      align-self: center;
+      width: auto;
+      align-items: start;
+      justify-content: flex-start;
+    }
+    .viciniinfoParent {
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+    .telefono,
+    .telefonoWhatsapp {
+      text-align: center;
+    }
+    .contatti,
+    .link,
+    .social {
+      align-items: center;
+      justify-content: center;
+    }
+    .link,
+    .social {
+      align-items: flex-start;
+    }
+    .social {
+      align-self: stretch;
+      width: auto;
+      justify-content: flex-start;
+    }
+    .content {
+      flex-direction: column;
+      padding-right: 0;
+      box-sizing: border-box;
+      gap: 30px;
+    }
+    .ragionesociale {
+      width: 100%;
+    }
+  }
+  
+  
+  @media screen and (max-width: 426px) {
+  
+    .viciniinfoIcon {
+      height: 70px;
+      width: auto;
+    }
+    .contattacicompact{
+      font-size: 14px;
+      text-align: center;
+      padding: 10px 30px 10px;
+    }
+  
+    .telefono{
+      font-size: 22px;
+    }
+  
+    .telefonoWhatsapp{
+      font-size: 18px;
+  
+    }
+  
+    .frameIcon,
+  .frameIcon1 {
+    height: 40px;
+    }
+  
+    .viciniinfoParent{
+      gap: 25px
+    }
+  
+    .viciniateParent{
+      gap: 8px
+    }
+  }
+  
+  @media screen and (max-width: 320px) {
+  
+    .contattacicompact {
+      font-size: 14px; /* Adjust as needed */
+      text-align: center;
+    }
+  
+    .telefono {
+      font-size: 18px; /* Adjust as needed */
+    }
+  
+    .telefonoWhatsapp {
+      font-size: 16px; /* Adjust as needed */
+    }
+  
+    .frameIcon,
+    .frameIcon1 {
+      height: 35px; /* Adjust as needed */
+    }
+  }
+
+
+  .mySkills {
+    align-self: stretch;
+    position: relative;
+    letter-spacing: -.02em;
+    line-height: 80%;
+    margin-bottom: 75px;
+    width: 100%
+  }
+  
+  .mySkills span {
+    color: #f26165
+  }
+  
+  .myskills {
+    width: 100%;
+    background-color: var(--color-gray);
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: var(--padding-81xl);
+    box-sizing: border-box;
+    gap: 100px;
+    text-align: left;
+    font-size: 75px;
+    color: var(--color-white);
+    font-family: var(--font-bricolage-grotesque);
+    margin: 0
+  }
+  
+  .letsGetIn {
+    position: relative;
+    letter-spacing: -.05em;
+    line-height: 80%;
+    font-weight: 800
+  }
+  
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center
+  }
+  
+  .header {
+    gap: var(--gap-81xl)
+  }
+  
+  .email {
+    align-self: stretch;
+    position: relative;
+    letter-spacing: -.02em;
+    line-height: 80%
+  }
+  
+  .email {
+    line-height: 110%;
+    font-weight: 800;
+    color: var(--color-salmon)
+  }
+  
+  .imgIcon,
+  .text {
+    position: relative
+  }
+  
+  .imgIcon, .emailicon {
+    width: 20px;
+    height: 20px;
+    object-fit: cover
+  }
+  
+  .text,
+  .text2 {
+    letter-spacing: -.02em;
+    line-height: 100%;
+    font-weight: 600
+  }
+  
+  .linkedin,
+  .resume {
+    filter: drop-shadow(2px 2px 20px rgba(238, 238, 238, .1));
+    border-radius: 25px;
+    border: 2px solid var(--color-whitesmoke);
+    justify-content: center;
+    padding: 10px 15px;
+    gap: 15px;
+    background-color: var(--color-gray);
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .buttoncontainer,
+  .linkedin {
+    display: flex;
+    flex-direction: row;
+    align-items: center
+  }
+  
+  .buttoncontainer {
+    justify-content: center;
+    gap: var(--gap-6xl);
+    font-size: var(--font-size-6xl);
+    color: var(--color-whitesmoke)
+  }
+  
+  .linkedin:hover {
+    border-color: #f26165;
+    transform: scale(1.1)
+  }
+  
+  .resume:hover {
+    transform: rotateY(10deg) translateZ(20px);
+    border-color: #f26165;
+    color: #f26165;
+    background-color: #eee;
+    transform: scale(1.2)
+  }
+  
+  .contact,
+  .contactcontentwrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start
+  }
+  
+  .contact .scriviciSu{
+    font-weight: 500;
+  }
+  
+  .scriviciSu{
+    font-size: 22px;
+  }
+  
+  .contactcontentwrapper {
+    align-self: stretch;
+    align-items: center;
+    padding: 0 var(--padding-81xl);
+    font-size: 30px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1280px;
+    align-self: center
+  }
+  
+  .contact {
+    width: 100%;
+    background-color: var(--color-gray);
+    max-width: 100%;
+    overflow: hidden;
+    align-items: center;
+    padding: var(--padding-81xl) 0;
+    box-sizing: border-box;
+    gap: var(--gap-81xl);
+    text-align: left;
+    font-size: var(--font-size-181xl);
+    color: var(--color-white);
+    font-family: var(--font-bricolage-grotesque)
+  }
+  
+  .divider {
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    filter: drop-shadow(10px 10px 20px rgba(238, 238, 238, .8));
+    border-radius: 10px;
+    transition: all .3s ease
+  }
+  
+  .letsGetIn {
+    position: relative;
+    letter-spacing: -.05em;
+    line-height: 80%;
+    font-weight: 800;
+    display: inline-flex;
+    white-space: nowrap;
+    margin: 0 40px;
+    gap: 40px
+  }
+  
+  .letsGetIn:hover {
+    animation-play-state: paused
+  }
+  
+  .letsGetIn span {
+    margin: 0 40px
+  }
+  
+  .redLetter {
+    color: var(--color-salmon);
+    letter-spacing: -.4em
+  }
+  
+  /* .linkedin,
+  .resume,
+  a {
+    text-decoration: none;
+    color: inherit
+  } */
+  
+  .divider {
+    width: 100%;
+    background: #fff;
+    height: 3px
+  }
+  
+  .secondRow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 25px
+  }
+  
+  
+  .email, .text2, .text{
+    font-size: 16px;
+  }
+  @keyframes animate_text {
+    from {
+      transform: translateX(0)
+    }
+  
+    to {
+      transform: translateX(-100%)
+    }
+  }
+  
+  @media screen and (max-width:1024px) {
+    .contact {
+      padding: 50px
+    }
+  
+    .contactcontentwrapper {
+      padding: 0
+    }
+  }
+  
+  @media screen and (max-width:768px) {
+    .email {
+      text-align: center;  }
+  
+    .email, .text2, .text{
+      font-size: 16px;
+    }
+  
+    .linkedin {
+      padding: var(--padding-mini) var(--padding-6xl);
+      box-sizing: border-box
+    }
+  
+    .contactcontentwrapper {
+      padding-left: var(--padding-21xl);
+      padding-right: var(--padding-21xl);
+      box-sizing: border-box
+    }
+  
+    .contact {
+      font-size: 150px;
+      padding: 0 0 50px 0
+    }
+  
+    .letsGetIn {
+      gap: 20px
+    }
+  
+    .myskills {
+      gap: var(--gap-31xl);
+      padding: var(--padding-31xl) var(--padding-21xl) var(--padding-81xl);
+      box-sizing: border-box;
+      text-align: center
+    }
+  
+    .mySkills {
+      text-align: center;
+      font-size: 50px
+    }
+  
+    .scriviciSu{
+      font-size: 18px;
+    }
+    .contatticard, .contatticard2{
+      padding: 25px 10px;
+    }
+  }
+  
+  @media screen and (max-width:426px) {
+    .email {
+      font-size: var(--font-size-xl);
+      text-align: center
+    }
+  
+    .text,
+    .text2 {
+      font-size: var(--font-size-xl)
+    }
+  
+    .linkedin {
+      padding: var(--padding-mini) var(--padding-6xl);
+      box-sizing: border-box;
+      transform: scale(.8)
+    }
+  
+    .linkedin:hover {
+      transform: scale(.9)
+    }
+  
+    .buttoncontainer {
+      flex-direction: column
+    }
+  
+    .contactcontentwrapper {
+      padding-left: var(--padding-21xl);
+      padding-right: var(--padding-21xl);
+      box-sizing: border-box
+    }
+  
+    .contact {
+      font-size: 100px;
+      gap: 50px;
+      padding: 0 0 50px 0
+    }
+  
+    .letsGetIn {
+      gap: 0
+    }
+  
+    .buttoncontainer {
+      gap: 10px
+    }
+  
+    .mySkills {
+      text-align: center;
+      font-size: 40px;
+      margin-bottom: 50px
+    }
+  
+    .scriviciSu{
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width:320px) {
+    .email {
+      font-size: 18px
+    }
+  
+    .buttoncontainer {
+      gap: 10px
+    }
+  }
+  
+  .scriviciSu {
+    position: relative;
+    display: inline-block
+  }
+  
+  .emailicon {
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0
+  }
+  
+  .email {
+    position: relative
+  }
+  
+  .email,
+  .emailline {
+    display: flex;
+    align-items: center
+  }
+  
+  .emailline {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: inherit
+  }
+  
+  .email1 {
+    position: relative;
+    display: flex;
+    align-items: center
+  }
+  
+  .contatticard,
+  .contatticard2,
+  .formFields {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  
+  .formFields {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    color: var(--color-darkslategray-200);
+    gap: 10px;
+  }
+  
+  .contatticard {
+    box-shadow: 0 10px 20px rgba(26, 120, 66, .2);
+    border-radius: var(--br-xl);
+    border: 2px solid var(--color-whitesmoke);
+    flex-direction: column;
+    padding: 25px 50px;
+    gap: 25px;
+    width: 100%;
+    flex: 1;
+    min-width: 400px
+  }
+  
+  .contatticard2 {
+    box-shadow: 0 10px 20px rgba(26, 120, 66, .2);
+    border-radius: var(--br-xl);
+    border: 2px solid var(--color-whitesmoke);
+    flex-direction: column;
+    padding: 25px 50px;
+    gap: 25px;
+    width: 100%
+  }
+  
+  .contatticard, .contatticard2{
+    background: linear-gradient(135deg, #2c2c2c, #5a5a5a);
+    background-size: 200% 200%; /* Extend background for animation */
+    animation: gradientMove 5s ease infinite; /* Apply animation */
+  }
+  
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%; /* Start position */
+    }
+    50% {
+      background-position: 100% 50%; /* Middle position */
+    }
+    100% {
+      background-position: 0% 50%; /* Back to start */
+    }
+  }
+  
+  @media screen and (max-width:1024px) {
+    .formFields {
+      flex-direction: column;
+      gap: 10px
+    }
+  
+    .contatticard,
+    .contatticard2 {
+      width: 100%;
+      max-width: none;
+      min-width: 200px
+    }
+  
+    .text, .text2 {
+      font-size: calc(16px + (18 - 16) * ((100vw - 770px)/ (1025 - 770)))
+    }
+  }
+  
+  @media screen and (max-width:770px) {
+    .formFields {
+      font-size: 16px
+    }
+  
+  
+    .contatticard,
+    .contatticard2 {
+      flex-direction: column
+    }
+  
+  }
+  
+  @media screen and (max-width:450px) {
+    .formFields {
+      flex-direction: row
+    }
+  
+    .formFields b,
+    .buttoncontainer .text,
+    .linkedin .text,
+    .linkedin .text2 {
+      display: none
+    }
+  
+    .linkedin{
+      padding: 20px;
+      border-radius: 20px;
+    }
+  
+    .emailline {
+      padding: 0PX
+    }
+  
+    .contatticard,
+    .contatticard2 {
+      gap: 15px;
+      font-size: 14px;
+      padding: 15px 10px;
+      text-align: center
+    }
+  
+    .contatticard2 {
+      padding: 25px
+    }
+  
+  }

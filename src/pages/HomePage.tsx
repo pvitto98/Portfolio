@@ -5,6 +5,7 @@ import Hero from "../components/HomePage/Hero";
 import AboutMe from "../components/HomePage/AboutMe";
 import Projects from "../components/HomePage/Projects";
 import Skills from "../components/HomePage/Skills";
+import Footer from "../components/HomePage/Footer";
 
 interface HomeScreenProps {
   onLoaded: () => void; // Define the type for the onLoaded prop

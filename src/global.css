@@ -1,31 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200;400;500;600;700;800&display=swap");
+
 body {
   margin: 0;
   line-height: normal;
   background-color: #2b2b2b;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 :root {
   /* fonts */
   --font-bricolage-grotesque: "Bricolage Grotesque";
 
   /* font sizes */
   --font-size-77xl: 96px;
-  --font-size-11xl: 30px;
   --font-size-3xl: 22px;
-  --font-size-16xl: 35px;
   --font-size-xl: 20px;
   --font-size-13xl: 32px;
   --font-size-51xl: 70px;
   --font-size-6xl: 25px;
   --font-size-31xl: 50px;
-  --font-size-21xl: 40px;
   --font-size-181xl: 200px;
   --font-size-5xl: 24px;
   --font-size-sm: 14px;
   --font-size-26xl: 45px;
+  /* font sizes */
+  --font-size-md: 15px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-21xl: 40px;
+  --font-size-27xl: 46px;
+  --font-size-9xl: 28px;
+  --font-size-11xl: 30px;
+  --font-size-111xl: 130px;
+  --font-size-16xl-6: 35.6px;
 
   /* Colors */
   --color-gray: #2b2b2b;
@@ -36,26 +46,53 @@ html {
 
   /* Gaps */
   --gap-81xl: 100px;
-  --gap-xl: 20px;
-  --gap-56xl: 75px;
-  --gap-6xl: 25px;
-  --gap-mini: 15px;
-  --gap-31xl: 50px;
   --gap-3xs: 10px;
+  --gap-6xl: 25px;
+  --gap-31xl: 50px;
+  --gap-xl: 20px;
+  --gap-40xl: 59px;
+  --gap-11xl: 30px;
+  --gap-mini: 15px;
+  --gap-56xl: 75px;
+  --gap-base-1: 15.1px;
+  --gap-4xs-9: 8.9px;
+  --gap-21xl: 40px;
+
+
 
   /* Paddings */
-  --padding-81xl: 100px;
-  --padding-21xl: 40px;
-  --padding-31xl: 50px;
-  --padding-xl: 20px;
-  --padding-6xl: 25px;
   --padding-56xl: 75px;
-  --padding-mini: 15px;
   --padding-8xs: 5px;
-  --padding-3xs: 10px;
+  --padding-81xl: 100px;
+  --padding-31xl: 50px;
+  --padding-9xl: 28px;
+  --padding-6xl: 25px;
+  --padding-mini: 15px;
+  --padding-61xl: 80px;
+  --padding-46xl: 65px;
+  --padding-21xl: 40px;
   --padding-11xl: 30px;
+  --padding-8xl: 27px;
+  --padding-base: 16px;
+  --padding-3xs: 10px;
+  --padding-131xl: 150px;
+  --padding-101xl: 120px;
+  --padding-31xl-3: 50.3px;
+  --padding-4xs-9: 8.9px;
+  --padding-sm-3: 13.3px;
+  --padding-xl: 20px;
+  --padding-11xs: 2px;
+
 
   /* Border radiuses */
   --br-31xl: 50px;
   --br-11xl: 30px;
+  --br-81xl: 100px;
+  --br-xl: 20px;
+  --br-131xl: 150px;
+  --br-3xs: 10px;
+  --br-6xl: 25px;
+  --br-158xl-8: 177.8px;
+  --br-25xl-4: 44.4px;
+  --br-mini: 15px;
 }

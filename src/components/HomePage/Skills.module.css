@@ -16,11 +16,11 @@
 }
 .skillset {
   flex-direction: row;
-  justify-content: end;
+  justify-content: center;
   flex-wrap: wrap;
-  align-content: flex-end;
+  align-content: center;
   gap: 15px;
-  width: 50%;
+  width: 100%;
 }
 .myskillscontent {
   flex-direction: column;
@@ -37,7 +37,7 @@
   color: var(--color-whitesmoke);
   text-align: end;
   margin-top: 25px;
-  
+  width: 100%;
 }
 .myskills {
   width: 100%;
@@ -48,35 +48,68 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: var(--padding-81xl);
+  padding: var(--padding-81xl) 40px;
   box-sizing: border-box;
-  gap: 100px;
   text-align: left;
-  font-size: var(--font-size-31xl);
+  font-size: 75px;
   color: var(--color-white);
   font-family: var(--font-bricolage-grotesque);
+  margin: 0;
+}
+.mySkillsContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1280px;
+  row-gap: 75px;
 }
 
 .content{
   display: flex;
-  flex-direction: column;
-  gap: 40px;
+  flex-direction: row;
+  row-gap: 75px;
+  column-gap: 25px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
 }
 
 .categoryTitle{
-  font-size: 25px;
-  width: 50%;
-  text-align: start;
-  font-weight: 200;
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
 }
 .category{
   display: flex;
-  flex-direction: row;
-  width: 100%;
+  flex-direction: column;
+  min-width: 450px;
+  max-width: 600px;
+  gap:25px;
+  flex: 1;
+}
+
+
+@media screen and (max-width: 1025px) {
+
+  .mySkills{
+    text-align: center;
+  }
+  .content{
+    row-gap: 50px;
+    column-gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
 }
 
 
 @media screen and (max-width: 768px) {
+  .category{
+    min-width: auto;
+  }
   .myskillscontent {
     padding-left: 0;
     padding-right: 0;
@@ -99,7 +132,6 @@
     width: 100%;
     text-align: center;
     font-weight: 200;
-    margin-bottom: 20px;
   }
   .category{
     display: flex;
@@ -111,13 +143,15 @@
     flex-direction: row;
     justify-content: center;
   }
-}
-
-@media screen and (max-width: 1024px) {
-  .myskills{
-    padding: 50px;
+  .mySkills{
+    font-size: 50px;
+  }
+  .mySkillsContainer{
+    gap: 50px;
   }
 }
+
+
 
 @media screen and (max-width: 450px) {
   .skillset {
@@ -149,7 +183,6 @@
     width: 100%;
     text-align: center;
     font-weight: 200;
-    margin-bottom: 20px;
   }
   .category{
     display: flex;
@@ -161,5 +194,8 @@
     flex-direction: row;
     justify-content: center;
     
+  }
+  .mySkills{
+    font-size: 40px;
   }
 }

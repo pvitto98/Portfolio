@@ -13,7 +13,7 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   align-content: flex-start;
   gap: 20px;
@@ -22,39 +22,69 @@
   width: 100%;
   background-color: var(--color-gray);
   max-width: 100%;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: var(--padding-81xl);
+  padding: 40px;
   box-sizing: border-box;
-  gap: var(--gap-81xl);
   text-align: left;
   font-size: var(--font-size-31xl);
   color: var(--color-white);
   font-family: var(--font-bricolage-grotesque);
 }
 
+.projectContent{
+  display: flex;
+  flex-direction: column;
+  max-width: 1280px;
+  align-self: center;
+  gap: 75px;
+}
+
+h1{
+  font-size: 75px;
+  margin: 0;
+
+}
 @media screen and (max-width: 1024px) {
 .myprojects{
   padding: 50px;
   text-align: center;
 }
+
+.projectcontainer{
+  justify-content: space-around;
 }
+}
+
+@media screen and (max-width: 768px) {
+  .myProjects {
+      text-align: center;
+      font-size: 50px;
+  }
+  .projectContent{
+    gap: 50px;
+  }
+}
+
 @media screen and (max-width: 450px) {
   .projectcontainer {
     align-self: stretch;
     width: auto;
     flex-direction: column;
+    gap: 25px;
   }
   .myprojects {
     width: 100%;
     gap: 50px;
-    padding-left: var(--padding-21xl);
-    padding-right: var(--padding-21xl);
+    padding: 50px;
     box-sizing: border-box;
     font-size: 40px;
     text-align: center;
+  }
+  .myProjects {
+    font-size: 40px;
   }
 }

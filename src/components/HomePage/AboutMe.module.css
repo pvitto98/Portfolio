@@ -1,3 +1,21 @@
+@keyframes animateBorderRadius {
+    0% {
+      border-radius: 50% 50% 70% 30% / 41% 35% 65% 59%;
+    }
+  
+    33% {
+      border-radius: 40% 60% 50% 50% / 50% 50% 40% 60%;
+    }
+  
+    66% {
+      border-radius: 60% 40% 60% 40% / 60% 40% 60% 40%;
+    }
+  
+    100% {
+      border-radius: 50% 50% 70% 30% / 41% 35% 65% 59%;
+    }
+  }
+
 .aboutMeSection {
     width: 100%;
     background-color: var(--color-gray);
@@ -5,20 +23,32 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 200px 100px 0px 100px;
+    padding: 200px 40px 100px 40px;
     box-sizing: border-box;
-    gap: 25px;
     text-align: left;
     font-family: var(--font-bricolage-grotesque);
 }
 
+.aboutMecontainer{
+    max-width: 1280px;
+    align-self: center;
+    gap: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* .aboutMecontainer p {
+    margin: 0;
+} */
+
 .title {
-    font-size: var(--font-size-31xl);
+    font-size: 75px;
     color: var(--color-white);
     letter-spacing: -0.02em;
     line-height: 80%;
     text-align: start;
     width: 100%;
+    margin: 0px;
 }
 .title span {
     color: #f26165; /* Red color */
@@ -27,26 +57,26 @@
 .content {
     display: flex;
     justify-content: space-between;
-    gap: 100px;
     width: 100%;
     align-items: center;
 }
 
 .text {
-    flex: 0 0 58%; /* Take up 60% of the space */
-    font-size: 32px;
-    line-height: 1.4;
+    flex: 1.3;
+    font-size: 25px;
+    line-height: 1.5;
     /* Adjusted for better readability */
     color: var(--color-white);
-    max-width: 53%;
-    align-self: start;
     text-align: justify;
+    align-self: center;
 }
 
 
 .model {
-    flex: 0 0 40%; /* Take up 40% of the space */
+    /* flex: 0 0 40%; Take up 40% of the space */
     height: 100%;
+        flex: 1;
+        justify-items: end;
   }
 
 .highlightedWord {
@@ -70,20 +100,89 @@
     /* Salmon color */
 }
 
+.servizioimage {
+    flex: 1;
+    border-radius: var(--br-xl);
+    justify-content: space-between;
+    border-radius: 50% 50% 70% 30% / 41% 35% 65% 59%;
+    position: relative;
+    display: flex;   
+    background: linear-gradient(90deg, #f26165, #2b2b2b);
+    border: 2px solid var(--color-whitesmoke);
+
+    background-size: 200% 200%; /* Larger size for smoother motion */
+    max-width: 380px;
+    max-height: 380px;
+    min-width: 250px;
+    min-height: 250px;
+    overflow: hidden;
+    perspective: 1000px;
+    /* Increased for stronger 3D effect */
+    animation: gradientMove 6s ease infinite, float 6s ease-in-out infinite, animateBorderRadius 16s ease-in-out infinite;
+}
+
+/* Animation for moving gradient */
+@keyframes gradientMove {
+    0% {
+        background-size: 100% 100%; /* Start size */
+    }
+    50% {
+        background-size: 150% 150%; /* Zoom in */
+    }
+    100% {
+        background-size: 100% 100%; /* Zoom out */
+    }
+}
+
+
+  .imageIcon {
+    width: 140%;
+    margin: 0 !important;
+    /* top: calc(50% - 171.55px);
+    left: calc(50% - 174.5px); */
+    object-fit: cover;
+    z-index: 1;
+    position: relative;
+    bottom: -135px;
+    left: -70px;
+    overflow: visible;
+  }
+
+
+@media screen and (max-width: 1440px){
+    .text {
+        font-size: clamp(20px,calc(20px + (25 - 20) * ((100vw - 1025px) / (1440 - 1025))),25px);
+    }
+}
 @media screen and (max-width: 1024px) {
     .text {
-        font-size: 25px;
+        font-size: clamp(20px,calc(20px + (25 - 20) * ((100vw - 767px) / (1025 - 767))),25px);
+        text-align: center;
     }
-    .aboutMeSection{
-        padding: 50px;
+    .content {
+        flex-direction: column-reverse;
+        gap: 25px;
+    }
+
+    .servizioimage{
+        max-width: 300px;
+        max-height: 300px;
+    }
+    .title{
+        text-align: center;
+    }
+    .aboutMecontainer{
+        gap: 50px;
+    }
+    .imageIcon{
+        left: -60px;
     }
 }
 
 
 @media screen and (max-width: 768px) {
-    .content {
-        flex-direction: column;
-        gap: 50px;
+    .aboutMeSection{
+        padding: 100px 40px 50px 40px;
     }
 
     .title {
@@ -99,15 +198,15 @@
         width: 100%;
         height: 30vh;
         justify-content: center;
+        justify-items: center;
     }
-    .aboutMeSection {
-        padding: 100px 80px;
+    .aboutMecontainer{
+        gap: 50px;
     }
 }
 
 @media screen and (max-width: 450px) {
     .content {
-        flex-direction: column;
         gap: 25px;
     }
 
@@ -117,7 +216,7 @@
     }
 
     .text {
-        font-size: 20px;
+        font-size: 16px;
         max-width: 100%;
     }
 
@@ -128,7 +227,15 @@
         display: flex;
         justify-content: center;
     }
-    .aboutMeSection {
-        padding: 100px 40px 0px;
+
+    .imageIcon{
+        bottom: -50px;
+        left: 0;
+    }
+    .servizioimage{
+        max-width: 180px;
+        max-height: 180px;
+        min-width: 160px;
+        min-height: 160px;
     }
 }

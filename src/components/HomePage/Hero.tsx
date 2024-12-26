@@ -24,7 +24,7 @@ const Hero: React.FC<HeroSection1Props> = memo(({ onLoaded }) => {
 
   return (
     <Profiler id="Hero" onRender={(id, phase, actualDuration) => {
-      console.log({ id, phase, actualDuration });
+      // console.log({ id, phase, actualDuration });
     }}>
     <div className={[styles.herosection].join(' ')} id="home">
       <Canvas style={{ position: 'absolute', height: '100svh', width: '100%' }}>

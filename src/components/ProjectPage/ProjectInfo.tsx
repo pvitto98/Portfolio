@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import styles from "./ProjectInfo.module.css";
 import SkillCard from "../HomePage/SkillCard";
+import ReactGA from "react-ga4";
 
 export type ProjectInfoProps = {
   title: string;
@@ -19,11 +20,21 @@ const ProjectInfo: FunctionComponent<ProjectInfoProps> = ({
   credits,
   className = "",
 }) => {
+
+  const handleLinkClick = () => {
+    ReactGA.event({
+      category: "Project Link",
+      action: "Clicked Visit Project",
+      label: title, // Include the project title as the label
+    });
+  };
+
   return (
     <div className={[styles.projectinfo, className].join(" ")}>
       <div className={styles.header}>
         <div className={styles.title}>{title}</div>
-        {(link !== "" ? <a href={link} className={styles.projectLink} target="_blank" rel="noopener noreferrer">
+        {(link !== "" ? <a href={link} className={styles.projectLink} target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}
+            >
           Visit Project
         </a> : <></>)}      </div>
       <div className={styles.informations}>

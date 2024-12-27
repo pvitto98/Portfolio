@@ -7,12 +7,17 @@ import Contact from "./components/HomePage/Contact";
 import HomePage from "./pages/HomePage";
 import Spinner from "./components/Misc/Spinner";
 import Footer from "./components/HomePage/Footer";
+import usePageTracking from "./usePageTracking";
 
 function App() {
   const [loading, setLoading] = useState(true);
   const action = useNavigationType();
   const location = useLocation();
   const pathname = location.pathname;
+
+  //Google Analytics
+  usePageTracking();
+
 
   const projectData = [
     {

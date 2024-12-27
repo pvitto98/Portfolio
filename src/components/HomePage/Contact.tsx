@@ -1,60 +1,45 @@
 import { FunctionComponent, useState } from "react";
 import styles from "./Contact.module.css";
-import Marquee from "react-marquee-slider";
+// import Marquee from "react-marquee-slider";
 import { motion } from "framer-motion";
+import ReactGA from "react-ga4";
+
+
 
 export type Contact1Type = {
   className?: string;
 };
 
 const Contact: FunctionComponent<Contact1Type> = ({ className = "" }) => {
-  const [velocity, setVelocity] = useState(250);
+  // const [velocity, setVelocity] = useState(250);
 
-  const handleMouseEnter = () => {
-    setVelocity(0); // Stops the marquee
-  };
+  // const handleMouseEnter = () => {
+  //   setVelocity(0); // Stops the marquee
+  // };
 
-  const handleMouseLeave = () => {
-    setVelocity(250); // Resumes the marquee
-  };
+  // const handleMouseLeave = () => {
+  //   setVelocity(250); // Resumes the marquee
+  // };
 
-  const handleClick = () => {
-    setVelocity(0); // Stops the marquee
-    setTimeout(() => {
-      setVelocity(250); // Resumes the marquee after 3 seconds
-    }, 3000);
+  // const handleClick = () => {
+  //   setVelocity(0); // Stops the marquee
+  //   setTimeout(() => {
+  //     setVelocity(250); // Resumes the marquee after 3 seconds
+  //   }, 3000);
+  // };
+
+  const handleClick = (linkName: string, url: string) => {
+    ReactGA.event({
+      category: "Contact Links",
+      action: `Clicked ${linkName}`,
+      label: url, // Log the URL being clicked
+    });
+
+    // console.log(`User clicked ${linkName}: ${url}`);
   };
 
   return (
     <div className={[styles.contact, className].join(" ")} id="contact">
-
-      {/* <div className={styles.headerContainer}>
-        <div className={styles.divider}></div>
-        <div className={styles.header}>
-          <div className={styles.scrolling_text} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={handleClick}>
-            <Marquee
-              velocity={velocity}
-              direction="rtl"
-              resetAfterTries={0}
-              scatterRandomly={false} // Adjust based on need
-              onInit={() => console.log('Marquee Initialized')} // Optional callback
-              onFinish={() => console.log('Marquee Finished')} // Optional callback
-            >
-              <div className={styles.letsGetIn}>
-                <span className={styles.redLetter}>C</span>ONTACT ME
-              </div>
-              <div className={styles.letsGetIn}>
-                <span className={styles.redLetter}>C</span>ONTACT ME
-              </div>
-              <div className={styles.letsGetIn}>
-                <span className={styles.redLetter}>C</span>ONTACT ME
-              </div>
-            </Marquee>
-          </div>
-        </div>
-        <div className={styles.divider}></div>
-      </div> */}
-
       <div className={styles.contactcontentwrapper}>
 
         <h1 className={styles.mySkills}><span>C</span>ONTACTS</h1>
@@ -66,7 +51,9 @@ const Contact: FunctionComponent<Contact1Type> = ({ className = "" }) => {
         >
           <b className={styles.scriviciSu}>Why don’t you write me at:</b>
           <div className={styles.formFields}>
-            <a href="mailto:pellittierivittorio@gmail.com" className={styles.emailline}>
+            <a href="mailto:pellittierivittorio@gmail.com" className={styles.emailline}          onClick={() =>
+                handleClick("Email", "mailto:pellittierivittorio@gmail.com")
+              }>
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -91,6 +78,9 @@ const Contact: FunctionComponent<Contact1Type> = ({ className = "" }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.linkedin}
+                onClick={() =>
+                  handleClick("LinkedIn", "https://www.linkedin.com/in/pvitto98")
+                }
               >
                 <img className={styles.imgIcon} alt="" src="/icons/img@2x.png" />
                 <div className={styles.text}>Linkedin</div>
@@ -112,6 +102,7 @@ const Contact: FunctionComponent<Contact1Type> = ({ className = "" }) => {
                 href="/resume.pdf" // Update this with the actual path to your resume
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => handleClick("Resume", "/resume.pdf")}
               // className={styles.resume}
               >
                 <div className={styles.linkedin}>
@@ -140,6 +131,9 @@ const Contact: FunctionComponent<Contact1Type> = ({ className = "" }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.linkedin}
+                  onClick={() =>
+                    handleClick("GitHub", "https://github.com/pvitto98")
+                  }
                 >
                   <img className={styles.imgIcon} alt="" src="/icons/img1@2x.png" />
                   <div className={styles.text}>Github</div>
